@@ -1,0 +1,8 @@
+Subject: リポートが削除されました - "{POST_SUBJECT}"
+
+{USERNAME} さん
+
+フォーラムサイト "{SITENAME}" において
+トピック "{TOPIC_TITLE}" の記事 "{POST_SUBJECT}" に対するあなたのリポートが、モデレータまたはフォーラムサイト管理人によって削除されました。
+
+{EMAIL_SIG}

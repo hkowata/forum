@@ -1,0 +1,12 @@
+Subject: トピックが却下されました - "{TOPIC_TITLE}"
+
+{USERNAME} さん
+
+フォーラムサイト "{SITENAME}" において
+あなたの投稿トピック "{TOPIC_TITLE}" がモデレータまたはフォーラムサイト管理人によって却下されました。
+
+下記メッセージは却下理由です：
+
+{REASON}
+
+{EMAIL_SIG}

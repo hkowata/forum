@@ -1,0 +1,12 @@
+Subject: 投稿記事が却下されました - "{POST_SUBJECT}"
+
+{USERNAME} さん
+
+フォーラムサイト "{SITENAME}" において
+あなたの投稿記事 "{POST_SUBJECT}" がモデレータまたはサイト管理人によって却下されました。
+
+却下理由を確認するには下記URLをクリックしてください：
+
+{REASON}
+
+{EMAIL_SIG}

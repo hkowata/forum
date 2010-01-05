@@ -6,3 +6,4 @@ config.php
 cache
 files
 store
+images/avatars/upload

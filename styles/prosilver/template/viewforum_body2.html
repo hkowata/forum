@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<hko>
+
+<!-- BEGIN topicrow -->
+
+	<!-- IF not topicrow.S_TOPIC_TYPE_SWITCH and not topicrow.S_FIRST_ROW -->
+	<!-- ENDIF -->
+
+	<!-- IF topicrow.S_FIRST_ROW or not topicrow.S_TOPIC_TYPE_SWITCH -->
+	<!-- ENDIF -->
+
+	<!-- IF topicrow.S_POST_STICKY -->
+		<nullitem/>
+	<!-- ENDIF -->
+
+	<!-- IF not topicrow.S_POST_GLOBAL -->
+	<!-- IF not topicrow.S_POST_ANNOUNCE -->
+	<!-- IF not topicrow.S_POST_STICKY -->
+	<!-- IF not topicrow.S_TOPIC_REPORTED -->
+		<item>
+			<TOPIC_TITLE_ORI>{topicrow.TOPIC_TITLE_ORI}</TOPIC_TITLE_ORI>
+			<TOPIC_AUTHOR>{topicrow.TOPIC_AUTHOR}</TOPIC_AUTHOR>
+			<TOPIC_AUTHOR_ID>{topicrow.TOPIC_AUTHOR_ID}</TOPIC_AUTHOR_ID>
+			<FIRST_POST_TIME>{topicrow.FIRST_POST_TIME}</FIRST_POST_TIME>
+			<REPLIES>{topicrow.REPLIES}</REPLIES>
+			<VIEWS>{topicrow.VIEWS}</VIEWS>
+			<LAST_POST_AUTHOR>{topicrow.LAST_POST_AUTHOR}</LAST_POST_AUTHOR>
+			<U_LAST_POST>{topicrow.U_LAST_POST}</U_LAST_POST>
+			<LAST_POST_TIME>{topicrow.LAST_POST_TIME}</LAST_POST_TIME>
+			<FORUM_ID>{topicrow.FORUM_ID}</FORUM_ID>
+			<TOPIC_ID>{topicrow.TOPIC_ID}</TOPIC_ID>
+		</item>
+	<!-- ENDIF -->
+	<!-- ENDIF -->
+	<!-- ENDIF -->
+	<!-- ENDIF -->
+
+	<!-- IF topicrow.S_LAST_ROW -->
+	<!-- ENDIF -->
+
+<!-- END topicrow -->
+	<TOTAL_POSTS>{TOTAL_POSTS}</TOTAL_POSTS>
+	<TOTAL_TOPICS>{TOTAL_TOPICS}</TOTAL_TOPICS>
+	<LUZI82_TOPIC_COUNT>{LUZI82_TOPIC_COUNT}</LUZI82_TOPIC_COUNT>
+
+</hko>
