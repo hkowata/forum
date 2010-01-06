@@ -4,7 +4,7 @@
 * posting [Japanese]
 *
 * @package language
-* @version $Id: posting.php 9464 2009-04-17 15:52:40Z acydburn $
+* @version $Id: posting.php 9742 2009-07-09 10:34:40Z bantu $
 * @copyright (c) 2005 phpBB Group
 * @license http://opensource.org/licenses/gpl-license.php GNU Public License
 *
@@ -39,18 +39,18 @@ if (empty($lang) || !is_array($lang))
 
 $lang = array_merge($lang, array(
 	'ADD_ATTACHMENT'			=> 'ファイル添付',
-	'ADD_ATTACHMENT_EXPLAIN'	=> 'この記事にファイルを添付します',
+	'ADD_ATTACHMENT_EXPLAIN'	=> 'ファイルを添付します',
 	'ADD_FILE'					=> 'ファイルの追加',
 	'ADD_POLL'					=> '投票の作成',
 	'ADD_POLL_EXPLAIN'			=> '投票トピックにしたくない場合はフィールドを空白のままにしてください',
 	'ALREADY_DELETED'			=> '記事は既に削除されています',
-	'ATTACH_QUOTA_REACHED'		=> '申し訳ありませんが、掲示板の添付ファイル保管スペースが限界に達したためこれ以上ファイルをアップロードすることはできません',
+	'ATTACH_QUOTA_REACHED'		=> '掲示板の添付ファイル保管スペースが限界に達したため、これ以上ファイルをアップロードすることはできません',
 	'ATTACH_SIG'				=> 'サインを追加する（サインは ユーザーCP で変更できます）',
 
 	'BBCODE_A_HELP'				=> '添付ファイルのインライン表示: [attachment=]filename.ext[/attachment]',
 	'BBCODE_B_HELP'				=> 'ボールド（太字）: [b]text[/b]',
 	'BBCODE_C_HELP'				=> 'コード表示: [code]code[/code]',
-	'BBCODE_E_HELP'				=> 'リスト: リスト要素を追加する',
+	'BBCODE_E_HELP'				=> 'リスト: リスト要素の追加',
 	'BBCODE_F_HELP'				=> 'フォントサイズ: [size=85]small text[/size]',
 	'BBCODE_IS_OFF'				=> '%sBBCode%s: <em>OFF</em>',
 	'BBCODE_IS_ON'				=> '%sBBCode%s: <em>ON</em>',
@@ -61,8 +61,8 @@ $lang = array_merge($lang, array(
 	'BBCODE_P_HELP'				=> '画像: [img]http://image_url[/img]',
 	'BBCODE_Q_HELP'				=> '引用: [quote]text[/quote]',
 	'BBCODE_S_HELP'				=> 'フォントカラー: [color=red]text[/color]  Tip: color=#FF0000 も可',
-	'BBCODE_U_HELP'				=> 'アンダーライン: [u]text[/u]',
-	'BBCODE_W_HELP'				=> 'URLリンク: [url]http://url[/url] または [url=http://url]URL text[/url]',
+	'BBCODE_U_HELP'				=> 'アンダーライン（下線）: [u]text[/u]',
+	'BBCODE_W_HELP'				=> 'ハイパーリンク: [url]http://url[/url] または [url=http://url]URL text[/url]',
 	'BBCODE_D_HELP'				=> 'Flash: [flash=width,height]http://url[/flash]',
 	'BUMP_ERROR'				=> 'トピックに記事が投稿されて間もないため、しばらく時間が経つまでトピックを上げることはできません',
 
@@ -76,18 +76,18 @@ $lang = array_merge($lang, array(
 	'CURRENT_TOPIC'				=> '現在のトピック',
 
 	'DELETE_FILE'				=> 'ファイルの削除',
-	'DELETE_MESSAGE'			=> 'メッセージの削除',
+	'DELETE_MESSAGE'			=> '【削除済みメッセージ】',
 	'DELETE_MESSAGE_CONFIRM'	=> 'このメッセージを本当に削除してもよろしいですか？',
-	'DELETE_OWN_POSTS'			=> 'この記事を削除できません。削除できるのは自分が投稿した記事だけです。',
+	'DELETE_OWN_POSTS'			=> 'この記事を削除することはできません。削除できるのは自分が投稿した記事だけです。',
 	'DELETE_POST_CONFIRM'		=> 'この記事を本当に削除してもよろしいですか？',
 	'DELETE_POST_WARN'			=> '一度削除された記事を元に戻すことはできません',
 	'DISABLE_BBCODE'			=> 'BBCode を無効にする',
 	'DISABLE_MAGIC_URL'			=> 'URL を自動的にパースしない',
 	'DISABLE_SMILIES'			=> 'スマイリーを無効にする',
-	'DISALLOWED_CONTENT'		=> 'アップロードファイルの内容と MIME Type が一致しなかったため、アップロードファイルの受付が拒否されました',
+	'DISALLOWED_CONTENT'		=> 'アップロードファイルの内容と MIME Type が一致しなかったため、アップロードファイルを拒否しました',
 	'DISALLOWED_EXTENSION'		=> '拡張子 %s は許可されていません',
-	'DRAFT_LOADED'				=> '下書きをロードしました。記事を完成させてください。<br />この記事を投稿すると下書きは自動的に削除されます。',
-	'DRAFT_LOADED_PM'			=> '下書きをロードしました。プライベートメッセージを完成させてください。<br />このプライベートメッセージを投稿すると下書きは自動的に削除されます。',
+	'DRAFT_LOADED'				=> '下書きをロードしました。記事を完成させてください。<br />記事を投稿すると下書きは自動的に削除されます。',
+	'DRAFT_LOADED_PM'			=> '下書きをロードしました。プライベートメッセージを完成させてください。<br />プライベートメッセージを投稿すると下書きは自動的に削除されます。',
 	'DRAFT_SAVED'				=> '下書きのセーブに成功しました',
 	'DRAFT_TITLE'				=> '下書きの件名',
 
@@ -116,7 +116,7 @@ $lang = array_merge($lang, array(
 
 	'LOAD'						=> 'ロード',
 	'LOAD_DRAFT'				=> '下書きをロードする',
-	'LOAD_DRAFT_EXPLAIN'		=> 'ここでは投稿中に書いた下書きをロード（読み込み）できます。下書きの閲覧・編集、削除は ユーザーCP で行うことができます。',
+	'LOAD_DRAFT_EXPLAIN'		=> '下書きをロード（読み込み）できます。下書きをロードすると現在書きかけの記事は削除されますのでご注意ください。下書きの閲覧、編集、削除は ユーザーCP で行うことができます。',
 	'LOGIN_EXPLAIN_BUMP'		=> 'このフォーラムでトピックを上げるにはログインが必要です',
 	'LOGIN_EXPLAIN_DELETE'		=> 'このフォーラムで記事を削除するにはログインが必要です',
 	'LOGIN_EXPLAIN_POST'		=> 'このフォーラムで記事を投稿するにはログインが必要です',
@@ -129,8 +129,8 @@ $lang = array_merge($lang, array(
 	'MAX_IMG_HEIGHT_EXCEEDED'	=> '使用できる画像ファイルの最大サイズ（高さ）は %1$d pix です',
 	'MAX_IMG_WIDTH_EXCEEDED'	=> '使用できる画像ファイルの最大サイズ（横幅）は %1$d pix です',
 
-	'MESSAGE_BODY_EXPLAIN'		=> 'ここにメッセージを入力してください。<strong>%d</strong> 字まで入力できます。',
-	'MESSAGE_DELETED'			=> 'メッセージを削除することに成功しました',
+	'MESSAGE_BODY_EXPLAIN'		=> 'メッセージを入力してください。<strong>%d</strong> 字まで入力できます。',
+	'MESSAGE_DELETED'			=> 'メッセージを削除しました',
 	'MORE_SMILIES'				=> 'スマイリーを全て表示する',
 
 	'NOTIFY_REPLY'				=> '返信が投稿されたら通知する',
@@ -138,7 +138,7 @@ $lang = array_merge($lang, array(
 	'NO_DELETE_POLL_OPTIONS'	=> '投票オプションに既に票が存在するため削除できません',
 	'NO_PM_ICON'				=> 'アイコンなし',
 	'NO_POLL_TITLE'				=> '投票のお題を入力してください',
-	'NO_POST'					=> '要求された記事は存在しません',
+	'NO_POST'					=> 'その記事は存在しません',
 	'NO_POST_MODE'				=> '投稿モードが指定されていません',
 
 	'PARTIAL_UPLOAD'			=> 'ファイルは一部だけアップロードされました',
@@ -155,14 +155,14 @@ $lang = array_merge($lang, array(
 	'POLL_OPTIONS_EXPLAIN'		=> '１行につき１つのオプションを入力してください。最大 <strong>%d</strong> 個までオプションを作成できます。',
 	'POLL_OPTIONS_EDIT_EXPLAIN'	=> '１行につき１つのオプションを入力してください。最大 <strong>%d</strong> 個までオプションを作成できます。オプションを削除または追加した場合、投票結果は全てリセットされます。',
 	'POLL_QUESTION'				=> '投票のお題',
-	'POLL_TITLE_TOO_LONG'		=> '投票のお題は １００ 字以下にしてください',
+	'POLL_TITLE_TOO_LONG'		=> '投票のお題は１００字以下にしてください',
 	'POLL_TITLE_COMP_TOO_LONG'	=> '投票のお題をページに表示すると大きくなりすぎる恐れがあります。BBCode とスマイリーの削除を検討してください。',
 	'POLL_VOTE_CHANGE'			=> '再投票を許可する',
 	'POLL_VOTE_CHANGE_EXPLAIN'	=> '許可した場合、ユーザーは投票先オプションを自由に変更できます',
 	'POSTED_ATTACHMENTS'		=> '添付ファイル',
 	'POST_APPROVAL_NOTIFY'		=> '記事が承認されるとその旨のメッセージがあなたに通知されます',
 	'POST_CONFIRMATION'			=> '投稿の確認',
-	'POST_CONFIRM_EXPLAIN'		=> '不正プログラムによる投稿を防ぐため、画像認証コードの入力を強制しています。認証コードは下の画像に表示されています。画像が表示されない、もしくは視覚的に問題がある場合は%s管理人%sにご連絡ください。',
+	'POST_CONFIRM_EXPLAIN'		=> '不正プログラムによる投稿を防ぐため、CAPTCHA 認証コードの入力を強制しています。認証コードは下の画像に表示されています。CAPTCHA が表示されない、もしくは視覚的に問題がある場合は%s管理人%sにご連絡ください。',
 	'POST_DELETED'				=> '記事の削除に成功しました',
 	'POST_EDITED'				=> '記事の編集に成功しました',
 	'POST_EDITED_MOD'			=> '記事の編集に成功しました。モデレータが承認するまで編集内容は記事に反映されません。',
@@ -170,7 +170,9 @@ $lang = array_merge($lang, array(
 	'POST_ICON'					=> '記事アイコン',
 	'POST_NORMAL'				=> '通常',
 	'POST_REVIEW'				=> '記事のレビュー',
-	'POST_REVIEW_EXPLAIN'		=> '他ユーザーがこのトピックに記事を投稿しました。投稿する前に全ての返信記事をご確認ください。',
+	'POST_REVIEW_EDIT'			=> '編集記事のレビュー',
+	'POST_REVIEW_EDIT_EXPLAIN'	=> '記事編集中に他のユーザーがこの記事を編集しました。送信前に編集された記事をご確認ください。',
+	'POST_REVIEW_EXPLAIN'		=> '記事作成中に他のユーザーがこのトピックに記事を投稿しました。投稿する前に全ての返信記事をご確認ください。',
 	'POST_STORED'				=> '記事の投稿に成功しました',
 	'POST_STORED_MOD'			=> '記事の投稿に成功しました。モデレータがこの記事を承認するとフォーラムに記事が表示されます。',
 	'POST_TOPIC_AS'				=> 'トピックタイプ',
@@ -187,10 +189,11 @@ $lang = array_merge($lang, array(
 	'SMILIES_ARE_ON'			=> 'スマイリー: <em>ON</em>',
 	'STICKY_ANNOUNCE_TIME_LIMIT'=> 'この期間が過ぎるとトピックは通常トピックに自動的に変更されます',
 	'STICK_TOPIC_FOR'			=> '注目/告知 の有効期間',
-	'STICK_TOPIC_FOR_EXPLAIN'	=> '0 か 空白にすると、注目トピックまたは告知トピックが通常トピックに自動的に変更されることはありません',
+	'STICK_TOPIC_FOR_EXPLAIN'	=> '0 か 空白にすると、注目/告知 トピックが通常トピックに自動的に変更されることはありません',
 	'STYLES_TIP'				=> 'Tip: テキストを選択した状態で BBCode ボタンをクリックすると選択部分がタグで囲まれます',
 
 	'TOO_FEW_CHARS'				=> 'メッセージが短すぎます',
+	'TOO_FEW_CHARS_LIMIT'		=> '現在のメッセージは %1$d 字です。 %2$d 字以上にする必要があります。',
 	'TOO_FEW_POLL_OPTIONS'		=> '投票オプションは少なくとも２つ作成してください',
 	'TOO_MANY_ATTACHMENTS'		=> 'これ以上この記事にファイルを添付することはできません。記事１つあたりの最大添付ファイル数は %d です。',
 	'TOO_MANY_CHARS'			=> 'メッセージが長すぎます',

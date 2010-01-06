@@ -133,6 +133,7 @@ $lang = array_merge($lang, array(
 	'DB_PASSWORD'				=> '数据库密码',
 	'DB_PORT'					=> '数据库服务器端口',
 	'DB_PORT_EXPLAIN'			=> '不用填写，除非您确定服务器监听一个非标准端口。',
+	'DB_UPDATE_NOT_SUPPORTED'	=> '非常抱歉, 升级程序无法升级版本低于 “%1$s” 的phpBB论坛. 您当前使用的论坛版本为 “%2$s”. 请升级至一个较新的版本后再执行此升级程序. 如果您需要帮助, 请到phpBB.com的用户支持版面提出.',
 	'DB_USERNAME'				=> '数据库用户名',
 	'DB_TEST'					=> '连接检测',
 	'DEFAULT_LANG'				=> '默认论坛语言',
@@ -166,6 +167,7 @@ $lang = array_merge($lang, array(
 	'FILES_REQUIRED_EXPLAIN'	=> '<strong>必需的</strong> - 为了正常运行，phpBB需要针对特定文件或目录的写入权限。如果下面出现“不存在”，您就需要创建相应的文件或目录；如果出现“不可写入”，您就需要改变相应的文件或目录的权限来允许phpBB对其进行写入操作。',
 	'FILLING_TABLE'				=> '正在填充表格：<strong>%s</strong>',
 	'FILLING_TABLES'			=> '正在填充表格',
+	'FIREBIRD_DBMS_UPDATE_REQUIRED'		=> 'phpBB不再支持版本低于2.1的 Firebird/Interbase 数据库. 请升级您的 Firebird 数据库.',
 	'FINAL_STEP'				=> '正在执行最后一步',
 	'FORUM_ADDRESS'				=> '论坛地址',
 	'FORUM_ADDRESS_EXPLAIN'		=> '这是指向您的论坛根目录的超链接地址，例如：<samp>http://www.example.com/phpBB2/</samp>。如果您填入了一个地址，所有在信件、短信及签名档中与前面示例相同的地址都将被替换为新的论坛地址。',
@@ -184,11 +186,11 @@ $lang = array_merge($lang, array(
 	'INITIAL_CONFIG_EXPLAIN'	=> '安装程序认为您的服务器可以运行phpBB，您需要提供一些具体信息。如果您不知道如何连接您的数据库，请首先考虑联络您的服务供应商，或是访问phpBB支持论坛。在继续下一步之前，请仔细检查您输入的信息。',
 	'INSTALL_CONGRATS'			=> '恭喜！',
 	'INSTALL_CONGRATS_EXPLAIN'	=> '
-		<p>您已经成功安装 phpBB %1$s. 从这里, 您有两个选项可以设置您新安装的 phpBB3:</p>
+		<p>您已经成功安装 phpBB %1$s. 从这里, 您可以通过以下选项设置您的 phpBB3:</p>
 		<h2>转换一个已经存在的论坛到 phpBB3</h2>
 		<p>phpBB 统一转换框架支持从 phpBB 2.0.x 和其他论坛软件到 phpBB3 的转换. 如果您有一个旧的论坛需要转换, 请 <a href="%2$s">运行转换程序</a>.</p>
 		<h2>使用您的 phpBB3!</h2>
-		<p>点击下面的链接将带您到管理员控制面板 (ACP). 花一些时间检查设置选项是否可用. 记住可以使用在线帮助文档位于 <a href="http://www.phpbb.com/support/documentation/3.0/">文档</a> 和 <a href="http://www.phpbb.com/community/viewforum.php?f=46">技术支持版面</a>, 查看 <a href="%3$s">README</a> 以得到更多的信息.</p><p><strong>请在使用论坛前删除, 移动或重命名install文件夹. 如果这个文件夹存在, 只有管理员控制面板才可以访问.</strong></p>',
+		<p>点击下面的链接将带您到管理员控制面板 (ACP)下提交统计数据的界面. 花一些时间检查设置选项是否可用. 记住可以使用在线帮助文档位于 <a href="http://www.phpbb.com/support/documentation/3.0/">文档</a> 和 <a href="http://www.phpbb.com/community/viewforum.php?f=46">技术支持版面</a>, 查看 <a href="%3$s">README</a> 以得到更多的信息.</p><p><strong>请在使用论坛前删除, 移动或重命名install文件夹. 如果这个文件夹存在, 只有管理员控制面板才可以访问.</strong></p>',
 	'INSTALL_INTRO'				=> '欢迎安装！',
 
 	'INSTALL_INTRO_BODY'		=> '使用这个选项, 应该可以在您的服务器上安装 phpBB.</p><p>为了继续安装, 您需要知道您的数据库设置. 如果您不清楚这些, 请联络您的web空间提供者. 没有这些信息安装将不能继续. 您需要:</p>
@@ -208,7 +210,7 @@ $lang = array_merge($lang, array(
 		<li>MySQL 3.23 或更高 (支持MySQLi)</li>
 		<li>PostgreSQL 7.3+</li>
 		<li>SQLite 2.8.2+</li>
-		<li>Firebird 2.0+</li>
+		<li>Firebird 2.1+</li>
 		<li>MS SQL Server 2000 或更高 (直接访问或通过 ODBC)</li>
 		<li>Oracle</li>
 	</ul>
@@ -230,7 +232,7 @@ $lang = array_merge($lang, array(
 	'INST_ERR_DB_NO_MYSQLI'		=> '服务器内安装的 MySQL 版本与您选择的 “MySQL (使用 MySQLi 扩展)” 选项不兼容，请尝试 “MySQL” 选项。',
 	'INST_ERR_DB_NO_SQLITE'		=> '您安装的 SQLite 版本太古老，请升级至最低 2.8.2 版。',
 	'INST_ERR_DB_NO_ORACLE'		=> '服务器内安装的 Oracle 版本需要您将参数 <var>NLS_CHARACTERSET</var> 设置为 <var>UTF8</var>。请设置此参数，或将 Oracle 升级至最低 9.2 版。',
-	'INST_ERR_DB_NO_FIREBIRD'	=> '您安装的 Firebird 版本太古老，请升级至最低 2.0 版。',
+	'INST_ERR_DB_NO_FIREBIRD'	=> '您安装的 Firebird 版本太古老，请升级至最低 2.1 版。',
 	'INST_ERR_DB_NO_FIREBIRD_PS'=> '您为 Firebird 选择的数据库的页面容量小于 8192，它必须至少为 8192。',
 	'INST_ERR_DB_NO_POSTGRES'	=> '您选择的数据库不是 <var>UNICODE</var> 或 <var>UTF8</var> 编码，请使用 <var>UNICODE</var> 或 <var>UTF8</var> 编码的数据库。',
 	'INST_ERR_DB_NO_NAME'		=> '没有指定数据库名称',
@@ -364,7 +366,7 @@ $lang = array_merge($lang, array(
 
 // Updater
 $lang = array_merge($lang, array(
-	'ALL_FILES_UP_TO_DATE'		=> '所有的文件都已经升级到最新版本。现在您应该 <a href="../ucp.php?mode=login">登陆到论坛</a> 并检查系统是否正常工作。不要忘记删除或者重命名（移动）install安装目录！',
+	'ALL_FILES_UP_TO_DATE'		=> '所有的文件都已经升级到最新版本。现在您应该 <a href="../ucp.php?mode=login&amp;redirect=adm/index.php%3Fi=send_statistics%26mode=send_statistics">登陆到论坛</a> 并检查系统是否正常工作。不要忘记删除或者重命名（移动）install安装目录！',
 	'ARCHIVE_FILE'				=> '文档中的源文件',
 
 	'BACK'				=> '后退',
@@ -563,8 +565,9 @@ $lang = array_merge($lang, array(
 	'VERSION_CHECK_EXPLAIN'		=> '检查您当前运行的论坛是否是最新版本.',
 	'VERSION_NOT_UP_TO_DATE'	=> '您的论坛版本不是最新的, 请继续升级进程.',
 	'VERSION_NOT_UP_TO_DATE_ACP'=> '您的论坛版本不是最新的.<br />下面是最新版本的发布和更新帮助链接.',
+	'VERSION_NOT_UP_TO_DATE_TITLE'	=> '您的论坛版本不是最新的.',
 	'VERSION_UP_TO_DATE'		=> '您的版本是最新的, 没有可用的更新. 您也许想进行一次论坛程序文件的校验.',
-	'VERSION_UP_TO_DATE_ACP'	=> '您的版本是最新的, 没有可用的更新. 您不需要升级您的论坛.',
+	'VERSION_UP_TO_DATE_ACP'	=> '您的版本是最新的, 没有可用的更新.',
 	'VIEWING_FILE_CONTENTS'		=> '查看文件内容',
 	'VIEWING_FILE_DIFF'			=> '查看文件差异',
 

@@ -4,7 +4,7 @@
 * help_bbcode [Japanese]
 *
 * @package language
-* @version $Id: help_bbcode.php 9461 2009-04-17 15:23:17Z acydburn $
+* @version $Id: help_bbcode.php 9623 2009-06-18 18:12:28Z nickvergessen $
 * @copyright (c) 2005 phpBB Group
 * @license http://opensource.org/licenses/gpl-license.php GNU Public License
 *
@@ -39,7 +39,7 @@ $help = array(
 	),
 	array(
 		0 => 'BBCode とは？',
-		1 => 'BBCode とは、HTML を利用した phpBB3 独自の実装によるマークアップ言語です。BBCode を使用できるか否かは掲示板の設定によります。BBCode を使用できる場合でも投稿する時に投稿ページで BBCode を無効にできます。 BBCode はマークアップ言語である点で HTML と似ていますが、タグは &lt; &gt; でなく角カッコ [ ] で括られます。 BBCode を使用することによって文章の見栄えをコントロールしたり画像やリンクを文章に挿入したりできるようになります。掲示板のスタイルによりますが、メッセージ入力フォームの真上に BBCode ボタンがずらりと並んでいるはずです。これらのボタンをクリックすれば簡単に BBCode をテキストエリア内に挿入できます。 BBCode をさらに詳しく知るには以下のガイドをご参照ください。'
+		1 => 'BBCode とは、HTML を利用した phpBB3 独自の実装によるマークアップ言語です。BBCode を使用できるか否かは掲示板の設定によります。BBCode を使用できる場合でも投稿する時に投稿ページで BBCode を無効にできます。 BBCode はマークアップ言語である点で HTML と似ていますが、タグは &lt; &gt; でなく角カッコ [ ] で括られます。 BBCode を使用することによって文章の見栄えをコントロールしたり画像やリンクを文章に挿入したりできるようになります。掲示板のスタイルによりますが、テキストエリアの真上に BBCode ボタンがずらりと並んでいるはずです。これらのボタンをクリックすれば簡単に BBCode をテキストエリア内に挿入できます。 BBCode をさらに詳しく知るには以下のガイドをご参照ください。'
 	),
 	array(
 		0 => '--',
@@ -67,7 +67,7 @@ $help = array(
 	),
 	array(
 		0 => 'コードまたは固定幅データの表示',
-		1 => 'プログラムのコードやタブ・スペースなどの固定幅が必要な表データを表示するには、そのテキストを [code][/code] で囲みます：<br /><br /><strong>[code]</strong>echo &quot;これはプログラムのコードです&quot;;<strong>[/code]</strong><br /><br /> <strong>[code][/code]</strong> で囲まれた部分が固定幅で表示されます。 <strong>[code=php][/code]</strong> とすると if(){} や while(){} などのPHP構文をハイライト表示することができ、PHPコード が読みやすくなるのでお勧めです。'
+		1 => 'プログラムのコード や タブ・スペースなどの固定幅が必要な表データ を表示するには、そのテキストを [code][/code] で囲みます：<br /><br /><strong>[code]</strong>echo &quot;これはプログラムのコードです&quot;;<strong>[/code]</strong><br /><br /> <strong>[code][/code]</strong> で囲まれた部分が固定幅で表示されます。 <strong>[code=php][/code]</strong> とすると if(){} や while(){} などのPHP構文をハイライト表示することができ、PHPコード が読みやすくなるのでお勧めです。'
 	),
 	array(
 		0 => '--',
@@ -75,11 +75,16 @@ $help = array(
 	),
 	array(
 		0 => '番号なしリストの作成方法',
-		1 => 'BBCode は番号なしリストと番号付きリストをサポートしています。BBCode のリストは HTML の &lt;li&gt; と同じように機能します。番号なしリストは各項目の先頭に丸い点が置かれます。番号なしリストを作成するには <strong>[list][/list]</strong> タグの中で <strong>[*]</strong> を使って各項目を指定します。例えば自分の好きな色をリスト表示するには次のようにします：<br /><br /><strong>[list]</strong><br /><strong>[*]</strong>Red<br /><strong>[*]</strong>Blue<br /><strong>[*]</strong>Yellow<br /><strong>[/list]</strong><br /><br /> 上記のようにすると次のリストが表示されます：<ul><li>Red</li><li>Blue</li><li>Yellow</li></ul>'
+		1 => 'BBCode は 番号なしリスト と 番号付きリスト をサポートしています。BBCode のリストは HTML の &lt;li&gt; と同じように機能します。番号なしリストは各項目の先頭に丸い点が置かれます。番号なしリストを作成するには <strong>[list][/list]</strong> タグの中で <strong>[*]</strong> を使って各項目を指定します。例えば自分の好きな色をリスト表示するには次のようにします：<br /><br /><strong>[list]</strong><br /><strong>[*]</strong>Red<br /><strong>[*]</strong>Blue<br /><strong>[*]</strong>Yellow<br /><strong>[/list]</strong><br /><br /> 上記のようにすると次のリストが表示されます：<ul><li>Red</li><li>Blue</li><li>Yellow</li></ul>'
 	),
 	array(
 		0 => '番号付きリストの作成方法',
-		1 => '番号付きリストを作成するには <strong>[list=1][/list]</strong> を用います。番号順の代わりにアルファベット順にしたい場合は <strong>[list=a][/list]</strong> を用います。番号なしリストと同様に各項目を指定するには <strong>[*]</strong> を使用します。簡単な例を紹介します：<br /><br /><strong>[list=1]</strong><br /><strong>[*]</strong>Go to the shops<br /><strong>[*]</strong>Buy a new computer<br /><strong>[*]</strong>Swear at computer when it crashes<br /><strong>[/list]</strong><br /><br /> 上記のようにすると次のリストが表示されます：<ol style="list-style-type: decimal;"><li>Go to the shops</li><li>Buy a new computer</li><li>Swear at computer when it crashes</li></ol> 次にアルファベット順リストの例を紹介します：<br /><br /><strong>[list=a]</strong><br /><strong>[*]</strong>The first possible answer<br /><strong>[*]</strong>The second possible answer<br /><strong>[*]</strong>The third possible answer<br /><strong>[/list]</strong><br /><br /> 上記のようにすると次のようなリストができます：<ol style="list-style-type: lower-alpha"><li>The first possible answer</li><li>The second possible answer</li><li>The third possible answer</li></ol>'
+		1 => '番号付きリストを作成するには <strong>[list=1][/list]</strong> を用います。番号順の代わりにアルファベット順にしたい場合は <strong>[list=a][/list]</strong> を用います。番号なしリストと同様に各項目を指定するには <strong>[*]</strong> を使用します。簡単な例を紹介します：<br /><br /><strong>[list=1]</strong><br /><strong>[*]</strong>Go to the shops<br /><strong>[*]</strong>Buy a new computer<br /><strong>[*]</strong>Swear at computer when it crashes<br /><strong>[/list]</strong><br /><br /> 上記のようにすると次のリストが表示されます：<ol style="list-style-type: decimal;"><li>Go to the shops</li><li>Buy a new computer</li><li>Swear at computer when it crashes</li></ol> 次にアルファベット順リストの例を紹介します：<br /><br /><strong>[list=a]</strong><br /><strong>[*]</strong>The first possible answer<br /><strong>[*]</strong>The second possible answer<br /><strong>[*]</strong>The third possible answer<br /><strong>[/list]</strong><br /><br /> 上記のようにすると次のリストが表示されます：<ol style="list-style-type: lower-alpha"><li>The first possible answer</li><li>The second possible answer</li><li>The third possible answer</li></ol>'
+	),
+	// This block will switch the FAQ-Questions to the second template column
+	array(
+		0 => '--',
+		1 => '--'
 	),
 	array(
 		0 => '--',
@@ -87,7 +92,7 @@ $help = array(
 	),
 	array(
 		0 => '他サイトへのリンクの作成方法',
-		1 => 'BBCode は URI（Uniform Resource Indicators の略、URL と同義） を作成する方法をいくつかサポートしています。<ul><li>リンクしたい文字を <strong>[url=][/url]</strong> で囲みます。 = の後にリンク先の URL を入力します。例えば phpBB.com へのリンクを作る場合は次のようにします：<br /><br /><strong>[url=http://www.phpbb.com/]</strong>Visit phpBB!<strong>[/url]</strong><br /><br /> 上記のようにすると <a href="http://www.phpbb.com/">Visit phpBB!</a> と表示されます。リンクをクリックした時に同じウィンドウで開くか新しいウィンドウで開くかはブラウザの設定に依存する点にご注意ください。</li><li>URL そのものをリンクにしたい場合は単純に次のようにします：<br /><br /><strong>[url]</strong>http://www.phpbb.com/<strong>[/url]</strong><br /><br /> 上記のようにすれば <a href="http://www.phpbb.com/">http://www.phpbb.com/</a>  と表示されます。</li><li>phpBB には <i>マジックリンク</i> と呼ばれる機能が備わっています。マジックリンクは構文的に正しい URL をタグなしで自動的にリンク化する機能です。http:// さえ不要です。例えば www.phpbb.com と入力すると自動的に <a href="http://www.phpbb.com/">www.phpbb.com</a> と表示されます。</li><li>同じ事がメールアドレスにも言えます：<br /><br /><strong>[email]</strong>no.one@domain.adr<strong>[/email]</strong><br /><br /> 上記のようにすれば <a href="mailto:no.one@domain.adr">no.one@domain.adr</a> と表示されます。そしてタグをつけずに no.one@domain.adr と入力するだけで自動的にリンク化されます。</li></ul>URLタグ は <strong>[img][/img]</strong>（このタグについては次の項目を参照してください）、<strong>[b][/b]</strong> など他の全ての BBCodeタグ を囲むことができます。一つの部分に複数のタグを使用する場合は開始タグと終了タグを正しく並べてください。次のタグの使い方は間違っている例です：<br /><br /><strong>[url=http://www.google.com/][img]</strong>http://www.google.com/intl/en_ALL/images/logo.gif<strong>[/url][/img]</strong><br /><br /> 上記の例は<span style="text-decoration: underline">誤った並べ方</span>なのでご注意ください。'
+		1 => 'BBCode は URI（Uniform Resource Indicators の略、URL と同義） を作成する方法をいくつかサポートしています。<ul><li>リンクしたい文字を <strong>[url=][/url]</strong> で囲みます。 = の後にリンク先の URL を入力します。例えば phpBB.com へのリンクを作る場合は次のようにします：<br /><br /><strong>[url=http://www.phpbb.com/]</strong>Visit phpBB!<strong>[/url]</strong><br /><br /> 上記のようにすると <a href="http://www.phpbb.com/">Visit phpBB!</a> と表示されます。リンククリック時に同じウィンドウで開くか新しいウィンドウで開くかはブラウザの設定に依存する点にご注意ください。</li><li>URL そのものをリンクにしたい場合は単純に次のようにします：<br /><br /><strong>[url]</strong>http://www.phpbb.com/<strong>[/url]</strong><br /><br /> 上記のようにすれば <a href="http://www.phpbb.com/">http://www.phpbb.com/</a>  と表示されます。</li><li>phpBB には <i>マジックリンク</i> と呼ばれる機能が備わっています。マジックリンクは構文的に正しい URL をタグなしで自動的にリンク化する機能です。http:// さえ不要です。例えば www.phpbb.com と入力すると自動的に <a href="http://www.phpbb.com/">www.phpbb.com</a> と表示されます。</li><li>同じ事がメールアドレスにも言えます：<br /><br /><strong>[email]</strong>no.one@domain.adr<strong>[/email]</strong><br /><br /> 上記のようにすれば <a href="mailto:no.one@domain.adr">no.one@domain.adr</a> と表示されます。そしてタグをつけずに no.one@domain.adr と入力するだけで自動的にリンク化されます。</li></ul>URLタグ は <strong>[img][/img]</strong>（このタグについては次の項目をご参照ください）、<strong>[b][/b]</strong> など他の全ての BBCodeタグ を囲むことができます。複数のタグを使用する場合は開始タグと終了タグを正しく並べてください。次のタグの使い方は間違っている例です：<br /><br /><strong>[url=http://www.google.com/][img]</strong>http://www.google.com/intl/en_ALL/images/logo.gif<strong>[/url][/img]</strong><br /><br /> 上記の例は<span style="text-decoration: underline">誤った並べ方</span>なのでご注意ください。'
 	),
 	array(
 		0 => '--',

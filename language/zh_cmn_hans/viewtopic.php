@@ -48,6 +48,7 @@ $lang = array_merge($lang, array(
 	'BUMP_TOPIC'			=> '顶起主题',
 
 	'CODE'					=> '代码',
+	'COLLAPSE_QR'			=> '隐藏快速回复',
 
 	'DELETE_TOPIC'			=> '删除主题',
 	'DOWNLOAD_NOTICE'		=> '您没有权限查看这个主题的附件。',
@@ -59,6 +60,7 @@ $lang = array_merge($lang, array(
 
 	'FILE_NOT_FOUND_404'	=> '文件 <strong>%s</strong> 不存在。',
 	'FORK_TOPIC'			=> '复制主题',
+	'FULL_EDITOR'			=> '完整编辑器',
 
 	'LINKAGE_FORBIDDEN'		=> '您未被授权查看、下载或链接这个网站。',
 	'LOGIN_NOTIFY_TOPIC'	=> '您有关于这个主题的通知，请登录查看。',
@@ -86,11 +88,13 @@ $lang = array_merge($lang, array(
 	'PRINT_TOPIC'			=> '打印预览',
 
 	'QUICK_MOD'				=> '快速管理工具',
+	'QUICKREPLY'			=> '快速回复',
 	'QUOTE'					=> '引用',
 
 	'REPLY_TO_TOPIC'		=> '回复这个主题',
 	'RETURN_POST'			=> '%s回到帖子%s',
 
+	'SHOW_QR'				=> '快速回复',
 	'SUBMIT_VOTE'			=> '提交投票',
 
 	'TOTAL_VOTES'			=> '总计票数',

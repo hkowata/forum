@@ -4,7 +4,7 @@
 * viewtopic [Japanese]
 *
 * @package language
-* @version $Id: viewtopic.php 8775 2008-08-21 15:41:12Z Kellanved $
+* @version $Id: viewtopic.php 9972 2009-08-14 08:42:46Z Kellanved $
 * @copyright (c) 2005 phpBB Group
 * @license http://opensource.org/licenses/gpl-license.php GNU Public License
 *
@@ -40,7 +40,7 @@ if (empty($lang) || !is_array($lang))
 
 $lang = array_merge($lang, array(
 	'ATTACHMENT'						=> '添付ファイル',
-	'ATTACHMENT_FUNCTIONALITY_DISABLED'	=> '添付ファイル機能は無効に設定されています',
+	'ATTACHMENT_FUNCTIONALITY_DISABLED'	=> 'ファイル添付機能は無効に設定されています',
 
 	'BOOKMARK_ADDED'		=> 'トピックをブックマークしました',
 	'BOOKMARK_ERR'			=> 'トピックのブックマークに失敗しました。もう一度お試しください。',
@@ -48,28 +48,30 @@ $lang = array_merge($lang, array(
 	'BOOKMARK_TOPIC'		=> 'このトピックをブックマークする',
 	'BOOKMARK_TOPIC_REMOVE'	=> 'ブックマークを解除',
 	'BUMPED_BY'				=> 'トピックを最後に上げたユーザー %1$s [ %2$s ]',
-	'BUMP_TOPIC'			=> 'トピックを上げる',
+	'BUMP_TOPIC'			=> 'このトピックを上げる',
 
 	'CODE'					=> 'コード',
+	'COLLAPSE_QR'			=> 'クイック返信ボックスを隠す',
 
 	'DELETE_TOPIC'			=> 'トピックを削除する',
 	'DOWNLOAD_NOTICE'		=> 'パーミッションが与えられていないため、記事の添付ファイルを見ることができません',
 
 	'EDITED_TIMES_TOTAL'	=> '最後に編集したユーザー %1$s [ %2$s ], 累計 %3$d 回',
 	'EDITED_TIME_TOTAL'		=> '最後に編集したユーザー %1$s [ %2$s ], 累計 %3$d 回',
-	'EMAIL_TOPIC'			=> '知人にメールで知らせる',
+	'EMAIL_TOPIC'			=> '友達にメールで知らせる',
 	'ERROR_NO_ATTACHMENT'	=> '添付ファイルが存在していません',
 
 	'FILE_NOT_FOUND_404'	=> 'ファイル <strong>%s</strong> が存在していません',
 	'FORK_TOPIC'			=> 'トピックをコピーする',
+	'FULL_EDITOR'			=> '投稿画面へ',
 
-	'LINKAGE_FORBIDDEN'		=> 'あなたはこのサイト内の画像またはファイルについて、表示、ダウンロード、リンクすることをサイトから拒否されました',
-	'LOGIN_NOTIFY_TOPIC'	=> '監視中のトピックに新しい返信記事があります。新しい返信記事を閲覧するにはログインしてください。',
+	'LINKAGE_FORBIDDEN'		=> '当サイト内の画像またはファイルについて、表示、ダウンロード、リンクすることをサイトから拒否されました',
+	'LOGIN_NOTIFY_TOPIC'	=> 'ウォッチ中のトピックに新着記事があります。記事を閲覧するにはログインが必要です。',
 	'LOGIN_VIEWTOPIC'		=> 'このトピックを閲覧するにはユーザー登録かログインが必要です',
 
 	'MAKE_ANNOUNCE'				=> ' “告知トピック” へ変更する',
 	'MAKE_GLOBAL'				=> ' “グローバル告知トピック” へ変更する',
-	'MAKE_NORMAL'				=> ' “通常のトピック” へ変更する',
+	'MAKE_NORMAL'				=> ' “通常トピック” へ変更する',
 	'MAKE_STICKY'				=> ' “注目トピック” へ変更する',
 	'MAX_OPTIONS_SELECT'		=> '<strong>%d</strong> つのオプションまで選択できます',
 	'MAX_OPTION_SELECT'			=> '<strong>1</strong> つのオプションを選択できます',
@@ -89,11 +91,13 @@ $lang = array_merge($lang, array(
 	'PRINT_TOPIC'			=> '印刷ビュー',
 
 	'QUICK_MOD'				=> 'モデレータ用クイックツール',
+	'QUICKREPLY'			=> 'クイック返信',
 	'QUOTE'					=> '引用',
 
 	'REPLY_TO_TOPIC'		=> 'トピックへ返信する',
-	'RETURN_POST'			=> '%s記事へ戻る%s',
+	'RETURN_POST'			=> '%s記事に戻る%s',
 
+	'SHOW_QR'				=> 'クイック返信',
 	'SUBMIT_VOTE'			=> '投票',
 
 	'TOTAL_VOTES'			=> '総投票数',

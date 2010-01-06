@@ -47,13 +47,13 @@ $lang = array_merge($lang, array(
 
 	'JOINED_EXPLAIN'			=> '输入日期，使用 <kbd>YYYY-MM-DD</kbd> 格式。',
 
-	'LAST_ACTIVE_EXPLAIN'		=> '输入日起，使用<kbd>YYYY-MM-DD</kbd> 格式。',
+	'LAST_ACTIVE_EXPLAIN'		=> '输入日起，使用<kbd>YYYY-MM-DD</kbd> 格式。输入<kbd>0000-00-00</kbd>将删除从未登入的会员, <em>Before</em> 和 <em>After</em> 条件将被忽略',
 
 	'PRUNE_USERS_LIST'				=> '将被裁减的用户',
 	'PRUNE_USERS_LIST_DELETE'		=> '使用选中的条件, 如下的用户帐号将被删除.',
 	'PRUNE_USERS_LIST_DEACTIVATE'	=> '使用选中的条件, 如下的用户帐号将被冻结.',
 
-	'SELECT_USERS_EXPLAIN'		=> '在这里输入特定会员，他们将会用于上述的设定标准。',
+	'SELECT_USERS_EXPLAIN'		=> '在这里输入特定会员，他们将会用于上述的设定标准。创始人不会被删除',
 
 	'USER_DEACTIVATE_SUCCESS'	=> '被选择的会员已经成功冻结',
 	'USER_DELETE_SUCCESS'		=> '被选择的会员已经成功删除',

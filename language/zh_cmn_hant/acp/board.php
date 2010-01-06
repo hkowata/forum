@@ -4,7 +4,7 @@
 * acp_board [正體中文]
 *
 * @package language
-* @version $Id: board.php 9037 2008-10-26 10:52:43Z acydburn $
+* @version $Id: board.php 10080 2009-08-31 14:57:04Z nickvergessen $
 * @copyright (c) 2001 - 2007 phpBB TW Group (心靈捕手)
 * @license http://opensource.org/licenses/gpl-license.php GNU Public License
 *
@@ -70,6 +70,10 @@ $lang = array_merge($lang, array(
 	'ALLOW_NO_CENSORS'			=> '允許關閉字詞過濾',
 	'ALLOW_NO_CENSORS_EXPLAIN'	=> '會員可以選擇關閉在文章與私人訊息中的自動字詞過濾功能。',
 	'ALLOW_PM_ATTACHMENTS'		=> '允許在私人訊息中附加檔案',
+	'ALLOW_PM_REPORT'			=> '允許會員檢舉私人訊息',
+	'ALLOW_PM_REPORT_EXPLAIN'	=> '如果啟用，那麼會員將有檢舉他們已接收私人訊息或傳送給論壇版主的選項。這些私人訊息將會顯示在 MCP 中。',
+	'ALLOW_QUICK_REPLY'			=> '允許快速回覆',
+	'ALLOW_QUICK_REPLY_EXPLAIN'	=> '這個設定定義快速回覆的啟用與否。如果啟用，那麼需要在版面的快速回覆選項也同時啟用。',
 	'ALLOW_SIG'					=> '允許使用簽名檔',
 	'ALLOW_SIG_BBCODE'			=> '允許在會員簽名檔中使用 BBCode',
 	'ALLOW_SIG_FLASH'			=> '允許在會員簽名檔中使用 <code>[FLASH]</code> 的 BBCode 標籤',
@@ -87,9 +91,13 @@ $lang = array_merge($lang, array(
 $lang = array_merge($lang, array(
 	'ACP_AVATAR_SETTINGS_EXPLAIN'	=> '頭像一般是會員用於聯想到自己的一個小的，獨特的圖檔。根據風格，當檢視文章時，它們經常顯示在會員名稱的下面。在這裡，您可以決定會員如何定義他們的頭像。請注意！如果允許會員上傳頭像，您必須建立下面您所命名的資料夾，並確定這個資料夾對於網站伺服器是可寫入的。同時也請注意！那個檔案大小限制只對頭像上傳有效，對於連結的頭像是沒有限制的。',
 
+	'ALLOW_AVATARS'					=> '啟用頭像',
+	'ALLOW_AVATARS_EXPLAIN'			=> '允許一般頭像的使用；<br />如果您停用一般頭像或某些模式的頭像，這被停用的頭像將不再顯示於論壇上，但是會員仍然可由 UCP 下載他們自己的頭像。',
 	'ALLOW_LOCAL'					=> '允許使用系統相簿頭像',
 	'ALLOW_REMOTE'					=> '允許使用外部連結頭像',
 	'ALLOW_REMOTE_EXPLAIN'			=> '頭像連結來自其他網站。',
+	'ALLOW_REMOTE_UPLOAD'			=> '允許使用外部連結上傳頭像',
+	'ALLOW_REMOTE_UPLOAD_EXPLAIN'	=> '允許自另外的網站上傳頭像。',
 	'ALLOW_UPLOAD'					=> '允許會員上傳頭像',
 	'AVATAR_GALLERY_PATH'			=> '系統相簿路徑',
 	'AVATAR_GALLERY_PATH_EXPLAIN'	=> '該路徑必須在 phpBB 的根目錄內，例如：<samp>images/avatars/gallery</samp>。',
@@ -140,15 +148,12 @@ $lang = array_merge($lang, array(
 	'ALLOW_POST_FLASH'					=> '允許在文章中使用 <code>[FLASH]</code> 的 BBCode 標籤',
 	'ALLOW_POST_FLASH_EXPLAIN'			=> '如果不允許，那麼 <code>[FLASH]</code> BBCode 標籤在文章中是無法使用的。否則，權限系統必須控制會員可以使用 <code>[FLASH]</code> BBCode 標籤。',
 
-	'ENABLE_QUEUE_TRIGGER'			=> '啟用審核文章',
-	'ENABLE_QUEUE_TRIGGER_EXPLAIN'	=> '如果他們的文章數量少於底下的設定數值，那麼啟用註冊會員的文章將需要核准發表的能力。 這個設定不影響版面權限的設定。',
-	'QUEUE_TRIGGER_POSTS'			=> '審核文章的最大數量',
-	'QUEUE_TRIGGER_POSTS_EXPLAIN'	=> '如果啟用審核文章，那麼使用者的文章數量必須達到這個數值，才可以被核准發表。如果使用者的文章數量少於這個設定，那麼將自動被視為待審文章。',
-
 	'BUMP_INTERVAL'					=> '推文時間間隔',
 	'BUMP_INTERVAL_EXPLAIN'			=> '距離一個主題的最後發表文章多少時間 (分鐘，小時或天) 後，才能推文。',
 	'CHAR_LIMIT'					=> '每篇文章最多字元數',
 	'CHAR_LIMIT_EXPLAIN'			=> '每篇文章所允許發表的字元上限。設定為 0，表示沒有限制。',
+	'DELETE_TIME'					=> '刪除時間限制',
+	'DELETE_TIME_EXPLAIN'			=> '有效刪除新文章的時間限制。設定 0 表示停用此功能。',
 	'DISPLAY_LAST_EDITED'			=> '顯示最後編輯時間資訊',
 	'DISPLAY_LAST_EDITED_EXPLAIN'	=> '選擇是否在文章上顯示最後編輯的相關資訊。',
 	'EDIT_TIME'						=> '限制編輯時間',
@@ -166,12 +171,15 @@ $lang = array_merge($lang, array(
 	'MAX_POST_IMG_WIDTH_EXPLAIN'	=> '發文時允許一個圖檔/動畫的最大寬度。設定為 0，表示沒有限制。',
 	'MAX_POST_URLS'					=> '每篇文章的最多連結',
 	'MAX_POST_URLS_EXPLAIN'			=> '在一篇文章中允許的最多連結數量。設定為 0，表示沒有限制。',
+	'MIN_CHAR_LIMIT'				=> '每篇文章/私訊最少字元數',
+	'MIN_CHAR_LIMIT_EXPLAIN'		=> '每篇文章/私訊所允許發表的字元下限。',
 	'POSTING'						=> '發表中',
 	'POSTS_PER_PAGE'				=> '每頁顯示文章數',
 	'QUOTE_DEPTH_LIMIT'				=> '每篇文章中的最多引言',
 	'QUOTE_DEPTH_LIMIT_EXPLAIN'		=> '在一篇文章中允許的最多引言數量。設定為 0，表示沒有限制。',
 	'SMILIES_LIMIT'					=> '每篇文章中的最多表情符號',
 	'SMILIES_LIMIT_EXPLAIN'			=> '在一篇文章中允許的最多表情符號數量。設定為 0，表示沒有限制。',
+	'SMILIES_PER_PAGE'				=> '每頁表情符號數',
 	'TOPICS_PER_PAGE'				=> '每頁顯示主題數',
 ));
 
@@ -199,6 +207,11 @@ $lang = array_merge($lang, array(
 
 	'ACC_ACTIVATION'			=> '帳號啟用',
 	'ACC_ACTIVATION_EXPLAIN'	=> '這決定了會員是否可以在註冊後立刻登入討論區，還是必須進行確認。您也可以完全地停止新的註冊。',
+	'NEW_MEMBER_POST_LIMIT'			=> '新會員文章限制',
+	'NEW_MEMBER_POST_LIMIT_EXPLAIN'	=> '新會員直到他們達到此文章數之前，都是在 <em>新註冊會員</em> 群組之內。您可以使用這個群組讓他們使用 PM 系統，或去檢視他們的文章。<strong>設定 0 表示停用此功能。</strong>',
+	'NEW_MEMBER_GROUP_DEFAULT'		=> '預設為新註冊會員群組',
+	'NEW_MEMBER_GROUP_DEFAULT_EXPLAIN'	=> '如果設定為是，那麼新會員文章限制不只是將新註冊會員放進 <em>新註冊會員</em> 群組, 而且將是他們的預設會員群組。如果您想要指派一個有預設等級且/或頭像的群組供會員繼承，這也許會派上用場。',
+
 	'ACC_ADMIN'					=> '由管理員',
 	'ACC_DISABLE'				=> '停止',
 	'ACC_NONE'					=> '不必',
@@ -231,11 +244,45 @@ $lang = array_merge($lang, array(
 	'USERNAME_LENGTH_EXPLAIN'	=> '會員名稱的最少和最多字元數量。',
 ));
 
+// Feeds
+$lang = array_merge($lang, array(
+	'ACP_FEED_MANAGEMENT'				=> '一般消息來源設定',
+	'ACP_FEED_MANAGEMENT_EXPLAIN'		=> '這個模組使用各種有效的 ATOM 消息來源，解析任何文章中的 BBCode，使它們可以在外部的消息來源中被閱讀。',
+
+	'ACP_FEED_ENABLE'					=> '啟用消息來源',
+	'ACP_FEED_ENABLE_EXPLAIN'			=> '開啟或關閉整個論壇的 ATOM 消息來源。<br />無論底下的選項設定為何，停用這個將關閉所有的消息來源。',
+	'ACP_FEED_LIMIT'					=> '項目數量',
+	'ACP_FEED_LIMIT_EXPLAIN'			=> '消息來源項目所要顯示的最大數量。',
+
+	'ACP_FEED_OVERALL_FORUMS'			=> '啟用整個論壇之消息來源',
+	'ACP_FEED_OVERALL_FORUMS_EXPLAIN'	=> '消息來源顯示論壇所有主題的最後發表之文章。',
+	'ACP_FEED_OVERALL_FORUMS_LIMIT'		=> '在論壇消息來源中每頁所要顯示的項目數量',
+
+	'ACP_FEED_OVERALL_TOPIC'			=> '啟用所有主題之消息來源',
+	'ACP_FEED_OVERALL_TOPIC_EXPLAIN'	=> '啟用「所有主題」之消息來源。',
+	'ACP_FEED_OVERALL_TOPIC_LIMIT'		=> '在主題消息來源中每頁所要顯示的項目數量',
+	'ACP_FEED_FORUM'					=> '啟用每個版面之消息來源',
+	'ACP_FEED_FORUM_EXPLAIN'			=> '單一版面的新文章。',
+	'ACP_FEED_TOPIC'					=> '啟用每個主題之消息來源',
+	'ACP_FEED_TOPIC_EXPLAIN'			=> '單一主題的新文章。',
+	'ACP_FEED_NEWS'						=> '新聞之消息來源',
+	'ACP_FEED_NEWS_EXPLAIN'				=> '自這些版面中拉出第一篇文章。沒有選擇版面將停用此功能。<br />以按住 <samp>CTRL</samp> 以及點選來選擇多個版面。',
+
+	'ACP_FEED_GENERAL'					=> '一般消息來源設定',
+
+	'ACP_FEED_ITEM_STATISTICS'			=> '項目統計',
+	'ACP_FEED_ITEM_STATISTICS_EXPLAIN'	=> '下面的消息來源顯示個別的項目統計<br />(發表者、日期與時間、回覆數、觀看數)',
+	'ACP_FEED_EXCLUDE_ID'				=> '排除這些版面',
+	'ACP_FEED_EXCLUDE_ID_EXPLAIN'		=> '來自這些版面的內容將 <strong>不包含在消息來源中</strong>。沒有選擇版面將自所有的版面拉出資料。<br />以按住 <samp>CTRL</samp> 以及點選來選擇/刪除多個版面。',
+));
+
 // Visual Confirmation Settings
 $lang = array_merge($lang, array(
-	'ACP_VC_SETTINGS_EXPLAIN'		=> '在這裡，您可以定義預設的確認代碼以及 CAPTCHA 設定。',
-
+	'ACP_VC_SETTINGS_EXPLAIN'				=> '在這裡，您可以選擇以及設定 CAPTCHA 外掛，它們將以各種不同的方法拒絕所謂的廣告機器人嘗試註冊。',
+	'AVAILABLE_CAPTCHAS'					=> '有用的外掛',
+	'CAPTCHA_UNAVAILABLE'					=> '這 CAPTCHA 不能選擇，因為它沒有所需的要件。',
 	'CAPTCHA_GD'							=> 'GD CAPTCHA',
+	'CAPTCHA_GD_3D'							=> 'GD 3D Captcha',
 	'CAPTCHA_GD_FOREGROUND_NOISE'			=> 'GD CAPTCHA 前景干擾',
 	'CAPTCHA_GD_EXPLAIN'					=> '使用 GD 去產生更進階的 CAPTCHA。',
 	'CAPTCHA_GD_FOREGROUND_NOISE_EXPLAIN'	=> '使用前景干擾去產生基於 GD 而較堅固的 CAPTCHA。',
@@ -248,20 +295,27 @@ $lang = array_merge($lang, array(
 	'CAPTCHA_GD_3D_NOISE'					=> '增加 3D 干擾物',
 	'CAPTCHA_GD_3D_NOISE_EXPLAIN'			=> '增加額外的物體到 CAPTCHA 中，覆蓋原來的字。',
 	'CAPTCHA_GD_FONTS'						=> '使用不同的字體',
-	'CAPTCHA_GD_FONTS_EXPLAIN'				=> '這個設定控制您要使用多少不同的字體。您可以只使用預設字體或是引進改變的字體。增加小寫字體也是可行的。',
+	'CAPTCHA_GD_FONTS_EXPLAIN'				=> '此設定控制許多不同的已使用之字體。您只可以使用預設字體或介紹已改變的字體。增加小寫字體也是可行的。',
 	'CAPTCHA_FONT_DEFAULT'					=> '預設字體',
 	'CAPTCHA_FONT_NEW'						=> '新的字體',
-	'CAPTCHA_FONT_LOWER'					=> '包含小寫',
+	'CAPTCHA_FONT_LOWER'					=> '也有小寫',
+	'CAPTCHA_NO_GD'							=> 'CAPTCHA 沒有 GD',
+	'CAPTCHA_PREVIEW_MSG'					=> '您所改變的確認代碼設定尚未儲存，這只是預覽。',
+	'CAPTCHA_PREVIEW_EXPLAIN'				=> '使用目前選擇的確認代碼，看起來就像這個樣子。',
 
+	'CAPTCHA_SELECT'						=> '安裝 CAPTCHA 外掛',
+	'CAPTCHA_SELECT_EXPLAIN'				=> '由下拉式選單中選取論壇所認證的 CAPTCHA 外掛。灰色的項目目前是沒有用的，而在使用前必須調整基本組態。',
+	'CAPTCHA_CONFIGURE'						=> 'CAPTCHAs 設定',
+	'CAPTCHA_CONFIGURE_EXPLAIN'				=> '為已選擇的 CAPTCHA 改變設定。.',
+	'CONFIGURE'								=> '設定',
+	'CAPTCHA_NO_OPTIONS'					=> '這 CAPTCHA 沒有設定選項。',
 
-	'CAPTCHA_PREVIEW_MSG'					=> '您更改的確認代碼設定尚未儲存。這只是一個預覽。',
-	'CAPTCHA_PREVIEW_EXPLAIN'				=> '使用目前的設定，CAPTCHA 將如眼前所示。使用預覽按鈕重新整理。注意！captcha 是隨機產生的，每次出現的都可能不一樣。',
 	'VISUAL_CONFIRM_POST'					=> '啟用訪客發文確認代碼',
 	'VISUAL_CONFIRM_POST_EXPLAIN'			=> '當匿名使用者發文時，需要輸入一個隨機而符合圖片的代碼，以協助防止大量發文。',
 	'VISUAL_CONFIRM_REG'					=> '啟用註冊確認代碼',
 	'VISUAL_CONFIRM_REG_EXPLAIN'			=> '當新的使用者註冊時，需要輸入一個隨機而符合圖片的代碼，以協助防止大量註冊。',
 	'VISUAL_CONFIRM_REFRESH'				=> '啟用使用者重新整理確認代碼',
-	'VISUAL_CONFIRM_REFRESH_EXPLAIN'		=> '如果在註冊時無法判定確認代碼，允許使用者重新讀取新的確認代碼。',
+	'VISUAL_CONFIRM_REFRESH_EXPLAIN'		=> '如果在註冊時無法判定確認代碼，那麼允許使用者去重新讀取新的確認代碼。某些外掛不支援這個選項。',
 ));
 
 // Cookie Settings
@@ -347,7 +401,7 @@ $lang = array_merge($lang, array(
 	'ACP_SERVER_SETTINGS_EXPLAIN'	=> '在這裡，您可以定義伺服器和網域名稱相關的設定。請確認您所輸入的資料是正確的，錯誤的設定將導致 e-mail 包含不正確的資訊。當輸入網域名稱時，記住不包含 http:// 或其他通訊協議。如果您知道您的伺服器使用一個不同的連接埠時，那麼才需要更改埠號，絕大部分使用的連接埠號都是 80。',
 
 	'ENABLE_GZIP'				=> '啟用 GZip 壓縮',
-	'ENABLE_GZIP_EXPLAIN'		=> '產生的內容將在發送到使用者之前被壓縮。這能減少網路流量，但是會同時增加伺服器和客戶端的 CPU 使用量。',
+	'ENABLE_GZIP_EXPLAIN'		=> '產生的內容將在發送到使用者之前被壓縮。這能減少網路流量，但是會同時增加伺服器和客戶端的 CPU 使用量。需要加載 PHP 的延伸功能。',
 	'FORCE_SERVER_VARS'			=> '強迫伺服器 URL 設定',
 	'FORCE_SERVER_VARS_EXPLAIN'	=> '如果設定為是，那麼在此定義的伺服器設定將自動地使用有利的決定值。',
 	'ICONS_PATH'				=> '主題圖示儲存路徑',
@@ -434,7 +488,7 @@ $lang = array_merge($lang, array(
 	'EMAIL_SIG'						=> 'E-mail 簽名',
 	'EMAIL_SIG_EXPLAIN'				=> '這段文字將附加在討論區所有發送的 e-mail 中。',
 	'ENABLE_EMAIL'					=> '允許討論區發送 e-mail',
-	'ENABLE_EMAIL_EXPLAIN'			=> '如果停用，那麼將沒有任何 e-mail 會被討論區發送。',
+	'ENABLE_EMAIL_EXPLAIN'			=> '如果停用，那麼將沒有任何 e-mail 會被討論區發送。<em>注意！由會員或管理員啟用帳號的設定者，必須啟用這個設定。如果停用此設定，那麼新的帳號將不需要啟用的程序。</em>',
 	'SMTP_AUTH_METHOD'				=> 'SMTP 驗證方式',
 	'SMTP_AUTH_METHOD_EXPLAIN'		=> '只有在設定過會員名稱/密碼時才有用，如果您不確定使用何種方式，那麼請詢問您的提供者。',
 	'SMTP_CRAM_MD5'					=> 'CRAM-MD5',

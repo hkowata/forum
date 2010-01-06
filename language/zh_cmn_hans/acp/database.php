@@ -54,6 +54,7 @@ $lang = array_merge($lang, array(
 	'DOWNLOAD_BACKUP'	=> '下载备份',
 
 	'FILE_TYPE'			=> '文件类型',
+	'FILE_WRITE_FAIL'	=> '无法在存储文件夹下写入.',
 	'FULL_BACKUP'		=> '完整',
 
 	'RESTORE_FAILURE'		=> '备份文件已损坏.',

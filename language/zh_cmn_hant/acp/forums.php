@@ -4,7 +4,7 @@
 * acp_forums [正體中文]
 *
 * @package language
-* @version $Id: forums.php 9309 2009-01-27 19:16:29Z terrafrost $
+* @version $Id: forums.php 9896 2009-07-31 12:46:15Z Kellanved $
 * @copyright (c) 2001 - 2007 phpBB TW Group (心靈捕手)
 * @license http://opensource.org/licenses/gpl-license.php GNU Public License
 *
@@ -44,9 +44,12 @@ $lang = array_merge($lang, array(
 	'AUTO_PRUNE_VIEWED'			=> '自動刪除已檢視文章的時間',
 	'AUTO_PRUNE_VIEWED_EXPLAIN'	=> '自從主題被檢視後多少天，這個主題會被刪除。',
 
+	'CONTINUE'						=> '繼續',
 	'COPY_PERMISSIONS'				=> '複製權限自',
+	'COPY_PERMISSIONS_EXPLAIN'		=> '為了便於安排您的新版面權限，您可以複製一個已存在的版面權限。',
 	'COPY_PERMISSIONS_ADD_EXPLAIN'	=> '一旦建立，這個版面將擁有您所選擇版面的同樣權限。如果沒有版面被選中，那麼新建版面在完成權限設定之前將是看不見的。',
 	'COPY_PERMISSIONS_EDIT_EXPLAIN'	=> '如果您選擇了複製權限，版面將擁有您所選擇版面的同樣權限。這將覆蓋任何您之前設定的權限。如果沒有版面被選中，那麼將保留目前的權限。',
+	'COPY_TO_ACL'					=> '另外，您也可以為此版面 %s設定新的權限%s。',
 	'CREATE_FORUM'					=> '建立新版面',
 
 	'DECIDE_MOVE_DELETE_CONTENT'		=> '刪除內容或移動到版面',
@@ -62,7 +65,9 @@ $lang = array_merge($lang, array(
 	'ENABLE_INDEXING_EXPLAIN'		=> '如果設定為是，這個版面的文章將被寫入搜尋索引。',
 	'ENABLE_POST_REVIEW'			=> '能夠使用預覽文章',
 	'ENABLE_POST_REVIEW_EXPLAIN'	=> '如果設定為是，當會員在編寫新的文章時，可以預覽他們的文章。這功能在聊天版面中應該停用。',
-	'ENABLE_RECENT'					=> '啟用最近討論的主題',
+	'ENABLE_QUICK_REPLY'			=> '啟用快速回覆',
+	'ENABLE_QUICK_REPLY_EXPLAIN'	=> '如果設定為是，那麼使用者將可以在此版面看見快速回覆盒。即使在這裡設定為是，如果全域的快速回覆選項停用，或者是該版面不能發文，那麼快速回覆盒還是不能顯示。',
+	'ENABLE_RECENT'					=> '顯示最近討論的主題',
 	'ENABLE_RECENT_EXPLAIN'			=> '如果設定為是，那麼這個版面的主題，將顯示在最近討論的主題列表中。',
 	'ENABLE_TOPIC_ICONS'			=> '能夠使用主題圖示',
 

@@ -4,7 +4,7 @@
 * common [正體中文]
 *
 * @package language
-* @version $Id: common.php 9464 2009-04-17 15:52:40Z acydburn $
+* @version $Id: common.php 9845 2009-07-24 11:13:32Z acydburn $
 * @copyright (c) 2001 - 2007 phpBB TW Group (yoshika, 心靈捕手, 動機不明)
 * @license http://opensource.org/licenses/gpl-license.php GNU Public License
 *
@@ -41,10 +41,10 @@ if (empty($lang) || !is_array($lang))
 
 $lang = array_merge($lang, array(
 	'TRANSLATION_INFO'	=> '正體中文語系由 <a href="http://phpbb-tw.net/" onclick="window.open(this.href);return false;"><span style="color:#ff6633"><strong>竹貓星球</strong></span></a> 維護製作',
-	'DIRECTION'	=> 'ltr',
+	'DIRECTION'			=> 'ltr',
 	'DATE_FORMAT'	=> '|Y-m-d|',// 2007-01-01
 	'USER_LANG'	=> 'zh-tw',
-	
+
 	'1_DAY'	=> '1天',
 	'1_MONTH'	=> '1個月',
 	'1_YEAR'	=> '1年',
@@ -52,7 +52,7 @@ $lang = array_merge($lang, array(
 	'3_MONTHS'	=> '3個月',
 	'6_MONTHS'	=> '6個月',
 	'7_DAYS'	=> '7天',
-	
+
 	'ACCOUNT_ALREADY_ACTIVATED'	=> '您的帳號已經被啟用。',
 	'ACCOUNT_DEACTIVATED'	=> '您的帳號已經被停用，並且只有管理員才能重新啟用。',
 	'ACCOUNT_NOT_ACTIVATED'	=> '您的帳號尚未被啟用',
@@ -62,7 +62,7 @@ $lang = array_merge($lang, array(
 	'ADMINISTRATOR'	=> '管理員',
 	'ADMINISTRATORS'	=> '管理員',
 	'AGE'	=> '年齡',
-	'AIM'	=> 'AIM',
+	'AIM'							=> 'AIM',
 	'ALLOWED'	=> '允許',
 	'ALL_FILES'	=> '所有檔案',
 	'ALL_FORUMS'	=> '所有版面',
@@ -92,7 +92,7 @@ $lang = array_merge($lang, array(
 	'AVATAR_URL_NOT_FOUND'	=> '無法找到指定的檔案。',
 	'AVATAR_WRONG_FILESIZE'	=> '頭像檔案大小必須介於 0 和 %1d %2s 之間。',
 	'AVATAR_WRONG_SIZE'	=> '頭像的寬度必須大於 %1$d 像素，高度必須大於 %2$d 像素，並且寬度不得超過 %3$d 像素，高度不得超過 %4$d 像素。您送出的頭像寬為 %5$d 像素，高為 %6$d 像素。',
-		
+
 	'BACK_TO_TOP'	=> '回頂端',
 	'BACK_TO_PREV'	=> '回到前一頁',
 	'BAN_TRIGGERED_BY_EMAIL'	=> '您的 e-mail 位址已經被封鎖。',
@@ -110,8 +110,8 @@ $lang = array_merge($lang, array(
 	'BROWSING_FORUM'		=> '正在瀏覽這個版面的使用者：%1$s',
 	'BROWSING_FORUM_GUEST'	=> '正在瀏覽這個版面的使用者：%1$s 和 %2$d 位訪客',
 	'BROWSING_FORUM_GUESTS'	=> '正在瀏覽這個版面的使用者：%1$s 和 %2$d 位訪客',
-	'BYTES'	=> 'Bytes',
-		
+	'BYTES'					=> 'Bytes',
+
 	'CANCEL'	=> '取消',
 	'CHANGE'	=> '變更',
 	'CHANGE_FONT_SIZE'	=> '變更字體大小',
@@ -132,7 +132,7 @@ $lang = array_merge($lang, array(
 	'CONNECTION_SUCCESS'	=> '連線成功！',
 	'COOKIES_DELETED'	=> '所有的 Cookies 都已經被清除。',
 	'CURRENT_TIME'	=> '現在的時間是 %s',
-		
+
 	'DAY'	=> '日',
 	'DAYS'	=> '天',
 	'DELETE'	=> '刪除',
@@ -156,7 +156,7 @@ $lang = array_merge($lang, array(
 	'VIEWED_COUNT'	=> '被瀏覽 %d 次',
 	'VIEWED_COUNTS'	=> '被瀏覽 %d 次',
 	'VIEWED_COUNT_NONE'	=> '尚未被瀏覽',
-		
+
 	'EDIT_POST'	=> '編輯文章',
 	'EMAIL'	=> 'E-mail',// EMAIL_ADDRESS 的簡寫
 	'EMAIL_ADDRESS'	=> 'E-mail 位址',
@@ -176,7 +176,7 @@ $lang = array_merge($lang, array(
 	'EXPAND_VIEW'	=> '展開瀏覽',
 	'EXTENSION'	=> '副檔名',
 	'EXTENSION_DISABLED_AFTER_POSTING'	=> '副檔名 <strong>%s</strong> 已經被停用且不再顯示。',
-		
+
 	'FAQ'	=> '問答集',
 	'FAQ_EXPLAIN'	=> '問答集',
 	'FILENAME'	=> '檔案名稱',
@@ -200,7 +200,7 @@ $lang = array_merge($lang, array(
 	'FORUM_RULES_LINK'	=> '請點選這裡檢視版面規則',
 	'FROM'	=> '從',
 	'FSOCK_DISABLED'	=> '操作無法完成，因為 <var>fsockopen</var> 函數被停用或是伺服器沒有回應。',
-		
+
 	'FTP_FSOCK_HOST'	=> 'FTP 主機',
 	'FTP_FSOCK_HOST_EXPLAIN'	=> '您的 FTP 伺服器連結位址。',
 	'FTP_FSOCK_PASSWORD'	=> 'FTP 密碼',
@@ -226,7 +226,7 @@ $lang = array_merge($lang, array(
 	'FTP_TIMEOUT_EXPLAIN'	=> '您的伺服器連線回應逾時時間 (秒)。',
 	'FTP_USERNAME'	=> 'FTP 帳號',
 	'FTP_USERNAME_EXPLAIN'	=> '登入您 FTP 伺服器的使用者帳號。',
-		
+
 	'GENERAL_ERROR'	=> '一般性錯誤',
 	'GB'						=> 'GB',
 	'GIB'						=> 'GiB',
@@ -250,7 +250,8 @@ $lang = array_merge($lang, array(
 	'G_REGISTERED'	=> '註冊會員',
 	'G_REGISTERED_COPPA'	=> '註冊 COPPA 會員',
 	'G_GLOBAL_MODERATORS'	=> '全域版主',
-		
+	'G_NEWLY_REGISTERED'		=> '新註冊會員',
+
 	'HIDDEN_USERS_ONLINE'			=> '%d 位隱形會員上線',
 	'HIDDEN_USERS_TOTAL'			=> '%d 位隱形會員',
 	'HIDDEN_USERS_TOTAL_AND'		=> '%d 位隱形會員和 ',
@@ -264,8 +265,8 @@ $lang = array_merge($lang, array(
 	'HIDE_ME'	=> '此次登入請隱藏我的上線狀態',
 	'HOURS'	=> '小時',
 	'HOME'	=> '首頁',
-		
-	'ICQ'	=> 'ICQ',
+
+	'ICQ'						=> 'ICQ',
 	'ICQ_STATUS'	=> 'ICQ 狀態',
 	'IF'	=> '如果',
 	'IMAGE'	=> '圖檔',
@@ -277,18 +278,18 @@ $lang = array_merge($lang, array(
 	'INTERESTS'	=> '興趣',
 	'INVALID_DIGEST_CHALLENGE'	=> '無效的摘要需求。',
 	'INVALID_EMAIL_LOG'	=> '<strong>%s</strong> 可能是無效的 e-mail 位址？',
-	'IP'	=> 'IP',
+	'IP'						=> 'IP',
 	'IP_BLACKLISTED'	=> '您的 IP %1$s 已經被封鎖，因為它在封鎖列表中。細節請參考 <a href="%2$s">%2$s</a>。',
-		
-	'JABBER'	=> 'Jabber',
+
+	'JABBER'				=> 'Jabber',
 	'JOINED'	=> '註冊時間',
 	'JUMP_PAGE'				=> '輸入您想要前往的頁數',
 	'JUMP_TO'	=> '前往 ',
 	'JUMP_TO_PAGE'	=> '點選要前往的頁面...',
-		
-	'KB'	=> 'KB',
+
+	'KB'					=> 'KB',
 	'KIB'					=> 'KiB',
-		
+
 	'LAST_POST'	=> '最後發表',
 	'LAST_UPDATED'	=> '最後更新',
 	'LAST_VISIT'	=> '最後訪問',
@@ -316,7 +317,7 @@ $lang = array_merge($lang, array(
 	'LOGOUT'	=> '登出',
 	'LOGOUT_USER'	=> '登出 [ %s ]',
 	'LOG_ME_IN'	=> '每次瀏覽時自動登入',
-		
+
 	'MARK'	=> '標示',
 	'MARK_ALL'	=> '選擇全部',
 	'MARK_FORUMS_READ'	=> '將版面標示為已閱讀',
@@ -383,6 +384,8 @@ $lang = array_merge($lang, array(
 	'NO_ONLINE_USERS'	=> '沒有註冊會員',
 	'NO_POSTS'	=> '沒有文章',
 	'NO_POSTS_TIME_FRAME'	=> '在選定的時段中這個主題沒有文章存在。',
+	'NO_FEED_ENABLED'			=> '在這個論壇的消息來源是不可用的。',
+	'NO_FEED'					=> '所需求的消息來源是不可用的。',
 	'NO_SUBJECT'	=> '沒有輸入標題',
 	'NO_SUCH_SEARCH_MODULE'	=> '指定的搜尋模組不存在。',
 	'NO_SUPPORTED_AUTH_METHODS'	=> '沒有可支援的認證方式。',
@@ -402,7 +405,7 @@ $lang = array_merge($lang, array(
 		1			=> '1 篇文章待審',		// 1
 		2			=> '%d 篇文章待審',		// 2+
 	),
-		
+
 	'OCCUPATION'	=> '職業',
 	'OFFLINE'	=> '離線',
 	'ONLINE'	=> '線上',
@@ -411,11 +414,11 @@ $lang = array_merge($lang, array(
 	'ONLINE_USERS_ZERO_TOTAL'	=> '線上共有 <strong>0</strong> 位使用者：',
 	'ONLINE_USER_TOTAL'	=> '線上共有 <strong>%d</strong> 位使用者：',
 	'OPTIONS'	=> '選項',
-		
+
 	'PAGE_OF'	=> '第 <strong>%1$d</strong> 頁 (共 <strong>%2$d</strong> 頁)',
 	'PASSWORD'	=> '密碼',
 	'PLAY_QUICKTIME_FILE'	=> '播放 Quicktime 檔案',
-	'PM'	=> 'PM',
+	'PM'					=> 'PM',
 	'POSTING_MESSAGE'	=> '發表訊息於 %s',
 	'POSTING_PRIVATE_MESSAGE'	=> '編寫私人訊息',
 	'POST'	=> '文章',
@@ -448,7 +451,7 @@ $lang = array_merge($lang, array(
 	'PRIVATE_MESSAGES'	=> '私人訊息',
 	'PRIVATE_MESSAGING'	=> '私人訊息',
 	'PROFILE'	=> '會員控制台 (UCP)',
-		
+
 	'READING_FORUM'	=> '正在檢視 %s 版面的主題',
 	'READING_GLOBAL_ANNOUNCE'	=> '檢視全域公告',
 	'READING_LINK'	=> '下面的版面連結 %s',
@@ -457,7 +460,7 @@ $lang = array_merge($lang, array(
 	'REASON'	=> '理由',
 	'RECORD_ONLINE_USERS'	=> '最高線上人數記錄為 <span style="color:#ff6633"><strong>%1$s</strong></span> 人 [ 記錄時間：<span style="color:#ff6633"><strong>%2$s</strong></span> ]',
 	'REDIRECT'	=> '重新導向',
-	'REDIRECTS'	=> '觀看次數',
+	'REDIRECTS'	=> '轉向總數',
 	'REGISTER'	=> '註冊',
 	'REGISTERED_USERS'	=> '註冊會員：',
 	'REG_USERS_ONLINE'			=> '共有 %d 位註冊會員和 ',
@@ -486,23 +489,25 @@ $lang = array_merge($lang, array(
 	'RETURN_PAGE'	=> '%s回到先前的頁面%s',
 	'RETURN_TOPIC'	=> '%s回到最近瀏覽的主題%s',
 	'RETURN_TO'	=> '回到',
+	'FEED'						=> '消息來源',
+	'FEED_NEWS'					=> '新聞',
 	'RULES_ATTACH_CAN'	=> '您 <strong>可以</strong> 在這個版面上傳附加檔案',
 	'RULES_ATTACH_CANNOT'	=> '您 <strong>不能</strong> 在這個版面上傳附加檔案',
-	'RULES_DELETE_CAN'	=> '您 <strong>可以</strong> 在這個版面刪除文章',
-	'RULES_DELETE_CANNOT'	=> '您 <strong>不能</strong> 在這個版面刪除文章',
+	'RULES_DELETE_CAN'	=> '您 <strong>可以</strong> 在這個版面刪除您的文章',
+	'RULES_DELETE_CANNOT'	=> '您 <strong>不能</strong> 在這個版面刪除您的文章',
 	'RULES_DOWNLOAD_CAN'	=> '您 <strong>可以</strong> 在這個版面下載附加檔案',
 	'RULES_DOWNLOAD_CANNOT'	=> '您 <strong>不能</strong> 在這個版面下載附加檔案',
-	'RULES_EDIT_CAN'	=> '您 <strong>可以</strong> 在這個版面編輯文章',
-	'RULES_EDIT_CANNOT'	=> '您 <strong>不能</strong> 在這個版面編輯文章',
-	'RULES_LOCK_CAN'	=> '您 <strong>可以</strong> 在這個版面鎖定文章',
-	'RULES_LOCK_CANNOT'	=> '您 <strong>不能</strong> 在這個版面鎖定文章',
+	'RULES_EDIT_CAN'	=> '您 <strong>可以</strong> 在這個版面編輯您的文章',
+	'RULES_EDIT_CANNOT'	=> '您 <strong>不能</strong> 在這個版面編輯您的文章',
+	'RULES_LOCK_CAN'	=> '您 <strong>可以</strong> 在這個版面鎖定您的文章',
+	'RULES_LOCK_CANNOT'	=> '您 <strong>不能</strong> 在這個版面鎖定您的文章',
 	'RULES_POST_CAN'	=> '您 <strong>可以</strong> 在這個版面發表主題',
 	'RULES_POST_CANNOT'	=> '您 <strong>不能</strong> 在這個版面發表主題',
 	'RULES_REPLY_CAN'	=> '您 <strong>可以</strong> 在這個版面回覆主題',
 	'RULES_REPLY_CANNOT'	=> '您 <strong>不能</strong> 在這個版面回覆主題',
 	'RULES_VOTE_CAN'	=> '您 <strong>可以</strong> 在這個版面建立投票',
 	'RULES_VOTE_CANNOT'	=> '您 <strong>不能</strong> 在這個版面建立投票',
-		
+
 	'SEARCH'	=> '搜尋',
 	'SEARCH_MINI'	=> '搜尋...',
 	'SEARCH_ADV'	=> '進階搜尋',
@@ -517,6 +522,7 @@ $lang = array_merge($lang, array(
 	'SEARCH_SELF'	=> '檢視您的文章',
 	'SEARCH_TOPIC'	=> '搜尋這個主題...',
 	'SEARCH_UNANSWERED'	=> '檢視沒有回覆的主題',
+	'SEARCH_UNREAD'				=> '檢視沒有閱讀的文章',
 	'SECONDS'	=> '秒',
 	'SELECT'	=> '選擇',
 	'SELECT_ALL_CODE'	=> '選擇全部',
@@ -535,6 +541,7 @@ $lang = array_merge($lang, array(
 	'SORT_JOINED'	=> '註冊時間',
 	'SORT_LOCATION'	=> '來自',
 	'SORT_RANK'	=> '等級',
+	'SORT_POSTS'				=> '文章',
 	'SORT_TOPIC_TITLE'	=> '主題',
 	'SORT_TOPIC_TIME'	=> '開帖時間',
 	'SORT_USERNAME'	=> '會員名稱',
@@ -549,14 +556,14 @@ $lang = array_merge($lang, array(
 	'SUBFORUMS'	=> '子版面',
 	'SUBJECT'	=> '主題',
 	'SUBMIT'	=> '送出',
-		
+
 	'TERMS_USE'	=> '使用條款',
 	'TEST_CONNECTION'	=> '連結測試',
 	'THE_TEAM'	=> '管理團隊',
 	'TIME'	=> '時間',
 
 	'TOO_LONG'						=> '您輸入的數值太長。',
-		
+
 	'TOO_LONG_AIM'	=> '您輸入的 AIM 帳號太長了。',
 	'TOO_LONG_CONFIRM_CODE'	=> '您輸入的確認代碼太長了。',
 	'TOO_LONG_DATEFORMAT'			=> '您輸入的時間格式太長了。',
@@ -574,11 +581,11 @@ $lang = array_merge($lang, array(
 	'TOO_LONG_EMAIL_CONFIRM'	=> '您輸入的 e-mail 確認位址太長了。',
 	'TOO_LONG_WEBSITE'	=> '您輸入的網站位址太長了。',
 	'TOO_LONG_YIM'	=> '您輸入的 Yahoo！ Messenger 會員名稱太長了。',
-		
+
 	'TOO_MANY_VOTE_OPTIONS'	=> '您在投票中選擇了過多的選項。',
 
 	'TOO_SHORT'						=> '您輸入的數值太短。',
-		
+
 	'TOO_SHORT_AIM'	=> '您輸入的 AIM 帳號太短了。',
 	'TOO_SHORT_CONFIRM_CODE'	=> '您輸入的確認代碼太短了。',
 	'TOO_SHORT_DATEFORMAT'			=> '您輸入的時間格式太短了。',
@@ -596,9 +603,10 @@ $lang = array_merge($lang, array(
 	'TOO_SHORT_EMAIL_CONFIRM'	=> '您輸入的確認 e-mail 位址太短了。',
 	'TOO_SHORT_WEBSITE'	=> '您輸入的網站位址太短了。',
 	'TOO_SHORT_YIM'	=> '您輸入的 Yahoo！ Messenger 會員名稱太短了。',
-		
+
 	'TOPIC'	=> '主題',
 	'TOPICS'	=> '主題',
+	'TOPICS_UNAPPROVED'	=> '在這論壇至少有一個主題沒有被核准。',
 	'TOPIC_ICON'	=> '主題圖示',
 	'TOPIC_LOCKED'	=> '這個主題已被鎖定，您不能編輯或回覆這個主題。',
 	'TOPIC_LOCKED_SHORT'=> '主題已鎖定',
@@ -621,7 +629,7 @@ $lang = array_merge($lang, array(
 	'TOTAL_USERS_OTHER'	=> '會員總數：<strong>%d</strong>',
 	'TOTAL_USERS_ZERO'	=> '會員總數：<strong>0</strong>',
 	'TRACKED_PHP_ERROR'	=> '已追蹤 PHP 錯誤：%s',
-		
+
 	'UNABLE_GET_IMAGE_SIZE'	=> '無法瀏覽圖檔，或者此檔案不是一個有效的圖檔。',
 	'UNABLE_TO_DELIVER_FILE'	=> '無法傳送檔案。',
 	'UNKNOWN_BROWSER'	=> '無法瀏覽',
@@ -644,7 +652,9 @@ $lang = array_merge($lang, array(
 	'USER_POSTS'	=> '%d 篇文章',
 	'USERS'	=> '會員',
 	'USE_PERMISSIONS'	=> '切換成此會員的權限 (測試用)',
-		
+
+	'USER_NEW_PERMISSION_DISALLOWED'	=> '很抱歉！您沒有權限使用這個功能。您只是剛在這裡註冊，您需要有更多的參與，才可使用這個功能。',
+
 	'VARIANT_DATE_SEPARATOR'	=> ' / ',
 	'VIEWED'	=> '已觀看',
 	'VIEWING_FAQ'	=> '檢視問答集',
@@ -672,31 +682,31 @@ $lang = array_merge($lang, array(
 	'VIEW_TOPIC_POLL'	=> '投票：',
 	'VIEW_TOPIC_STICKY'	=> '置頂：',
 	'VISIT_WEBSITE'	=> '參觀網站',
-		
+
 	'WARNINGS'	=> '警告',
 	'WARN_USER'	=> '警告會員',
 	'WELCOME_SUBJECT'	=> '歡迎來到 %s 討論區',
 	'WEBSITE'	=> '網站',
-	'WHOIS'	=> 'Whois',
+	'WHOIS'				=> 'Whois',
 	'WHO_IS_ONLINE'	=> '誰在線上',
 	'WRONG_PASSWORD'	=> '您輸入了錯誤的密碼。',
-		
+
 	'WRONG_DATA_ICQ'	=> '您輸入的數字不是一個有效的 ICQ 號碼。',
 	'WRONG_DATA_JABBER'	=> '您輸入的名字不是一個有效的 Jabber 帳號。',
 	'WRONG_DATA_LANG'	=> '您指定了一個無效的語言。',
 	'WRONG_DATA_WEBSITE'	=> '網站的位址是無效的 URL，請包含通信協議。例如 http://www.bamboocat.com/。',
 	'WROTE'	=> '寫',
-		
+
 	'YEAR'	=> '年',
 	'YEAR_MONTH_DAY'	=> '(YYYY-MM-DD)',
 	'YES'	=> '是',
-	'YIM'	=> 'YIM',
+	'YIM'				=> 'YIM',
 	'YOU_LAST_VISIT'	=> '最後訪問是 %s',
 	'YOU_NEW_PM'	=> '您的收件夾中有一個新訊息。',
 	'YOU_NEW_PMS'	=> '您的收件夾中有多個新訊息。',
 	'YOU_NO_NEW_PM'	=> '您的收件夾中沒有新的訊息。',
 
-	'datetime'	=> array(
+	'datetime'			=> array(
 		'TODAY'	=> '今天',
 		'TOMORROW'	=> '明天',
 		'YESTERDAY'	=> '昨天',
@@ -750,7 +760,7 @@ $lang = array_merge($lang, array(
 		'Dec'	=> '12月',
 	),
 
-	'tz'	=> array(
+	'tz'				=> array(
 		'-12'	=> 'UTC - 12 小時',
 		'-11'	=> 'UTC - 11 小時',
 		'-10'	=> 'UTC - 10 小時',
@@ -766,7 +776,7 @@ $lang = array_merge($lang, array(
 		'-3'	=> 'UTC - 3 小時',
 		'-2'	=> 'UTC - 2 小時',
 		'-1'	=> 'UTC - 1 小時',
-		'0'	=> 'UTC',
+		'0'		=> 'UTC',
 		'1'	=> 'UTC + 1 小時',
 		'2'	=> 'UTC + 2 小時',
 		'3'	=> 'UTC + 3 小時',

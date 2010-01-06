@@ -39,7 +39,7 @@ if (empty($lang) || !is_array($lang))
 // in a url you again do not need to specify an order e.g., 'Click %sHERE%s' is fine
 
 $lang = array_merge($lang, array(
-	'ACTIVE_TOPICS'			=> '活発なトピック',
+	'ACTIVE_TOPICS'			=> '最近のトピック',
 	'ANNOUNCEMENTS'			=> '告知トピック',
 
 	'FORUM_PERMISSIONS'		=> 'フォーラムパーミッション',
@@ -47,7 +47,7 @@ $lang = array_merge($lang, array(
 	'ICON_ANNOUNCEMENT'		=> '告知トピック',
 	'ICON_STICKY'			=> '注目トピック',
 
-	'LOGIN_NOTIFY_FORUM'	=> '監視中のフォーラムに新しい記事があります。新しい記事を閲覧するにはログインしてください。',
+	'LOGIN_NOTIFY_FORUM'	=> 'ウォッチ中のフォーラムに新しい記事が投稿されています。新しい記事を閲覧するにはログインしてください。',
 
 	'MARK_TOPICS_READ'		=> 'すべてのトピックを既読にする',
 

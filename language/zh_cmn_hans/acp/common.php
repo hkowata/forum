@@ -88,6 +88,7 @@ $lang = array_merge($lang, array(
 	'ACP_FORUM_MANAGEMENT'			=> '版面管理',
 	'ACP_FORUM_MODERATORS'			=> '版面版主',
 	'ACP_FORUM_PERMISSIONS'			=> '版面权限',
+	'ACP_FORUM_PERMISSIONS_COPY'	=> '复制版面权限',
 	'ACP_FORUM_ROLES'				=> '版面角色',
 
 	'ACP_GENERAL_CONFIGURATION'		=> '综合设定',
@@ -147,12 +148,15 @@ $lang = array_merge($lang, array(
 	'ACP_REGISTER_SETTINGS'		=> '用户注册设定',
 
 	'ACP_RESTORE'				=> '恢复',
+	'ACP_FEED'					=> 'ATOM管理',
+	'ACP_FEED_SETTINGS'			=> 'ATOM设定',
 
 	'ACP_SEARCH'				=> '搜索配置',
 	'ACP_SEARCH_INDEX'			=> '搜索索引',
 	'ACP_SEARCH_SETTINGS'		=> '搜索设定',
 
 	'ACP_SECURITY_SETTINGS'		=> '安全设定',
+	'ACP_SEND_STATISTICS'		=> '发送统计信息',
 	'ACP_SERVER_CONFIGURATION'	=> '服务器配置',
 	'ACP_SERVER_SETTINGS'		=> '服务器设定',
 	'ACP_SIGNATURE_SETTINGS'	=> '签名设定',
@@ -160,6 +164,7 @@ $lang = array_merge($lang, array(
 	'ACP_STYLE_COMPONENTS'		=> '风格组件',
 	'ACP_STYLE_MANAGEMENT'		=> '风格管理',
 	'ACP_STYLES'				=> '风格',
+	'ACP_SUBMIT_CHANGES'		=> '提交更改',
 
 	'ACP_TEMPLATES'				=> '模板',
 	'ACP_THEMES'				=> '风格主题',
@@ -181,8 +186,9 @@ $lang = array_merge($lang, array(
 	'ACP_USER_ROLES'				=> '用户角色',
 	'ACP_USER_SECURITY'				=> '用户安全',
 	'ACP_USER_SIG'					=> '签名档',
+	'ACP_USER_WARNINGS'				=> '警告',
 
-	'ACP_VC_SETTINGS'					=> '可视化确认设定',
+	'ACP_VC_SETTINGS'					=> '验证图片模块设定',
 	'ACP_VC_CAPTCHA_DISPLAY'			=> 'CAPTCHA 图片预览',
 	'ACP_VERSION_CHECK'					=> '检查更新',
 	'ACP_VIEW_ADMIN_PERMISSIONS'		=> '查看管理员权限',
@@ -241,6 +247,8 @@ $lang = array_merge($lang, array(
 
 	'MANAGE'				=> '管理',
 	'MENU_TOGGLE'			=> '隐藏或显示侧栏菜单',
+	'MORE'					=> '更多',			// Not used at the moment
+	'MORE_INFORMATION'		=> '更多信息 »',
 	'MOVE_DOWN'				=> '下移',
 	'MOVE_UP'				=> '上移',
 
@@ -271,6 +279,7 @@ $lang = array_merge($lang, array(
 	'SETTING_TOO_BIG'		=> '对设置项 “%1$s” 输入的值太大. 允许的最大值为 %2$d.',	
 	'SETTING_TOO_LONG'		=> '对设置项 “%1$s” 输入的长度太长. 允许的最大长度为 %2$d.',
 	'SETTING_TOO_SHORT'		=> '对设置项 “%1$s” 输入的长度太短. 允许的最小长度为 %2$d.',
+	'SHOW_ALL_OPERATIONS'	=> '显示所有操作',
 
 	'UCP'					=> '用户控制面板',
 	'USERNAMES_EXPLAIN'		=> '在同一行上分开排列用户名',
@@ -333,6 +342,9 @@ $lang = array_merge($lang, array(
 	'PURGE_CACHE'			=> '清除缓存',
 	'PURGE_CACHE_CONFIRM'	=> '您确认要清除缓存吗?',
 	'PURGE_CACHE_EXPLAIN'	=> '清除所有缓存相关的条目, 这包含被缓存的模板和数据库查询结果.',
+	'PURGE_SESSIONS'			=> '清除所有会话',
+	'PURGE_SESSIONS_CONFIRM'	=> '您确认要清除所有会话吗? 这会让所有已登录的用户登出论坛.',
+	'PURGE_SESSIONS_EXPLAIN'	=> '清除所有会话. 这会让所有已登录的用户登出论坛.',
 
 	'RESET_DATE'			=> '重置日期',
 	'RESET_DATE_CONFIRM'			=> '您确认要重置论坛的起始时间吗?',
@@ -358,6 +370,8 @@ $lang = array_merge($lang, array(
 	'USERS_PER_DAY'		=> '每日新用户',
 
 	'VALUE'					=> '值',
+	'VERSIONCHECK_FAIL'			=> '无法获取最新版本信息.',
+	'VERSIONCHECK_FORCE_UPDATE'	=> '再次检查版本',
 	'VIEW_ADMIN_LOG'		=> '查看管理员日志',
 	'VIEW_INACTIVE_USERS'	=> '查看冻结帐号',
 
@@ -384,8 +398,22 @@ $lang = array_merge($lang, array(
 	'SORT_LAST_VISIT'	=> '最后访问',
 	'SORT_REASON'		=> '原因',
 	'SORT_REG_DATE'		=> '注册日期',
+	'SORT_LAST_REMINDER'=> '最后提醒',
+	'SORT_REMINDER'		=> '提醒',
 
 	'USER_IS_INACTIVE'		=> '用户被冻结',
+));
+
+// Send statistics page
+$lang = array_merge($lang, array(
+	'EXPLAIN_SEND_STATISTICS'	=> '请发送您的服务器和论坛设置信息至phpBB官方以便于进行统计分析. 此信息不会包含任何与您或您的论坛的隐私数据. 所有数据都是完全<strong>匿名</strong>的. 我们会在今后的phpBB版本开发中参考收集到的信息. 统计的结果会向公众公开, 并提供给PHP语言项目的开发团队.',
+	'EXPLAIN_SHOW_STATISTICS'	=> '使用下面的按钮您可以查看发送的内容.',
+	'DONT_SEND_STATISTICS'		=> '返回管理员控制面板, 如果您不希望发送统计信息给phpBB.',
+	'GO_ACP_MAIN'				=> '前往管理员控制面板首页',
+	'HIDE_STATISTICS'			=> '隐藏细节',
+	'SEND_STATISTICS'			=> '发送统计信息',
+	'SHOW_STATISTICS'			=> '显示细节',
+	'THANKS_SEND_STATISTICS'	=> '非常感谢您的参与, phpBB团队向您致敬!',
 ));
 
 // Log Entries
@@ -464,6 +492,7 @@ $lang = array_merge($lang, array(
 	'LOG_CONFIG_MESSAGE'		=> '<strong>更改站内短信设定</strong>',
 	'LOG_CONFIG_POST'			=> '<strong>更改帖子设定</strong>',
 	'LOG_CONFIG_REGISTRATION'	=> '<strong>更改用户注册设定</strong>',
+	'LOG_CONFIG_FEED'			=> '<strong>更改ATOM设定</strong>',
 	'LOG_CONFIG_SEARCH'			=> '<strong>更改搜索设定</strong>',
 	'LOG_CONFIG_SECURITY'		=> '<strong>更改安全设定</strong>',
 	'LOG_CONFIG_SERVER'			=> '<strong>更改服务器设定</strong>',
@@ -481,6 +510,8 @@ $lang = array_merge($lang, array(
 	'LOG_LOCK_POST'				=> '<strong>锁定帖子</strong><br />» %s',
 	'LOG_MERGE'					=> '<strong>合并帖子</strong> 至主题<br />» %s',
 	'LOG_MOVE'					=> '<strong>移动主题</strong><br />» 自 %1$s 至 %2$s', 
+	'LOG_PM_REPORT_CLOSED'		=> '<strong>关闭短信举报</strong><br />» %s',
+	'LOG_PM_REPORT_DELETED'		=> '<strong>删除短信举报</strong><br />» %s',
 	'LOG_POST_APPROVED'			=> '<strong>审批帖子</strong><br />» %s',
 	'LOG_POST_DISAPPROVED'		=> '<strong>驳回帖子 “%1$s” 因为如下的原因</strong><br />» %2$s',
 	'LOG_POST_EDITED'			=> '<strong>编辑帖子 “%1$s” 由</strong><br />» %2$s',
@@ -511,6 +542,7 @@ $lang = array_merge($lang, array(
 	'LOG_ERROR_EMAIL'		=> '<strong>Email错误</strong><br />» %s',
 	
 	'LOG_FORUM_ADD'							=> '<strong>创建新版面</strong><br />» %s',
+	'LOG_FORUM_COPIED_PERMISSIONS'			=> '<strong>复制版面权限</strong> 自 %1$s<br />» %2$s',
 	'LOG_FORUM_DEL_FORUM'					=> '<strong>删除版面</strong><br />» %s',
 	'LOG_FORUM_DEL_FORUMS'					=> '<strong>删除版面及其子版面</strong><br />» %s',
 	'LOG_FORUM_DEL_MOVE_FORUMS'				=> '<strong>删除版面, 移动子版面</strong> 到 %1$s<br />» %2$s',
@@ -524,6 +556,7 @@ $lang = array_merge($lang, array(
 	'LOG_FORUM_MOVE_DOWN'					=> '<strong>移动版面</strong> %1$s <strong>往下</strong> %2$s',
 	'LOG_FORUM_MOVE_UP'						=> '<strong>移动版面</strong> %1$s <strong>往上</strong> %2$s',
 	'LOG_FORUM_SYNC'						=> '<strong>重新同步版面</strong><br />» %s',
+	'LOG_GENERAL_ERROR'	=> '<strong>发生错误</strong>: %1$s <br />» %2$s',
 
 	'LOG_GROUP_CREATED'		=> '<strong>创建新用户组</strong><br />» %s',
 	'LOG_GROUP_DEFAULTS'	=> '<strong>设置为成员默认用户组</strong><br />» %s',
@@ -533,9 +566,11 @@ $lang = array_merge($lang, array(
 	'LOG_GROUP_REMOVE'		=> '<strong>成员删除自用户组</strong> %1$s<br />» %2$s',
 	'LOG_GROUP_UPDATED'		=> '<strong>用户组细节修改</strong><br />» %s',
 	'LOG_MODS_ADDED'		=> '<strong>添加新的组管理员至用户组</strong> %1$s<br />» %2$s',
-	'LOG_USERS_APPROVED'	=> '<strong>用户批准加入用户组</strong> %1$s<br />» %2$s',
 	'LOG_USERS_ADDED'		=> '<strong>添加新的成员至用户组</strong> %1$s<br />» %2$s',
+	'LOG_USERS_APPROVED'	=> '<strong>用户被批准进入用户组</strong> %1$s<br />» %2$s',
+	'LOG_USERS_PENDING'		=> '<strong>用户申请加入 “%1$s” 并等待批准</strong><br />» %2$s',
 
+	'LOG_IMAGE_GENERATION_ERROR'	=> '<strong>创建图片时出错</strong><br />» 错误位于 %1$s 行 %2$s: %3$s',
 	'LOG_IMAGESET_ADD_DB'			=> '<strong>添加新图片组到数据库</strong><br />» %s',
 	'LOG_IMAGESET_ADD_FS'			=> '<strong>添加新图片组到文件系统</strong><br />» %s',
 	'LOG_IMAGESET_DELETE'			=> '<strong>删除图片组</strong><br />» %s',
@@ -603,6 +638,7 @@ $lang = array_merge($lang, array(
 	'LOG_PRUNE_USER_DEL_ANON'	=> '<strong>裁减用户 保留帖子</strong><br />» %s',
 
 	'LOG_PURGE_CACHE'			=> '<strong>清除缓存</strong>',
+	'LOG_PURGE_SESSIONS'		=> '<strong>清除会话</strong>',
 
 	'LOG_RANK_ADDED'		=> '<strong>添加新等级</strong><br />» %s',
 	'LOG_RANK_REMOVED'		=> '<strong>删除等级</strong><br />» %s',
@@ -654,12 +690,14 @@ $lang = array_merge($lang, array(
 	'LOG_USER_DELETED'		=> '<strong>删除用户</strong><br />» %s',
 	'LOG_USER_DEL_ATTACH'	=> '<strong>删除这个用户发表的所有附件</strong><br />» %s',
 	'LOG_USER_DEL_AVATAR'	=> '<strong>删除用户头像</strong><br />» %s',
+	'LOG_USER_DEL_OUTBOX'	=> '<strong>清空用户发件箱</strong><br />» %s',
 	'LOG_USER_DEL_POSTS'	=> '<strong>删除这个用户的所有帖子</strong><br />» %s',
 	'LOG_USER_DEL_SIG'		=> '<strong>删除用户签名档</strong><br />» %s',
 	'LOG_USER_INACTIVE'		=> '<strong>冻结用户</strong><br />» %s',
 	'LOG_USER_MOVE_POSTS'	=> '<strong>移动用户帖子</strong><br />» posts by "%1$s" to forum "%2$s"',
 	'LOG_USER_NEW_PASSWORD'	=> '<strong>更改用户密码</strong><br />» %s',
 	'LOG_USER_REACTIVATE'	=> '<strong>强制用户帐号重新激活</strong><br />» %s',
+	'LOG_USER_REMOVED_NR'	=> '<strong>关闭新注册标记于用户</strong><br />» %s',
 	'LOG_USER_UPDATE_EMAIL'	=> '<strong>用户 "%1$s" 更改 email</strong><br />» from "%2$s" to "%3$s"',
 	'LOG_USER_UPDATE_NAME'	=> '<strong>用户名称更改</strong><br />» from "%1$s" to "%2$s"',
 	'LOG_USER_USER_UPDATE'	=> '<strong>用户细节更新</strong><br />» %s',
@@ -682,6 +720,9 @@ $lang = array_merge($lang, array(
 	'LOG_USER_GROUP_JOIN'			=> '<strong>用户加入组</strong><br />» %s',
 	'LOG_USER_GROUP_JOIN_PENDING'	=> '<strong>用户加入组并等待批准</strong><br />» %s',
 	'LOG_USER_GROUP_RESIGN'			=> '<strong>用户解除组成员关系</strong><br />» %s',
+	'LOG_WARNING_DELETED'		=> '<strong>删除用户警告</strong><br />» %s',
+	'LOG_WARNINGS_DELETED'		=> '<strong>删除 %2$s 条用户警告</strong><br />» %1$s', // Example: '<strong>Deleted 2 user warnings</strong><br />» username'
+	'LOG_WARNINGS_DELETED_ALL'	=> '<strong>删除所有用户警告</strong><br />» %s',
 
 	'LOG_WORD_ADD'			=> '<strong>添加敏感词</strong><br />» %s',
 	'LOG_WORD_DELETE'		=> '<strong>删除敏感词</strong><br />» %s',

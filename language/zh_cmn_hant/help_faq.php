@@ -4,7 +4,7 @@
 * help_faq [正體中文]
 *
 * @package language
-* @version $Id: help_faq.php 8896 2008-09-19 16:59:40Z acydburn $
+* @version $Id: help_faq.php 9623 2009-06-18 18:12:28Z nickvergessen $
 * @copyright (c) 2001 - 2007 phpBB TW Group (yoshika, 心靈捕手, 動機不明)
 * @license http://opensource.org/licenses/gpl-license.php GNU Public License
 *
@@ -201,6 +201,11 @@ $help = array(
 	array(
 		0 => '主題圖示是甚麼？',
 		1 => '主題圖示是由發表者選定，它是和主題相關的圖案用以顯示其內容。是否可以使用主題圖示端賴管理員的權限設定。'
+	),
+	// This block will switch the FAQ-Questions to the second template column
+	array(
+		0 => '--',
+		1 => '--'
 	),
 	array(
 		0 => '--',

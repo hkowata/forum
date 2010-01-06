@@ -4,7 +4,7 @@
 * acp_language [Japanese]
 *
 * @package language
-* @version $Id: language.php 8479 2008-03-29 00:22:48Z naderman $
+* @version $Id: language.php 9649 2009-06-21 19:17:20Z bantu $
 * @copyright (c) 2005 phpBB Group
 * @license http://opensource.org/licenses/gpl-license.php GNU Public License
 *
@@ -39,7 +39,7 @@ if (empty($lang) || !is_array($lang))
 
 $lang = array_merge($lang, array(
 	'ACP_FILES'						=> 'Admin 言語ファイル',
-	'ACP_LANGUAGE_PACKS_EXPLAIN'	=> 'ここでは言語パックのインストール/アンインストールを行う事ができます。アスタリスク(*)が表示されている言語は掲示板のデフォルト言語である事を意味します。',
+	'ACP_LANGUAGE_PACKS_EXPLAIN'	=> 'ここでは言語パックの インストール/アンインストール を行う事ができます。アスタリスク(*)が表示されている言語は掲示板のデフォルト言語である事を意味します。',
 
 	'EMAIL_FILES'			=> 'メールテンプレートファイル',
 
@@ -49,12 +49,12 @@ $lang = array_merge($lang, array(
 	'HELP_FILES'				=> 'ヘルプファイル',
 
 	'INSTALLED_LANGUAGE_PACKS'	=> 'インストール済み言語パック',
-	'INVALID_LANGUAGE_PACK'		=> '選択した言語パックが正常ではないようです。言語パックが正常であるかどうかを確かめてください。必要であれば言語パックを再度アップロードしてください。',
+	'INVALID_LANGUAGE_PACK'		=> '選択した言語パックが正常ではないようです。言語パックが正常であるかどうかをご確認ください。必要であれば言語パックを再度アップロードしてください。',
 	'INVALID_UPLOAD_METHOD'		=> '選択したアップロード方式を使用できません。別の方式を選んでください。',
 
 	'LANGUAGE_DETAILS_UPDATED'			=> '言語データの更新に成功しました',
 	'LANGUAGE_ENTRIES'					=> '言語ファイルのエントリー',
-	'LANGUAGE_ENTRIES_EXPLAIN'			=> 'ここでは言語パック内の各ファイルの言語キーを修正、翻訳できます。<br /><strong>注意：</strong>アップロードした場合、修正した言語ファイルは保管ディレクトリに格納されます。修正ファイルを得るにはその保管ディレクトリからダウンロードしてください。オリジナルファイルを修正ファイルに置き換えるまでユーザーが見る掲示板に変化はありません。',
+	'LANGUAGE_ENTRIES_EXPLAIN'			=> 'ここでは言語パック内の各ファイルの言語キーをハック、翻訳できます。<br /><strong>注意：</strong>アップロードした場合、ハックした言語ファイルは保管ディレクトリに格納されます。ハックファイルを得るにはその保管ディレクトリからダウンロードしてください。純正ファイルをハックファイルに置き換えるまでユーザーが見る掲示板に変化はありません。',
 	'LANGUAGE_FILES'					=> '言語ファイル',
 	'LANGUAGE_KEY'						=> '言語キー',
 	'LANGUAGE_PACK_ALREADY_INSTALLED'	=> 'この言語パックは既にインストールされています',

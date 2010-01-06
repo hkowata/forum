@@ -201,6 +201,11 @@ $help = array(
 	array(
 		0 => '什么是主题图标?',
 		1 => '主题图标是和主题内容相关的一种小图片. 是否可以使用主题图标取决于管理员的设置.'
+	), 
+	// This block will switch the FAQ-Questions to the second template column
+	array(
+		0 => '--',
+		1 => '--'
 	),
 	array(
 		0 => '--',

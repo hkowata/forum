@@ -134,6 +134,10 @@ $lang = array_merge($lang, array(
 	'USER_ADMIN'			=> '管理用户',
 	'USER_BAN'				=> '封禁',
 	'USER_FORUM'			=> '用户统计',
+	'USER_LAST_REMINDED'	=> array(
+		0		=> '尚未发送提醒',
+		1		=> '发送过 %1$d 次提醒<br />» %2$s',
+	),
 	'USER_ONLINE'			=> '在线',
 	'USER_PRESENCE'			=> '论坛形象',
 

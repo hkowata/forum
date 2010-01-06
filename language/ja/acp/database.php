@@ -4,7 +4,7 @@
 * acp_database [Japanese]
 *
 * @package language
-* @version $Id: database.php 8479 2008-03-29 00:22:48Z naderman $
+* @version $Id: database.php 9765 2009-07-17 10:11:10Z bantu $
 * @copyright (c) 2005 phpBB Group
 * @license http://opensource.org/licenses/gpl-license.php GNU Public License
 *
@@ -40,7 +40,7 @@ if (empty($lang) || !is_array($lang))
 // Database Backup/Restore
 $lang = array_merge($lang, array(
 	'ACP_BACKUP_EXPLAIN'	=> 'ここでは phpBB のデータベースデータをバックアップできます。バックアップデータを <samp>store/</samp> フォルダに保管するか、ローカルコンピュータにダウンロードするかを選択してください。 サーバの設定によってファイルの圧縮形式をいくつか選択できます。',
-	'ACP_RESTORE_EXPLAIN'	=> 'ここでは phpBB のデータベースデータの復元を行うことができます。サーバが gzip または bzip2 圧縮形式をサポートしている場合、それら圧縮ファイルは自動的に解凍されます。<strong>警告</strong>：データの復元はデータの上書きを意味します。データを復元する前に必ずデータをバックアップしてください。また復元の完了には時間がかかりますが、復元が完了するまでこのページから移動しないようにしてください。phpBB のバックアップ機能を使用した場合、バックアップファイルは <samp>store/</samp> フォルダに保管されます。phpBB 以外のバックアップ機能で作成されたバックアップファイルによるデータの復元はうまくいかない事がある点にご注意ください。',
+	'ACP_RESTORE_EXPLAIN'	=> 'ここでは phpBB のデータベースの復元を行うことができます。サーバが gzip または bzip2 圧縮形式をサポートしている場合、それら圧縮ファイルは自動的に解凍されます。<strong>警告</strong>：データの復元はデータの上書きを意味します。データを復元する前に必ずデータをバックアップしてください。また復元の完了には時間がかかりますが、復元が完了するまでこのページから移動しないようにしてください。phpBB のバックアップ機能を使用した場合、バックアップファイルは <samp>store/</samp> フォルダに保管されます。phpBB 以外のバックアップ機能で作成されたバックアップファイルによるデータの復元はうまくいかない事がある点にご注意ください。',
 
 	'BACKUP_DELETE'		=> 'バックアップファイルの削除に成功しました',
 	'BACKUP_INVALID'	=> '選択したファイルは正規のバックアップファイルではありません',
@@ -56,6 +56,7 @@ $lang = array_merge($lang, array(
 	'DOWNLOAD_BACKUP'	=> 'バックアップファイルのダウンロード',
 
 	'FILE_TYPE'			=> 'ファイル形式',
+	'FILE_WRITE_FAIL'	=> '保管フォルダへファイルを保管できませんでした',
 	'FULL_BACKUP'		=> '完全',
 
 	'RESTORE_FAILURE'		=> 'バックアップファイルが破損している可能性があります',

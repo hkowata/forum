@@ -37,7 +37,7 @@ if (empty($lang) || !is_array($lang))
 
 $lang = array_merge($lang, array(
 	'ACP_FILES'						=> '管理语言文件',
-	'ACP_LANGUAGE_PACKS_EXPLAIN'	=> '这里您可以安装/删除语言包',
+	'ACP_LANGUAGE_PACKS_EXPLAIN'	=> '这里您可以安装/删除语言包, 默认的语言包在前面用星号标记',
 
 	'EMAIL_FILES'			=> 'Email模板',
 

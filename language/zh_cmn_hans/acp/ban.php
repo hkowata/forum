@@ -48,6 +48,8 @@ $lang = array_merge($lang, array(
 	'BAN_REASON'			=> '封禁原因',
 	'BAN_GIVE_REASON'		=> '显示给被封者的封禁原因',
 	'BAN_UPDATE_SUCCESSFUL'	=> '封禁列表更新成功',
+	'BANNED_UNTIL_DATE'		=> '直至 %s', // Example: "until Mon 13.Jul.2009, 14:44"
+	'BANNED_UNTIL_DURATION'	=> '%1$s (直至 %2$s)', // Example: "7 days (until Tue 14.Jul.2009, 14:44)"
 
 	'EMAIL_BAN'					=> '封禁信箱地址',
 	'EMAIL_BAN_EXCLUDE_EXPLAIN'	=> '被排除的Email地址将不受任何封禁影响。',

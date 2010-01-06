@@ -4,7 +4,7 @@
 * acp_styles [Japanese]
 *
 * @package language
-* @version $Id: styles.php 9046 2008-11-02 16:19:11Z acydburn $
+* @version $Id: styles.php 10074 2009-08-31 11:25:28Z acydburn $
 * @copyright (c) 2005 phpBB Group
 * @license http://opensource.org/licenses/gpl-license.php GNU Public License
 *
@@ -63,7 +63,7 @@ $lang = array_merge($lang, array(
 	'CACHE_CACHED'					=> 'キャッシュファイルの作成日時',
 	'CACHE_FILENAME'				=> 'テンプレートファイル',
 	'CACHE_FILESIZE'				=> 'ファイルサイズ',
-	'CACHE_MODIFIED'				=> 'テンプレートファイルの修正日時',
+	'CACHE_MODIFIED'				=> 'テンプレートファイルのハック日時',
 	'CONFIRM_IMAGESET_REFRESH'		=> 'イメージセットを本当にリフレッシュしてもよろしいですか？ イメージセットは全て初期化されます。',
 	'CONFIRM_TEMPLATE_CLEAR_CACHE'	=> 'キャッシュファイルを全て削除してもよろしいですか？',
 	'CONFIRM_TEMPLATE_REFRESH'		=> 'データベース内のテンプレート情報を本当にリフレッシュしてもよろしいですか？テンプレートは全て初期化されます。',
@@ -231,9 +231,9 @@ $lang = array_merge($lang, array(
 
 	'IMG_ICON_POST_DELETE'			=> '記事の削除',
 	'IMG_ICON_POST_EDIT'			=> '記事の編集',
-	'IMG_ICON_POST_INFO'			=> '記事の詳細データ',
+	'IMG_ICON_POST_INFO'			=> '記事の詳細',
 	'IMG_ICON_POST_QUOTE'			=> '記事の引用',
-	'IMG_ICON_POST_REPORT'			=> '記事のリポート',
+	'IMG_ICON_POST_REPORT'			=> '記事の通報',
 	'IMG_ICON_POST_TARGET'			=> '記事（画像小）',
 	'IMG_ICON_POST_TARGET_UNREAD'	=> '未読記事（画像小）',
 
@@ -241,14 +241,14 @@ $lang = array_merge($lang, array(
 	'IMG_ICON_TOPIC_ATTACH'			=> '添付ファイル',
 	'IMG_ICON_TOPIC_LATEST'			=> '最新記事',
 	'IMG_ICON_TOPIC_NEWEST'			=> '未読-最新記事',
-	'IMG_ICON_TOPIC_REPORTED'		=> 'リポートされた記事',
+	'IMG_ICON_TOPIC_REPORTED'		=> '通報された記事',
 	'IMG_ICON_TOPIC_UNAPPROVED'		=> '未承認記事',
 
 	'IMG_ICON_USER_ONLINE'		=> 'ユーザーオンライン',
 	'IMG_ICON_USER_OFFLINE'		=> 'ユーザーオフライン',
 	'IMG_ICON_USER_PROFILE'		=> 'プロフィール表示',
 	'IMG_ICON_USER_SEARCH'		=> '記事検索',
-	'IMG_ICON_USER_WARN'		=> 'ユーザーに警告',
+	'IMG_ICON_USER_WARN'		=> '警告',
 
 	'IMG_BUTTON_PM_FORWARD'		=> 'プライベートメッセージの転送',
 	'IMG_BUTTON_PM_NEW'			=> 'プライベートメッセージの新規作成',
@@ -393,6 +393,7 @@ $lang = array_merge($lang, array(
 	'TEMPLATE_LOCATION'			=> 'テンプレートのデータ格納形式',
 	'TEMPLATE_LOCATION_EXPLAIN'	=> '画像ファイルがデータベースに格納される事はありません。画像はファイルシステムで保管されます。',
 	'TEMPLATE_NAME'				=> 'テンプレートセット名',
+	'TEMPLATE_FILE_NOT_WRITABLE'=> 'テンプレートファイル %s への書き込みに失敗しました。ディレクトリまたはファイルのアクセス権をチェックしてください。',
 	'TEMPLATE_REFRESHED'		=> 'テンプレートセットのリフレッシュに成功しました',
 
 	'THEME_ADDED'				=> 'テーマが追加されました（データ格納形式：ファイルシステム）',

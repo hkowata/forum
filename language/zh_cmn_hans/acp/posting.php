@@ -179,6 +179,7 @@ $lang = array_merge($lang, array(
 	'SMILIES_ORDER'				=> '表情图标顺序',
 	'SMILIES_URL'				=> '表情图片文件',
 	'SMILIES_WIDTH'				=> '表情图片宽度',
+	'TOO_MANY_SMILIES'			=> '超过 %d 个表情图片的限制.',
 
 	'WRONG_PAK_TYPE'	=> '指定的文件包中没有所需的数据.',
 ));
@@ -217,6 +218,7 @@ $lang = array_merge($lang, array(
 	'RANK_ADDED'			=> '等级添加完成.',
 	'RANK_IMAGE'			=> '等级图标',
 	'RANK_IMAGE_EXPLAIN'	=> '这里定义和等级相关联的小图片. 路径为phpBB根目录的相对路径.',
+	'RANK_IMAGE_IN_USE'		=> '(使用中)',
 	'RANK_MINIMUM'			=> '最小帖子数',
 	'RANK_REMOVED'			=> '等级删除完成.',
 	'RANK_SPECIAL'			=> '设置为特殊等级',

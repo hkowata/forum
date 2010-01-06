@@ -53,6 +53,7 @@ $lang = array_merge($lang, array(
 	'JUMP_TO_POST'			=> '跳到帖子',
 	
 	'LOGIN_EXPLAIN_EGOSEARCH'	=> '您需要登录后才能查看您的文章.',
+	'LOGIN_EXPLAIN_UNREADSEARCH'=> '您需要登录后才能查看未读文章.',
 
 	'MAX_NUM_SEARCH_KEYWORDS_REFINE'   => '您输入了过多的搜索关键词. 允许的最多搜索词为 %1$d 个.',
 

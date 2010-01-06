@@ -4,7 +4,7 @@
 * memberlist [Japanese]
 *
 * @package language
-* @version $Id: memberlist.php 8574 2008-05-29 13:59:47Z Kellanved $
+* @version $Id: memberlist.php 9933 2009-08-06 09:12:21Z marshalrusty $
 * @copyright (c) 2005 phpBB Group
 * @license http://opensource.org/licenses/gpl-license.php GNU Public License
 *
@@ -136,6 +136,10 @@ $lang = array_merge($lang, array(
 	'USER_ADMIN'			=> 'ユーザー管理',
 	'USER_BAN'				=> 'アクセス禁止',
 	'USER_FORUM'			=> '統計データ',
+	'USER_LAST_REMINDED'	=> array(
+		0		=> 'この日時に送信されたアカウント有効化メールはありません',
+		1		=> 'アカウント有効化メールを %1$d 通送信しました<br />» %2$s',
+	),
 	'USER_ONLINE'			=> 'オンライン',
 	'USER_PRESENCE'			=> 'Board presence',
 

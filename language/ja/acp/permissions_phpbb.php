@@ -3,7 +3,7 @@
 * acp_permissions_phpbb (phpBB Permission Set) [Japanese]
 *
 * @package language
-* @version $Id: permissions_phpbb.php 8911 2008-09-23 13:03:33Z acydburn $
+* @version $Id: permissions_phpbb.php 9686 2009-06-26 11:52:54Z rxu $
 * @copyright (c) 2005 phpBB Group
 * @license http://opensource.org/licenses/gpl-license.php GNU Public License
 *
@@ -122,28 +122,28 @@ $lang = array_merge($lang, array(
 	'acl_u_pm_forward'	=> array('lang' => 'プライベートメッセージの転送', 'cat' => 'pm'),
 	'acl_u_pm_emailpm'	=> array('lang' => 'プライベートメッセージのメール送信', 'cat' => 'pm'),
 	'acl_u_pm_printpm'	=> array('lang' => 'プライベートメッセージの印刷ビューの表示', 'cat' => 'pm'),
-	'acl_u_pm_attach'	=> array('lang' => 'プライベートメッセージでのファイルの添付', 'cat' => 'pm'),
-	'acl_u_pm_download'	=> array('lang' => 'プライベートメッセージでのファイルのダウンロード', 'cat' => 'pm'),
-	'acl_u_pm_bbcode'	=> array('lang' => 'プライベートメッセージでの BBCode の使用', 'cat' => 'pm'),
-	'acl_u_pm_smilies'	=> array('lang' => 'プライベートメッセージでのスマイリーの使用', 'cat' => 'pm'),
-	'acl_u_pm_img'		=> array('lang' => 'プライベートメッセージでの BBCode [Img] の使用', 'cat' => 'pm'),
-	'acl_u_pm_flash'	=> array('lang' => 'プライベートメッセージでの BBCode [Flash] の使用', 'cat' => 'pm'),
+	'acl_u_pm_attach'	=> array('lang' => 'プライベートメッセージでファイルの添付', 'cat' => 'pm'),
+	'acl_u_pm_download'	=> array('lang' => 'プライベートメッセージでファイルのダウンロード', 'cat' => 'pm'),
+	'acl_u_pm_bbcode'	=> array('lang' => 'プライベートメッセージで BBCode の使用', 'cat' => 'pm'),
+	'acl_u_pm_smilies'	=> array('lang' => 'プライベートメッセージでスマイリーの使用', 'cat' => 'pm'),
+	'acl_u_pm_img'		=> array('lang' => 'プライベートメッセージで [img] BBCode の使用', 'cat' => 'pm'),
+	'acl_u_pm_flash'	=> array('lang' => 'プライベートメッセージで [flash] BBCode の使用', 'cat' => 'pm'),
 
 	'acl_u_sendemail'	=> array('lang' => 'メールの送信', 'cat' => 'misc'),
 	'acl_u_sendim'		=> array('lang' => 'インスタントメッセージの送信', 'cat' => 'misc'),
 	'acl_u_ignoreflood'	=> array('lang' => '連続投稿制限の無視', 'cat' => 'misc'),
-	'acl_u_hideonline'	=> array('lang' => 'オンラインステータスの隠蔽', 'cat' => 'misc'),
-	'acl_u_viewonline'	=> array('lang' => 'オンラインデータページでのお忍びユーザーの表示', 'cat' => 'misc'),
+	'acl_u_hideonline'	=> array('lang' => 'お忍びユーザー', 'cat' => 'misc'),
+	'acl_u_viewonline'	=> array('lang' => 'オンラインデータページでお忍びユーザーの表示', 'cat' => 'misc'),
 	'acl_u_search'		=> array('lang' => '掲示板全体で検索', 'cat' => 'misc'),
 ));
 
 // Forum Permissions
 $lang = array_merge($lang, array(
 	'acl_f_list'		=> array('lang' => 'フォーラムの表示', 'cat' => 'post'),
-	'acl_f_read'		=> array('lang' => 'フォーラムの閲覧', 'cat' => 'post'),
+	'acl_f_read'		=> array('lang' => 'フォーラムへのアクセス', 'cat' => 'post'),
 	'acl_f_post'		=> array('lang' => '新規トピックの投稿', 'cat' => 'post'),
 	'acl_f_reply'		=> array('lang' => 'トピックへ返信', 'cat' => 'post'),
-	'acl_f_icons'		=> array('lang' => 'トピック/返信アイコンの使用', 'cat' => 'post'),
+	'acl_f_icons'		=> array('lang' => 'トピック/返信アイコン の使用', 'cat' => 'post'),
 	'acl_f_announce'	=> array('lang' => '告知トピックの投稿', 'cat' => 'post'),
 	'acl_f_sticky'		=> array('lang' => '注目トピックの投稿', 'cat' => 'post'),
 
@@ -154,17 +154,17 @@ $lang = array_merge($lang, array(
 	'acl_f_attach'		=> array('lang' => 'ファイルの添付', 'cat' => 'content'),
 	'acl_f_download'	=> array('lang' => 'ファイルのダウンロード', 'cat' => 'content'),
 	'acl_f_sigs'		=> array('lang' => 'サインの使用', 'cat' => 'content'),
-	'acl_f_bbcode'		=> array('lang' => '投稿記事での BBCode の使用', 'cat' => 'content'),
-	'acl_f_smilies'		=> array('lang' => '投稿記事でのスマイリーの使用', 'cat' => 'content'),
-	'acl_f_img'			=> array('lang' => '投稿記事での BBCode [Img] の使用', 'cat' => 'content'),
-	'acl_f_flash'		=> array('lang' => '投稿記事での BBCode [Flash] の使用', 'cat' => 'content'),
+	'acl_f_bbcode'		=> array('lang' => '投稿記事で BBCode の使用', 'cat' => 'content'),
+	'acl_f_smilies'		=> array('lang' => '投稿記事でスマイリーの使用', 'cat' => 'content'),
+	'acl_f_img'			=> array('lang' => '投稿記事で [img] BBCode の使用', 'cat' => 'content'),
+	'acl_f_flash'		=> array('lang' => '投稿記事で [flash] BBCode の使用', 'cat' => 'content'),
 
 	'acl_f_edit'		=> array('lang' => '記事の編集', 'cat' => 'actions'),
 	'acl_f_delete'		=> array('lang' => '記事の削除', 'cat' => 'actions'),
 	'acl_f_user_lock'	=> array('lang' => 'トピックの閉鎖', 'cat' => 'actions'),
 	'acl_f_bump'		=> array('lang' => 'トピックの “上げ” ', 'cat' => 'actions'),
-	'acl_f_report'		=> array('lang' => '記事のリポート', 'cat' => 'actions'),
-	'acl_f_subscribe'	=> array('lang' => 'フォーラムの監視', 'cat' => 'actions'),
+	'acl_f_report'		=> array('lang' => '記事の通報', 'cat' => 'actions'),
+	'acl_f_subscribe'	=> array('lang' => 'フォーラムウォッチ', 'cat' => 'actions'),
 	'acl_f_print'		=> array('lang' => 'トピックの印刷ビューの表示', 'cat' => 'actions'),
 	'acl_f_email'		=> array('lang' => 'トピックのメール送信', 'cat' => 'actions'),
 
@@ -179,7 +179,7 @@ $lang = array_merge($lang, array(
 	'acl_m_edit'		=> array('lang' => '記事の編集', 'cat' => 'post_actions'),
 	'acl_m_delete'		=> array('lang' => '記事の削除', 'cat' => 'post_actions'),
 	'acl_m_approve'		=> array('lang' => '記事の承認', 'cat' => 'post_actions'),
-	'acl_m_report'		=> array('lang' => 'リポートの審査と削除', 'cat' => 'post_actions'),
+	'acl_m_report'		=> array('lang' => '通報の審査と削除', 'cat' => 'post_actions'),
 	'acl_m_chgposter'	=> array('lang' => '投稿者の変更', 'cat' => 'post_actions'),
 
 	'acl_m_move'	=> array('lang' => 'トピックの移動', 'cat' => 'topic_actions'),
@@ -188,7 +188,7 @@ $lang = array_merge($lang, array(
 	'acl_m_merge'	=> array('lang' => 'トピックの統合', 'cat' => 'topic_actions'),
 
 	'acl_m_info'	=> array('lang' => '記事の詳細の閲覧', 'cat' => 'misc'),
-	'acl_m_warn'	=> array('lang' => '警告の送信<br /><em>このオプションはグローバルパーミッションとして適用されます。ローカルパーミッションとして適用されることはありません。</em>', 'cat' => 'misc'), // This moderator setting is only global (and not local)
+	'acl_m_warn'	=> array('lang' => '警告<br /><em>このオプションはグローバルパーミッションとして適用されます。ローカルパーミッションとして適用されることはありません。</em>', 'cat' => 'misc'), // This moderator setting is only global (and not local)
 	'acl_m_ban'		=> array('lang' => 'アクセス禁止の管理<br /><em>このオプションはグローバルパーミッションとして適用されます。ローカルパーミッションとして適用されることはありません。</em>', 'cat' => 'misc'), // This moderator setting is only global (and not local)
 ));
 
@@ -199,7 +199,7 @@ $lang = array_merge($lang, array(
 	'acl_a_jabber'		=> array('lang' => 'Jabber 設定の変更', 'cat' => 'settings'),
 	'acl_a_phpinfo'		=> array('lang' => 'PHP情報の閲覧', 'cat' => 'settings'),
 
-	'acl_a_forum'		=> array('lang' => 'フォーラム設定へのアクセス', 'cat' => 'forums'),
+	'acl_a_forum'		=> array('lang' => 'フォーラムの管理', 'cat' => 'forums'),
 	'acl_a_forumadd'	=> array('lang' => 'フォーラムの作成', 'cat' => 'forums'),
 	'acl_a_forumdel'	=> array('lang' => 'フォーラムの削除', 'cat' => 'forums'),
 	'acl_a_prune'		=> array('lang' => 'フォーラムのプルーニング', 'cat' => 'forums'),
@@ -216,7 +216,7 @@ $lang = array_merge($lang, array(
 	'acl_a_groupdel'	=> array('lang' => 'グループの削除', 'cat' => 'user_group'),
 	'acl_a_ranks'		=> array('lang' => 'ランクの管理', 'cat' => 'user_group'),
 	'acl_a_profile'		=> array('lang' => 'カスタムプロフィールフィールドの管理', 'cat' => 'user_group'),
-	'acl_a_names'		=> array('lang' => '否認ユーザー名の管理', 'cat' => 'user_group'),
+	'acl_a_names'		=> array('lang' => '拒否ユーザー名の管理', 'cat' => 'user_group'),
 	'acl_a_ban'			=> array('lang' => 'アクセス禁止の管理', 'cat' => 'user_group'),
 
 	'acl_a_viewauth'	=> array('lang' => 'パーミッションマスクの表示', 'cat' => 'permissions'),
@@ -236,7 +236,7 @@ $lang = array_merge($lang, array(
 	'acl_a_language'	=> array('lang' => '言語パックの管理', 'cat' => 'misc'),
 	'acl_a_email'		=> array('lang' => '大量メールの送信', 'cat' => 'misc'),
 	'acl_a_bots'		=> array('lang' => 'ボットの管理', 'cat' => 'misc'),
-	'acl_a_reasons'		=> array('lang' => 'リポート/却下 の理由の管理', 'cat' => 'misc'),
+	'acl_a_reasons'		=> array('lang' => '通報/却下 の理由の管理', 'cat' => 'misc'),
 	'acl_a_backup'		=> array('lang' => 'データベースの バックアップ/復元', 'cat' => 'misc'),
 	'acl_a_search'		=> array('lang' => '検索バックエンドと検索設定の管理', 'cat' => 'misc'),
 ));

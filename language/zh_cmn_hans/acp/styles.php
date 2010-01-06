@@ -391,6 +391,7 @@ $lang = array_merge($lang, array(
 	'TEMPLATE_LOCATION'			=> '存储模板到',
 	'TEMPLATE_LOCATION_EXPLAIN'	=> '图片总是存储在文件系统中.',
 	'TEMPLATE_NAME'				=> '模板名称',
+	'TEMPLATE_FILE_NOT_WRITABLE'=> '无法写入模板文件 %s. 请检查此文件夹和文件的属性.',
 	'TEMPLATE_REFRESHED'		=> '模板刷新完成.',
 
 	'THEME_ADDED'				=> '新风格主题已经添加到文件系统.',

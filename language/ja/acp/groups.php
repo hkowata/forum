@@ -4,7 +4,7 @@
 * acp_groups [Japanese]
 *
 * @package language
-* @version $Id: groups.php 8911 2008-09-23 13:03:33Z acydburn $
+* @version $Id: groups.php 9701 2009-06-28 12:13:11Z toonarmy $
 * @copyright (c) 2005 phpBB Group
 * @license http://opensource.org/licenses/gpl-license.php GNU Public License
 *
@@ -59,9 +59,9 @@ $lang = array_merge($lang, array(
 	'GROUP_CONFIRM_ADD_USER'		=> 'ユーザー %1$s を本当に追加してもよろしいですか？',
 	'GROUP_CONFIRM_ADD_USERS'		=> 'ユーザー %1$s を本当に追加してもよろしいですか？',
 	'GROUP_CREATED'					=> 'グループの作成に成功しました',
-	'GROUP_DEFAULT'					=> 'デフォルトグループに設定する',
+	'GROUP_DEFAULT'					=> 'デフォルトグループに設定',
 	'GROUP_DEFS_UPDATED'			=> '指定したメンバーのデフォルトグループを変更しました',
-	'GROUP_DELETE'					=> 'メンバーから除名する',
+	'GROUP_DELETE'					=> 'メンバーを除名する',
 	'GROUP_DELETED'					=> 'グループの削除とユーザーのデフォルトグループの設定に成功しました',
 	'GROUP_DEMOTE'					=> 'グループリーダーを解任する',
 	'GROUP_DESC'					=> 'グループ説明',
@@ -69,7 +69,7 @@ $lang = array_merge($lang, array(
 	'GROUP_EDIT_EXPLAIN'			=> 'ここではグループの編集を行うことができます。グループの名前、説明、タイプを変更できます。グループカラー、ランク等の追加オプションも設定できます。これらの設定はユーザー設定を上書きします。適切なユーザーパーミッションを設定していない場合、グループのアバター設定よりもユーザーのアバター設定が優先される点にご注意ください。 ',
 	'GROUP_ERR_USERS_EXIST'			=> '指定したユーザーはすでにグループのメンバーです',
 	'GROUP_FOUNDER_MANAGE'			=> 'グループ作成者のみグループを管理する',
-	'GROUP_FOUNDER_MANAGE_EXPLAIN'	=> 'このグループを管理できるユーザーをグループ作成者だけに限定します。“グループ管理” パーミッションを持つユーザーは引き続きグループとそのメンバーを見る事ができます。',
+	'GROUP_FOUNDER_MANAGE_EXPLAIN'	=> 'このグループを管理できるユーザーをグループ作成者だけに限定します。“グループ管理” パーミッションを与えられたユーザーは、引き続きグループとそのメンバーを見る事だけはできます。',
 	'GROUP_HIDDEN'					=> '非公開',
 	'GROUP_LANG'					=> 'グループの言語',
 	'GROUP_LEAD'					=> 'グループリーダー',
@@ -90,14 +90,17 @@ $lang = array_merge($lang, array(
 	'GROUP_PENDING'					=> '承認待ちメンバー',
 	'GROUP_MAX_RECIPIENTS'			=> 'プライベートメッセージ送信先ユーザーの最大数',
 	'GROUP_MAX_RECIPIENTS_EXPLAIN'	=> 'プライベートメッセージの送信先として指定できるユーザー数の上限です。0 に設定した場合、“プライベートメッセージ設定” における “送信先ユーザーの最大数” が適用されます。',
+	'GROUP_OPTIONS_SAVE'			=> 'グループ設定　[ オプション ]',
 	'GROUP_PROMOTE'					=> 'グループリーダーに任命する',
 	'GROUP_RANK'					=> 'グループランク',
 	'GROUP_RECEIVE_PM'				=> 'プライベートメッセージを受信する',
-	'GROUP_RECEIVE_PM_EXPLAIN'		=> 'プライベートメッセージの宛先としてこのグループを指定できるようになります。メッセージはグループメンバー全員に送信されます。非公開グループはプライベートメッセージを受信できない事に注意してください。',
-	'GROUP_REQUEST'					=> '申請制',
-	'GROUP_SETTINGS_SAVE'			=> 'グループの一般設定',
+	'GROUP_RECEIVE_PM_EXPLAIN'		=> 'プライベートメッセージの宛先としてこのグループを指定できるようになります。メッセージはグループメンバー全員に送信されます。非公開グループはプライベートメッセージを受信できない点にご注意ください。',
+	'GROUP_REQUEST'					=> '申請',
+	'GROUP_SETTINGS_SAVE'			=> 'グループ設定　[ 必須 ] ',
+	'GROUP_SKIP_AUTH'				=> 'グループリーダーに対してパーミッションを適用しない',
+	'GROUP_SKIP_AUTH_EXPLAIN'		=> '有効にした場合、グループリーダーはこのグループからパーミッションの影響を受けません。このグループのパーミッション設定に “Never” を使用している場合は有効にしておくことを勧めます。',
 	'GROUP_TYPE'					=> 'グループタイプ',
-	'GROUP_TYPE_EXPLAIN'			=> '開放: 登録ユーザーは誰でもグループに参加できます。<br />申請制: 登録ユーザーはグループに参加を申請できます。参加するにはグループリーダーの承認が必要です。<br />閉鎖: グループはメンバーの募集を行いません。メンバーの追加はグループリーダーが行います。<br />非公開: グループメンバーと Admin 以外の全ユーザーに対してグループの存在を隠します。',
+	'GROUP_TYPE_EXPLAIN'			=> '開放: 登録ユーザーは誰でもグループに参加できます。<br />申請: 登録ユーザーはグループに参加を申請できます。参加するにはグループリーダーの承認が必要です。<br />閉鎖: グループはメンバーの募集を行いません。メンバーの追加はグループリーダーが行います。<br />非公開: グループメンバーと Admin 以外の全ユーザーに対してグループの存在を隠します。',
 	'GROUP_UPDATED'					=> 'グループの設定の更新に成功しました',
 	
 	'GROUP_USERS_ADDED'				=> 'グループメンバーの追加に成功しました',
@@ -115,14 +118,14 @@ $lang = array_merge($lang, array(
 	'NO_VALID_USERS'			=> 'アクションに有効なユーザー名を入力していません',
 
 	'SPECIAL_GROUPS'			=> '特別グループ',
-	'SPECIAL_GROUPS_EXPLAIN'	=> '特別グループとは掲示板を開始した時にはじめから存在しているグループの事です。特別グループを削除したりグループ名を変更したりする事はできません。ユーザーの追加、基本設定の変更は行えます。',
+	'SPECIAL_GROUPS_EXPLAIN'	=> '特別グループとは、掲示板をインストールした時に既に始めから存在しているグループの事です。特別グループを削除したりグループ名を変更したりする事はできません。ユーザーの追加、基本設定の変更は行えます。',
 
 	'TOTAL_MEMBERS'				=> 'メンバー数',
 
 	'USERS_APPROVED'				=> 'ユーザーの承認に成功しました',
 	'USER_DEFAULT'					=> 'ユーザーのランクを優先',
 	'USER_DEF_GROUPS'				=> '作成グループ',
-	'USER_DEF_GROUPS_EXPLAIN'		=> 'このグループはあなたか他の Admin によって作成されたグループです。メンバーの管理、グループの設定、グループの削除を行えます。',
+	'USER_DEF_GROUPS_EXPLAIN'		=> 'このグループは Admin によって作成されたグループです。メンバーの管理、グループの設定、グループの削除を行えます。',
 	'USER_GROUP_DEFAULT'			=> 'デフォルトグループに設定する',
 	'USER_GROUP_DEFAULT_EXPLAIN'	=> ' “はい” を選択すると、追加されたユーザーのデフォルトグループがこのグループに設定されます',
 	'USER_GROUP_LEADER'				=> 'グループリーダーに任命する',

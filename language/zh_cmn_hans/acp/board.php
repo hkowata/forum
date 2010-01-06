@@ -70,6 +70,10 @@ $lang = array_merge($lang, array(
 	'ALLOW_NO_CENSORS'			=> '允许禁用敏感词过滤',
 	'ALLOW_NO_CENSORS_EXPLAIN'	=> '用户可以选择是否禁用帖子和短信中的敏感词自动过滤.',
 	'ALLOW_PM_ATTACHMENTS'		=> '在短信中允许附件',
+	'ALLOW_PM_REPORT'			=> '允许用户举报不良站内短信',
+	'ALLOW_PM_REPORT_EXPLAIN'	=> '启用后, 用户会增加举报站内短信的选项, 随后被举报的短信会出现在版主控制面板上.',
+	'ALLOW_QUICK_REPLY'			=> '允许快速回复',
+	'ALLOW_QUICK_REPLY_EXPLAIN'	=> '启用此选项需要版面也启用快速回复.',
 	'ALLOW_SIG'					=> '允许签名档',
 	'ALLOW_SIG_BBCODE'			=> '在签名档中允许使用BBCode',
 	'ALLOW_SIG_FLASH'			=> '在用户签名档中允许使用<code>[FLASH]</code> 标签',
@@ -86,10 +90,14 @@ $lang = array_merge($lang, array(
 // Avatar Settings
 $lang = array_merge($lang, array(
 	'ACP_AVATAR_SETTINGS_EXPLAIN'	=> '头像是用户用于展示自己的一幅小图片. 根据界面有所不同, 不过它们通常显示在用户发布的帖子旁边. 这里您可以决定用户是否能和如何定义他们的头像. 请注意如果允许用户上载头像, 您必须建立下面的目录并保证这个目录对于web服务器是可写的. 同时也要注意这个文件大小只对头像上载有效, 对于链接的头像是没有限制的.',
+	'ALLOW_AVATARS'					=> '启用头像',
+	'ALLOW_AVATARS_EXPLAIN'			=> '允许使用头像;<br />如果您禁用了头像功能, 论坛将不再显示用户头像, 但是会员在会员控制面板中仍可以查看和下载自己的头像.',
 
 	'ALLOW_LOCAL'					=> '运行使用头像册',
 	'ALLOW_REMOTE'					=> '允许使用外部头像',
 	'ALLOW_REMOTE_EXPLAIN'			=> '从其他网站链接的头像',
+	'ALLOW_REMOTE_UPLOAD'			=> '允许远程上载头像',
+	'ALLOW_REMOTE_UPLOAD_EXPLAIN'	=> '允许会员上载来自另一个网站的头像.',
 	'ALLOW_UPLOAD'					=> '允许头像上载',
 	'AVATAR_GALLERY_PATH'			=> '头像册路径',
 	'AVATAR_GALLERY_PATH_EXPLAIN'	=> '在您的phpBB论坛根目录下的预先设定的头像画册, 例如 <samp>images/avatars/gallery</samp>',
@@ -139,16 +147,13 @@ $lang = array_merge($lang, array(
 	'ALLOW_POST_LINKS_EXPLAIN'			=> '如果禁用了<code>[URL]</code> 标签将停止链接解析.',
 	'ALLOW_POST_FLASH'					=> '允许在帖子中使用 <code>[FLASH]</code> BBCode 标签',
 	'ALLOW_POST_FLASH_EXPLAIN'			=> '如果禁用 <code>[FLASH]</code> BBCode 标签, 将禁止在帖子中使用flash. 否则由权限系统控制哪些用户可以使用 <code>[FLASH]</code> BBCode 标签.',
-	
-	'ENABLE_QUEUE_TRIGGER'         => '启用新用户发文待审',
-	'ENABLE_QUEUE_TRIGGER_EXPLAIN'   => '此功能启用后, 如果发帖者的文章数少于指定的值, 其发表的文章将会被置入待审文章列表, 需要审核之后才能发表. 此设置对权限设置无影响.',
-	'QUEUE_TRIGGER_POSTS'         => '评判新用户发文的最小文章数量',
-	'QUEUE_TRIGGER_POSTS_EXPLAIN'   => '如果启用新用户发文待审, 用户需要达到此文章数后才能直接发表文章而不需审核, 否则会被自动置入待审文章列表.',
 
 	'BUMP_INTERVAL'					=> '顶帖间隔',
 	'BUMP_INTERVAL_EXPLAIN'			=> '主题中最后一个帖子发表后的天数/小时数/分钟数.',
 	'CHAR_LIMIT'					=> '每个帖子的最大字数',
 	'CHAR_LIMIT_EXPLAIN'			=> '设置为0则不作限制.',
+	'DELETE_TIME'					=> '帖子删除时限',
+	'DELETE_TIME_EXPLAIN'			=> '设定新帖子的可删除时间. 设置为0则不作限制.',
 	'DISPLAY_LAST_EDITED'			=> '显示最后编辑信息',
 	'DISPLAY_LAST_EDITED_EXPLAIN'	=> '选择是否在帖子上显示最后被谁修改的信息',
 	'EDIT_TIME'						=> '编辑时限',
@@ -166,12 +171,15 @@ $lang = array_merge($lang, array(
 	'MAX_POST_IMG_WIDTH_EXPLAIN'	=> '作用于图片和flash, 设置为0则不作限制.',
 	'MAX_POST_URLS'					=> '帖子中允许的最大链接数量',
 	'MAX_POST_URLS_EXPLAIN'			=> '设置为0则不作限制.',
+	'MIN_CHAR_LIMIT'				=> '文章和私人短信的最小字符数限制',
+	'MIN_CHAR_LIMIT_EXPLAIN'		=> '用户在提交一篇文章或一封私人短信时的最小内容长度.',
 	'POSTING'						=> '发帖',
 	'POSTS_PER_PAGE'				=> '每页帖子数',
 	'QUOTE_DEPTH_LIMIT'				=> '每个帖子中的最大引用深度',
 	'QUOTE_DEPTH_LIMIT_EXPLAIN'		=> '设置为0则不作限制.',
 	'SMILIES_LIMIT'					=> '每个帖子中的最大表情数量',
 	'SMILIES_LIMIT_EXPLAIN'			=> '设置为0则不作限制.',
+	'SMILIES_PER_PAGE'				=> '每页表情数量',
 	'TOPICS_PER_PAGE'				=> '每页主题数',
 ));
 
@@ -199,6 +207,10 @@ $lang = array_merge($lang, array(
 
 	'ACC_ACTIVATION'			=> '帐号激活',
 	'ACC_ACTIVATION_EXPLAIN'	=> '这决定了用户是否可以在注册后立刻浏览论坛, 还是必须进行确认. 您也可以禁止新用户注册.',
+	'NEW_MEMBER_POST_LIMIT'			=> '新会员发文限制',
+	'NEW_MEMBER_POST_LIMIT_EXPLAIN'	=> '新会员会被归入 <em>Newly Registered Users</em> 用户组直到其发表足够多的文章. 您可以使用此用户组的组权限来限制其使用站内短信以及方便发文审核. <strong>设置为0则不启用此项功能.</strong>',
+	'NEW_MEMBER_GROUP_DEFAULT'		=> '设置Newly Registered Users用户组为默认组',
+	'NEW_MEMBER_GROUP_DEFAULT_EXPLAIN'	=> '如果设置为是, 并且设定了新会员发帖数目限制, 新会员不仅会加入到 <em>Newly Registered Users</em> 用户组, 这个用户组也会成为他的默认组. 这将方便管理员为该组指定一个默认等级和组头像.',
 	'ACC_ADMIN'					=> '由管理员',
 	'ACC_DISABLE'				=> '禁止',
 	'ACC_NONE'					=> '无',
@@ -231,11 +243,45 @@ $lang = array_merge($lang, array(
 	'USERNAME_LENGTH_EXPLAIN'	=> '用户名字符的最大和最小长度.',
 ));
 
+// Feeds
+$lang = array_merge($lang, array(
+	'ACP_FEED_MANAGEMENT'				=> 'ATOM管理',
+	'ACP_FEED_MANAGEMENT_EXPLAIN'		=> '此模块提供多种ATOM输出, 并转换BBCode为可阅读的内容.',
+
+	'ACP_FEED_ENABLE'					=> '启用ATOM',
+	'ACP_FEED_ENABLE_EXPLAIN'			=> '对整个论坛启用或停止ATOM输出.<br />关闭此选项会关闭论坛的所有ATOM输出, 以下的选项将不再起作用.',
+	'ACP_FEED_LIMIT'					=> '数量',
+	'ACP_FEED_LIMIT_EXPLAIN'			=> 'ATOM输出条目的最大数量.',
+
+	'ACP_FEED_OVERALL_FORUMS'			=> '启用版面ATOM输出',
+	'ACP_FEED_OVERALL_FORUMS_EXPLAIN'	=> '这将不区分所有版面输出最新主题.',
+	'ACP_FEED_OVERALL_FORUMS_LIMIT'		=> '版面ATOM输出每页显示的条数',
+
+	'ACP_FEED_OVERALL_TOPIC'			=> '启用主题ATOM输出',
+	'ACP_FEED_OVERALL_TOPIC_EXPLAIN'	=> '启用 “所有主题” ATOM',
+	'ACP_FEED_OVERALL_TOPIC_LIMIT'		=> '主题ATOM输出每页显示的条数',
+	'ACP_FEED_FORUM'					=> '启用单个版面ATOM输出',
+	'ACP_FEED_FORUM_EXPLAIN'			=> '单个版面的最新文章.',
+	'ACP_FEED_TOPIC'					=> '启用单个话题ATOM输出',
+	'ACP_FEED_TOPIC_EXPLAIN'			=> '单个话题的最新文章.',
+	'ACP_FEED_NEWS'						=> '各版面最新文章ATOM输出',
+	'ACP_FEED_NEWS_EXPLAIN'				=> '从以下版面中各摘取最新的一篇文章. 如果无指定版面则关闭此项输出.<br />要选定或反选多个版面, 请按住<samp>CTRL</samp>键用鼠标左键点选.',
+
+	'ACP_FEED_GENERAL'					=> '综合设定',
+
+	'ACP_FEED_ITEM_STATISTICS'			=> '条目统计',
+	'ACP_FEED_ITEM_STATISTICS_EXPLAIN'	=> '显示各<br />(作者, 日期和时间, 回复数, 查看数)',
+	'ACP_FEED_EXCLUDE_ID'				=> '排除下列版面',
+	'ACP_FEED_EXCLUDE_ID_EXPLAIN'		=> '来自这些版面的内容将<strong>不会被输出</strong>. 无指定版面则输出所有版面内容.<br />要选定或反选多个版面, 请按住<samp>CTRL</samp>键用鼠标左键点选.',
+));
+
 // Visual Confirmation Settings
 $lang = array_merge($lang, array(
-	'ACP_VC_SETTINGS_EXPLAIN'		=> '这里您可以对论坛的验证机制进行设置.',
-
-	'CAPTCHA_GD'					=> 'GD验证图片',
+	'ACP_VC_SETTINGS_EXPLAIN'				=> '这里您可以对论坛的验证机制进行设置, 有多种方式应对Spam机器人的注册尝试.',
+	'AVAILABLE_CAPTCHAS'					=> '可用插件',
+	'CAPTCHA_UNAVAILABLE'					=> '无法使用验证图片因为服务器环境不支持.',
+	'CAPTCHA_GD'							=> 'GD 验证图片',
+	'CAPTCHA_GD_3D'							=> 'GD 3D 验证图片',
 	'CAPTCHA_GD_FOREGROUND_NOISE'			=> 'GD 验证图片背景噪点',
 	'CAPTCHA_GD_EXPLAIN'					=> '使用 GD 生成更高级的验证图片.',
 	'CAPTCHA_GD_FOREGROUND_NOISE_EXPLAIN'	=> '使用基于GD的前景噪点.',
@@ -253,14 +299,23 @@ $lang = array_merge($lang, array(
 	'CAPTCHA_FONT_NEW'                  => '新字体',
 	'CAPTCHA_FONT_LOWER'               => '同时使用小写',
 
-	'CAPTCHA_PREVIEW_MSG'					=> '您更改的可视化验证设定还未保存, 这只是一个预览.',
-	'CAPTCHA_PREVIEW_EXPLAIN'				=> '使用当前设定的验证图片将如现在所示. 使用预览按钮刷新. 注意验证图片是随机生成的, 每次出现都可能不一样.',
-	'VISUAL_CONFIRM_POST'					=> '启用游客发帖验证',
-	'VISUAL_CONFIRM_POST_EXPLAIN'			=> '当匿名用户发帖时需要输入一个随机生成的验证码.',
-	'VISUAL_CONFIRM_REG'					=> '启用注册图片验证',
-	'VISUAL_CONFIRM_REG_EXPLAIN'			=> '当用户注册时需要输入一个随机生成的验证码.',
-	'VISUAL_CONFIRM_REFRESH'            => '允许用户刷新验证码',
-	'VISUAL_CONFIRM_REFRESH_EXPLAIN'      => '允许用户在注册的过程中更换新的验证码, 如果他们无法辨认当前显示的验证码.',
+	'CAPTCHA_NO_GD'							=> '验证图片(无GD)',
+	'CAPTCHA_PREVIEW_MSG'					=> '您的可视化验证设定尚未保存, 这只是预览.',
+	'CAPTCHA_PREVIEW_EXPLAIN'				=> '您当前设定下的验证图片预览.',
+
+	'CAPTCHA_SELECT'						=> '安装验证图片插件',
+	'CAPTCHA_SELECT_EXPLAIN'				=> '下拉框显示被识别的可用验证图片插件. 灰色项为需要预先设定方可使用的插件.',
+	'CAPTCHA_CONFIGURE'						=> '验证图片设定',
+	'CAPTCHA_CONFIGURE_EXPLAIN'				=> '设定选中的验证图片.',
+	'CONFIGURE'								=> '设定',
+	'CAPTCHA_NO_OPTIONS'					=> '此验证图片没有可设置的选项.',
+
+	'VISUAL_CONFIRM_POST'					=> '启用游客发文可视化验证',
+	'VISUAL_CONFIRM_POST_EXPLAIN'			=> '当匿名用户发表文章时会被要求输入一组随机字符以防止机器人发布垃圾信息.',
+	'VISUAL_CONFIRM_REG'					=> '在会员注册时启用可视化验证',
+	'VISUAL_CONFIRM_REG_EXPLAIN'			=> '在新会员注册时会被要求输入一组随机字符以防止机器人注册.',
+	'VISUAL_CONFIRM_REFRESH'				=> '允许用户刷新验证图片',
+	'VISUAL_CONFIRM_REFRESH_EXPLAIN'		=> '允许用户获取新的验证码. 当用户无法有效辨认当前验证图片时会有帮助. 注意有些验证图片不支持这项功能.',
 ));
 
 // Cookie Settings
@@ -346,7 +401,7 @@ $lang = array_merge($lang, array(
 	'ACP_SERVER_SETTINGS_EXPLAIN'	=> '这里配置服务器和域名相关的设定. 请确保输入的数据是正确可靠的, 错误将导致email包含错误信息. 档输入域名时记住不包含http:// 和其他协议头. 只有当您的服务器使用一个特别的端口时才需要更改端口号, 一般使用的都是80.',
 
 	'ENABLE_GZIP'				=> '启用GZip压缩', 
-	'ENABLE_GZIP_EXPLAIN'		=> '生成的页面将在发送到浏览器前被压缩. 这将减少网络流量但是会增加服务器和客户端的CPU负载.',
+	'ENABLE_GZIP_EXPLAIN'		=> '生成的页面将在发送到浏览器前被压缩. 这将减少网络流量但是会增加服务器和客户端的CPU负载. 需要zlib支持',
 	'FORCE_SERVER_VARS'			=> '强制设定服务器URL',
 	'FORCE_SERVER_VARS_EXPLAIN'	=> '如果设置为是, 以下的设定将启用',
 	'ICONS_PATH'				=> '主题图标存储路径',
@@ -433,7 +488,7 @@ $lang = array_merge($lang, array(
 	'EMAIL_SIG'						=> 'Email签名',
 	'EMAIL_SIG_EXPLAIN'				=> '将在论坛发送的email后附加这段文字.',
 	'ENABLE_EMAIL'					=> '允许论坛发送email',
-	'ENABLE_EMAIL_EXPLAIN'			=> '如果禁用, 论坛将不会发送任何email.',
+	'ENABLE_EMAIL_EXPLAIN'			=> '如果禁用, 论坛将不会发送任何email. <em>注意会员激活需要启用此项功能. 如果当前设定为会员自行激活和管理员激活, 则停用此项功能将使会员无需激活.</em>',
 	'SMTP_AUTH_METHOD'				=> 'SMTP验证方式',
 	'SMTP_AUTH_METHOD_EXPLAIN'		=> '只有在设置过用户名/密码的场合, 询问提供者如果您不能确定使用何种方式.',
 	'SMTP_CRAM_MD5'					=> 'CRAM-MD5',

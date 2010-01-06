@@ -71,12 +71,17 @@ $help = array(
 		1 => '创建列表'
 	),
 	array(
-		0 => '创建一个无序列表',
+		0 => '创建无序列表',
 		1 => 'BBCode支持两种列表, 有序的和无序的. 他们本质上在HTML中是一样的. 一个无序的列表依次输出每个元素. 创建一个无序的列表您可以使用 <strong>[list][/list]</strong> 并在列表中使用 <strong>[*]</strong> 定义每个元素. 例如列出您最喜爱的颜色:<br /><br /><strong>[list]</strong><br /><strong>[*]</strong>Red<br /><strong>[*]</strong>Blue<br /><strong>[*]</strong>Yellow<br /><strong>[/list]</strong><br /><br />这将生成如下的列表:<ul><li>Red</li><li>Blue</li><li>Yellow</li></ul>'
 	),
 	array(
-		0 => '创建一个有序列表',
+		0 => '创建有序列表',
 		1 => '第二种列表, 有序的列表让您可以控制每个元素前显示的符号. 创建一个有序列表可以使用 <strong>[list=1][/list]</strong> 创建一个数字化的列表, 或者使用 <strong>[list=a][/list]</strong> 可以创建一个字母化的列表. 就像无序的列表使用 <strong>[*]</strong>. 例如:<br /><br /><strong>[list=1]</strong><br /><strong>[*]</strong>Go to the shops<br /><strong>[*]</strong>Buy a new computer<br /><strong>[*]</strong>Swear at computer when it crashes<br /><strong>[/list]</strong><br /><br /> 将生成如下的:<ol type="1"><li>Go to the shops</li><li>Buy a new computer</li><li>Swear at computer when it crashes</li></ol>但是字母化的列表您得使用:<br /><br /><strong>[list=a]</strong><br /><strong>[*]</strong>The first possible answer<br /><strong>[*]</strong>The second possible answer<br /><strong>[*]</strong>The third possible answer<br /><strong>[/list]</strong><br /><br />得到<ol type="a"><li>The first possible answer</li><li>The second possible answer</li><li>The third possible answer</li></ol>'
+	),
+	// This block will switch the FAQ-Questions to the second template column
+	array(
+		0 => '--',
+		1 => '--'
 	),
 	array(
 		0 => '--',

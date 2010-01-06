@@ -43,10 +43,13 @@ $lang = array_merge($lang, array(
 	'AUTO_PRUNE_FREQ_EXPLAIN'	=> '裁减操作之间的天数间隔.',
 	'AUTO_PRUNE_VIEWED'			=> '帖子自动裁减点击时间',
 	'AUTO_PRUNE_VIEWED_EXPLAIN'	=> '在帖子最后被查看后多少天这个主题会被删除.',
+	'CONTINUE'						=> '继续',
 
 	'COPY_PERMISSIONS'				=> '复制权限自',
+	'COPY_PERMISSIONS_EXPLAIN'		=> '为了方便新版面的权限设置, 您可以复制一个现有的版面权限至新版面.',
 	'COPY_PERMISSIONS_ADD_EXPLAIN'	=> '一旦创建, 这个版面将行使您选择的版面同样的权限. 如果没有选中, 新的版面在权限设置前将是不可见的.',
 	'COPY_PERMISSIONS_EDIT_EXPLAIN'	=> '如果您选择了复制权限, 版面将行使您选择的版面同样的权限. 这将覆盖您原先设置的权限. 如果没有选中, 将保留原有权限.',
+	'COPY_TO_ACL'					=> '另外, 您也可以为这个版面 %s 设定新权限 %s .',
 	'CREATE_FORUM'					=> '创建新版面',
 
 	'DECIDE_MOVE_DELETE_CONTENT'		=> '删除或移动到版面',
@@ -62,6 +65,8 @@ $lang = array_merge($lang, array(
 	'ENABLE_INDEXING_EXPLAIN'		=> '如果设置为是, 这个版面的帖子将被记入搜索索引.',
 	'ENABLE_POST_REVIEW'			=> '允许预览帖子',
 	'ENABLE_POST_REVIEW_EXPLAIN'	=> '如果设置为是, 当用户在编写帖子时有新的帖子发布, 用户可以预览他们的帖子. 这在交谈版面中应该禁用.',
+	'ENABLE_QUICK_REPLY'			=> '启用快速回复',
+	'ENABLE_QUICK_REPLY_EXPLAIN'	=> '启用后用户在这个版面可以通过快速回复来回复文章. 如果全局设定中停用了快速回复, 这里的选项将不起作用.',
 	'ENABLE_RECENT'					=> '显示活跃帖子',
 	'ENABLE_RECENT_EXPLAIN'			=> '如果设置为是, 这个版面的话题将显示在活跃帖子列表中.',
 	'ENABLE_TOPIC_ICONS'			=> '允许主题图标',

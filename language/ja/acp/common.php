@@ -4,7 +4,7 @@
 * acp_common [Japanese]
 *
 * @package language
-* @version $Id: common.php 9382 2009-03-17 11:54:26Z acydburn $
+* @version $Id: common.php 10134 2009-09-10 15:32:16Z marshalrusty $
 * @copyright (c) 2005 phpBB Group
 * @license http://opensource.org/licenses/gpl-license.php GNU Public License
 *
@@ -80,7 +80,7 @@ $lang = array_merge($lang, array(
 
 	'ACP_DATABASE'				=> 'データベースの管理',
 	'ACP_DISALLOW'				=> '拒否',
-	'ACP_DISALLOW_USERNAMES'	=> 'ユーザー名の否認',
+	'ACP_DISALLOW_USERNAMES'	=> 'ユーザー名の拒否',
 	
 	'ACP_EMAIL_SETTINGS'		=> 'メール設定',
 	'ACP_EXTENSION_GROUPS'		=> '拡張子グループの管理',
@@ -90,6 +90,7 @@ $lang = array_merge($lang, array(
 	'ACP_FORUM_MANAGEMENT'			=> 'フォーラム管理',
 	'ACP_FORUM_MODERATORS'			=> 'モデレータパーミッション',
 	'ACP_FORUM_PERMISSIONS'			=> 'フォーラムパーミッション',
+	'ACP_FORUM_PERMISSIONS_COPY'	=> 'フォーラムパーミッションのコピー',
 	'ACP_FORUM_ROLES'				=> 'フォーラムパーミッションセット',
 
 	'ACP_GENERAL_CONFIGURATION'		=> '一般設定',
@@ -119,7 +120,7 @@ $lang = array_merge($lang, array(
 	'ACP_MANAGE_EXTENSIONS'		=> 'ファイル拡張子の管理',
 	'ACP_MANAGE_FORUMS'			=> 'フォーラム管理',
 	'ACP_MANAGE_RANKS'			=> 'ランク管理',
-	'ACP_MANAGE_REASONS'		=> 'リポート/却下 の理由',
+	'ACP_MANAGE_REASONS'		=> '通報/却下 の理由',
 	'ACP_MANAGE_USERS'			=> 'ユーザー管理',
 	'ACP_MASS_EMAIL'			=> '大量メール',
 	'ACP_MESSAGES'				=> 'メッセージ',
@@ -145,16 +146,20 @@ $lang = array_merge($lang, array(
 	'ACP_QUICK_ACCESS'			=> 'クイックアクセス',
 	
 	'ACP_RANKS'					=> 'ランク',
-	'ACP_REASONS'				=> 'リポート/却下 の理由',
+	'ACP_REASONS'				=> '通報/却下 の理由',
 	'ACP_REGISTER_SETTINGS'		=> 'ユーザー登録設定',
 
 	'ACP_RESTORE'				=> '復元',
 
+	'ACP_FEED'					=> 'フィード管理',
+	'ACP_FEED_SETTINGS'			=> 'フィード設定',
+
 	'ACP_SEARCH'				=> '検索',
-	'ACP_SEARCH_INDEX'			=> '検索インデックス',
+	'ACP_SEARCH_INDEX'			=> '検索インデクス',
 	'ACP_SEARCH_SETTINGS'		=> '検索設定',
 
 	'ACP_SECURITY_SETTINGS'		=> 'セキュリティ設定',
+	'ACP_SEND_STATISTICS'		=> '設定情報の提供',
 	'ACP_SERVER_CONFIGURATION'	=> 'サーバ設定',
 	'ACP_SERVER_SETTINGS'		=> 'サーバ環境',
 	'ACP_SIGNATURE_SETTINGS'	=> 'サイン設定',
@@ -162,6 +167,8 @@ $lang = array_merge($lang, array(
 	'ACP_STYLE_COMPONENTS'		=> 'スタイル構成',
 	'ACP_STYLE_MANAGEMENT'		=> 'スタイル管理',
 	'ACP_STYLES'				=> 'スタイル',
+
+	'ACP_SUBMIT_CHANGES'		=> 'Submit changes',
 	
 	'ACP_TEMPLATES'				=> 'テンプレートセット',
 	'ACP_THEMES'				=> 'テーマ',
@@ -183,9 +190,10 @@ $lang = array_merge($lang, array(
 	'ACP_USER_ROLES'				=> 'ユーザーパーミッションセット',
 	'ACP_USER_SECURITY'				=> 'ユーザーセキュリティ',
 	'ACP_USER_SIG'					=> 'サイン',
+	'ACP_USER_WARNINGS'				=> '警告',
 
-	'ACP_VC_SETTINGS'					=> '画像認証設定',
-	'ACP_VC_CAPTCHA_DISPLAY'			=> 'CAPTCHA 画像プレビュー',
+	'ACP_VC_SETTINGS'					=> 'CAPTCHA 設定',
+	'ACP_VC_CAPTCHA_DISPLAY'			=> 'CAPTCHA プレビュー',
 	'ACP_VERSION_CHECK'					=> '更新チェック',
 	'ACP_VIEW_ADMIN_PERMISSIONS'		=> 'Adminパーミッションマスク',
 	'ACP_VIEW_FORUM_MOD_PERMISSIONS'	=> 'モデレータパーミッションマスク',
@@ -204,7 +212,7 @@ $lang = array_merge($lang, array(
 	'ADMIN_PANEL'			=> 'AdminCP',
 
 	'ADM_LOGOUT'			=> 'ACP&nbsp;ログアウト',
-	'ADM_LOGGED_OUT'		=> 'Administration Control Panel からログアウトすることに成功しました',
+	'ADM_LOGGED_OUT'		=> 'Administration Control Panel からログアウトしました',
 
 	'BACK'					=> '戻る',
 
@@ -243,6 +251,8 @@ $lang = array_merge($lang, array(
 
 	'MANAGE'				=> '管理',
 	'MENU_TOGGLE'			=> 'サイドメニューの表示/非表示',
+	'MORE'					=> 'More',			// Not used at the moment
+	'MORE_INFORMATION'		=> '詳しくはこちら ≫',
 	'MOVE_DOWN'				=> '下に移動',
 	'MOVE_UP'				=> '上に移動',
 
@@ -256,7 +266,7 @@ $lang = array_merge($lang, array(
 
 	'PARSE_BBCODE'						=> 'BBCode をパースする',
 	'PARSE_SMILIES'						=> 'スマイリーをパースする',
-	'PARSE_URLS'						=> 'URLリンク をパースする',
+	'PARSE_URLS'						=> 'URL をパースする',
 	'PERMISSIONS_TRANSFERRED'			=> 'パーミッションテスト中',
 	'PERMISSIONS_TRANSFERRED_EXPLAIN'	=> 'ユーザー %1$s のパーミッションテストを実行中です。Adminパーミッションをテストすることはできないため、パーミッションテスト中は AdminCP へ入室することはできません。あなたはいつでも<a href="%2$s"><strong>パーミッションテストを終了する</strong></a>事ができます。',
 	'PIXEL'								=> 'px',	
@@ -264,7 +274,7 @@ $lang = array_merge($lang, array(
 
 	'REMIND'							=> 'アカウント有効化メールの送信',
 	'RESYNC'							=> '同期',
-	'RETURN_TO'							=> '…へ戻る',
+	'RETURN_TO'							=> '…に戻る',
 
 	'SELECT_ANONYMOUS'		=> '匿名ユーザーの選択',
 	'SELECT_OPTION'			=> 'オプションを選択してください',
@@ -273,6 +283,7 @@ $lang = array_merge($lang, array(
 	'SETTING_TOO_BIG'			=> '“%1$s” の値が大きすぎます。%2$d 以下にしてください。',
 	'SETTING_TOO_LONG'		=> '“%1$s” が長すぎます。%2$d 字以下にしてください。',
 	'SETTING_TOO_SHORT'		=> '“%1$s” が短すぎます。%2$d 字以上にしてください。',
+	'SHOW_ALL_OPERATIONS'	=> 'Show all operations',
 
 	'UCP'					=> 'ユーザーCP',
 	'USERNAMES_EXPLAIN'		=> '１行につき１つのユーザー名を入力してください',
@@ -336,6 +347,10 @@ $lang = array_merge($lang, array(
 	'PURGE_CACHE_CONFIRM'	=> 'キャッシュを本当に消去してもよろしいですか?',
 	'PURGE_CACHE_EXPLAIN'	=> '掲示板のキャッシュデータを全て消去します。テンプレートファイルと SQLファイル の消去を含みます。',
 
+	'PURGE_SESSIONS'			=> 'セッションの消去',
+	'PURGE_SESSIONS_CONFIRM'	=> 'セッションを本当に消去してもよろしいですか? ユーザーは全て強制的にログアウトされます。',
+	'PURGE_SESSIONS_EXPLAIN'	=> 'セッションを全て消去します。ユーザーは全て強制的にログアウトされます。',
+
 	'RESET_DATE'					=> '掲示板開始日時をリセットする',
 	'RESET_DATE_CONFIRM'			=> '掲示板開始日時を本当にリセットしてもよろしいですか？',
 	'RESET_ONLINE'					=> '最大同時ユーザーオンライン数をリセットする',
@@ -352,7 +367,7 @@ $lang = array_merge($lang, array(
 	'RUN'							=> '実行',
 
 	'STATISTIC'					=> '統計',
-	'STATISTIC_RESYNC_OPTIONS'	=> '統計データの同期/リセット',
+	'STATISTIC_RESYNC_OPTIONS'	=> '統計データの 同期/リセット',
 
 	'TOPICS_PER_DAY'	=> '１日あたりのトピック数',
 
@@ -360,11 +375,13 @@ $lang = array_merge($lang, array(
 	'USERS_PER_DAY'		=> '１日あたりの登録ユーザー数',
 
 	'VALUE'					=> '値',
+	'VERSIONCHECK_FAIL'			=> '最新バージョン情報の取得に失敗しましたFailed to obtain latest version information.',
+	'VERSIONCHECK_FORCE_UPDATE'	=> 'バージョン再チェック',
 	'VIEW_ADMIN_LOG'		=> '全ての Adminログ を表示',
 	'VIEW_INACTIVE_USERS'	=> '全ての無効アカウントを表示',
 
 	'WELCOME_PHPBB'			=> 'phpBB へようこそ',
-	'WRITABLE_CONFIG'		=> 'コンフィグファイル（config.php）のアクセス権の設定が非常に危険です。サーバの全ユーザーに対して書き込みが許可されており、誰でも修正できる状態にあります。今すぐにファイルアクセス権を 604 または少なくとも 644 に設定（<a href="http://en.wikipedia.org/wiki/Chmod" rel="external">chmod</a> 640 config.php）してください。',
+	'WRITABLE_CONFIG'		=> 'コンフィグファイル（config.php）のアクセス権の設定が非常に危険です。サーバの全ユーザーに対して書き込みが許可されており、誰でも修正できる状態にあります。今すぐにファイルアクセス権を 604 または少なくとも 644 に設定（<a href="http://en.wikipedia.org/wiki/Chmod" rel="external">chmod</a> 604 config.php）してください。',
 ));
 
 // Inactive Users
@@ -386,8 +403,22 @@ $lang = array_merge($lang, array(
 	'SORT_LAST_VISIT'	=> '最近の訪問日時',
 	'SORT_REASON'		=> '理由',
 	'SORT_REG_DATE'		=> '登録日時',
+	'SORT_LAST_REMINDER'=> '最近のアカウント有効化メール送信日時',
+	'SORT_REMINDER'		=> 'アカウント有効化メール送信数',
 
-	'USER_IS_INACTIVE'		=> 'ユーザーのアカウントは有効化されていません',
+	'USER_IS_INACTIVE'		=> '無効アカウント',
+));
+
+// Send statistics page
+$lang = array_merge($lang, array(
+	'EXPLAIN_SEND_STATISTICS'	=> 'サーバと掲示板の設定情報を phpBB Group に提供します。この情報は主に phpBB の今後の開発方針を決定する際に参考として利用されます。ユーザーの皆様のご協力をお願い致します。またこの情報は一般公開され、プログラミング言語 PHP の開発にも利用されます。提供情報には、ユーザーまたはサイトを特定するような情報は一切含まれませんのでご安心ください - それら個人情報は全て <strong>匿名</strong> として扱われます。',
+	'EXPLAIN_SHOW_STATISTICS'	=> '下のボタンをクリックすれば提供情報の全データが表示されます',
+	'DONT_SEND_STATISTICS'		=> 'AdminCP トップに戻る',
+	'GO_ACP_MAIN'				=> 'AdminCP トップへ',
+	'HIDE_STATISTICS'			=> '提供情報を隠す',
+	'SEND_STATISTICS'			=> 'サーバと掲示板の設定情報を phpBB Group に提供する',
+	'SHOW_STATISTICS'			=> '提供情報を表示する',
+	'THANKS_SEND_STATISTICS'	=> 'ご協力して頂きありがとうございました',
 ));
 
 // Log Entries
@@ -450,7 +481,7 @@ $lang = array_merge($lang, array(
 	'LOG_BOT_DELETE'	=> '<strong>ボットを削除しました</strong><br />≫ %s',
 	'LOG_BOT_UPDATED'	=> '<strong>ボットを更新しました</strong><br />≫ %s',
 
-	'LOG_CLEAR_ADMIN'		=> '<strong>Adminログを消去しました</strong>',
+	'LOG_CLEAR_ADMIN'		=> '<strong>Adminログ を消去しました</strong>',
 	'LOG_CLEAR_CRITICAL'	=> '<strong>エラーログを消去しました</strong>',
 	'LOG_CLEAR_MOD'			=> '<strong>モデレータログを消去しました</strong>',
 	'LOG_CLEAR_USER'		=> '<strong>ユーザーログを消去しました</strong><br />≫ %s',
@@ -466,12 +497,13 @@ $lang = array_merge($lang, array(
 	'LOG_CONFIG_MESSAGE'		=> '<strong>プライベートメッセージ設定 を変更しました</strong>',
 	'LOG_CONFIG_POST'			=> '<strong>投稿設定 を変更しました</strong>',
 	'LOG_CONFIG_REGISTRATION'	=> '<strong>ユーザー登録設定 を変更しました</strong>',
+	'LOG_CONFIG_FEED'			=> '<strong>フィード設定 を変更しました</strong>',
 	'LOG_CONFIG_SEARCH'			=> '<strong>検索設定 を変更しました</strong>',
 	'LOG_CONFIG_SECURITY'		=> '<strong>セキュリティ設定 を変更しました</strong>',
 	'LOG_CONFIG_SERVER'			=> '<strong>サーバ設定 を変更しました</strong>',
 	'LOG_CONFIG_SETTINGS'		=> '<strong>掲示板の環境 を変更しました</strong>',
 	'LOG_CONFIG_SIGNATURE'		=> '<strong>サイン設定 を変更しました</strong>',
-	'LOG_CONFIG_VISUAL'			=> '<strong>画像認証設定 を変更しました</strong>',
+	'LOG_CONFIG_VISUAL'			=> '<strong>CAPTCHA 設定 を変更しました</strong>',
 
 	'LOG_APPROVE_TOPIC'			=> '<strong>トピックを承認しました</strong><br />≫ %s',
 	'LOG_BUMP_TOPIC'			=> '<strong>トピックを上げました</strong><br />≫ %s',
@@ -483,11 +515,13 @@ $lang = array_merge($lang, array(
 	'LOG_LOCK_POST'				=> '<strong>記事を凍結しました</strong><br />≫ %s',
 	'LOG_MERGE'					=> '<strong>記事をトピックに統合しました</strong><br />≫ %s',
 	'LOG_MOVE'					=> '<strong>トピックを移動しました</strong><br />≫ from %1$s to %2$s',
+	'LOG_PM_REPORT_CLOSED'		=> '<strong>通報 [ PM ] の審査を完了しました</strong><br />≫ %s',
+	'LOG_PM_REPORT_DELETED'		=> '<strong>通報 [ PM ] を削除しました</strong><br />≫ %s',
 	'LOG_POST_APPROVED'			=> '<strong>記事を承認しました</strong><br />≫ %s',
 	'LOG_POST_DISAPPROVED'		=> '<strong>次の理由で記事 “%1$s” を承認しませんでした</strong><br />≫ %2$s',
 	'LOG_POST_EDITED'			=> '<strong>記事 “%1$s” を編集しました</strong><br />≫ %2$s',
-	'LOG_REPORT_CLOSED'			=> '<strong>リポートの審査を完了しました</strong><br />≫ %s',
-	'LOG_REPORT_DELETED'		=> '<strong>リポートを削除しました</strong><br />≫ %s',
+	'LOG_REPORT_CLOSED'			=> '<strong>通報の審査を完了しました</strong><br />≫ %s',
+	'LOG_REPORT_DELETED'		=> '<strong>通報を削除しました</strong><br />≫ %s',
 	'LOG_SPLIT_DESTINATION'		=> '<strong>分割した記事を移動しました</strong><br />≫ to %s',
 	'LOG_SPLIT_SOURCE'			=> '<strong>記事を分割しました</strong><br />≫ from %s',
 
@@ -498,8 +532,8 @@ $lang = array_merge($lang, array(
 	'LOG_UNLOCK'				=> '<strong>トピックを閉鎖しました</strong><br />≫ %s',
 	'LOG_UNLOCK_POST'			=> '<strong>記事の凍結を解除しました</strong><br />≫ %s',
 
-	'LOG_DISALLOW_ADD'		=> '<strong>否認リストにユーザー名を追加しました</strong><br />≫ %s',
-	'LOG_DISALLOW_DELETE'	=> '<strong>否認リストからユーザー名を削除しました</strong>',
+	'LOG_DISALLOW_ADD'		=> '<strong>拒否リストにユーザー名を追加しました</strong><br />≫ %s',
+	'LOG_DISALLOW_DELETE'	=> '<strong>拒否リストからユーザー名を削除しました</strong>',
 
 	'LOG_DB_BACKUP'			=> '<strong>データベースをバックアップしました</strong>',
 	'LOG_DB_DELETE'			=> '<strong>データベースのバックアップを削除しました</strong>',
@@ -513,6 +547,7 @@ $lang = array_merge($lang, array(
 	'LOG_ERROR_EMAIL'		=> '<strong>メールエラー</strong><br />≫ %s',
 	
 	'LOG_FORUM_ADD'							=> '<strong>フォーラムを作成しました</strong><br />≫ %s',
+	'LOG_FORUM_COPIED_PERMISSIONS'			=> '<strong>フォーラムパーミッションをコピーしました</strong> from %1$s<br />≫ %2$s',
 	'LOG_FORUM_DEL_FORUM'					=> '<strong>フォーラムを削除しました</strong><br />≫ %s',
 	'LOG_FORUM_DEL_FORUMS'					=> '<strong>フォーラムとそのサブフォーラムを削除しました</strong><br />≫ %s',
 	'LOG_FORUM_DEL_MOVE_FORUMS'				=> '<strong>フォーラムを削除しサブフォーラムを移動しました</strong><br />≫ %2$s',
@@ -528,16 +563,21 @@ $lang = array_merge($lang, array(
 	'LOG_FORUM_MOVE_UP'						=> '<strong>フォーラム</strong> %1$s <strong>を</strong> %2$s <strong>の上に移動しました</strong>',
 	'LOG_FORUM_SYNC'						=> '<strong>フォーラムを同期しました</strong><br />≫ %s',
 
+	'LOG_GENERAL_ERROR'	=> '<strong>一般エラーが発生しました</strong>: %1$s <br />≫ %2$s',
+
 	'LOG_GROUP_CREATED'		=> '<strong>グループを作成しました</strong><br />≫ %s',
-	'LOG_GROUP_DEFAULTS'	=> '<strong>グループ “%1$s” がデフォルトグループに設定されました</strong><br />≫ %2$s',
+	'LOG_GROUP_DEFAULTS'	=> '<strong>グループ “%1$s” をデフォルトグループにしました</strong><br />≫ %2$s',
 	'LOG_GROUP_DELETE'		=> '<strong>グループを削除しました</strong><br />≫ %s',
 	'LOG_GROUP_DEMOTED'		=> '<strong>グループ</strong> %1$s <strong>のリーダーが解任されました</strong><br />≫ %2$s',
 	'LOG_GROUP_PROMOTED'	=> '<strong>グループ</strong> %1$s <strong>でリーダーが任命されました</strong><br />≫ %2$s',
 	'LOG_GROUP_REMOVE'		=> '<strong>グループ</strong> %1$s <strong>からメンバーが除名されました<br />≫ %2$s',
 	'LOG_GROUP_UPDATED'		=> '<strong>グループ設定を更新しました</strong><br />≫ %s',
 	'LOG_MODS_ADDED'		=> '<strong>グループ</strong> %1$s <strong>で新しいリーダーを任命しました</strong><br />≫ %2$s',
-	'LOG_USERS_APPROVED'	=> '<strong>グループ</strong> %1$s <strong>でユーザーが承認されました</strong><br />≫ %2$s',
 	'LOG_USERS_ADDED'		=> '<strong>グループ</strong> %1$s <strong>にメンバーを追加しました<br />≫ %2$s',
+	'LOG_USERS_APPROVED'	=> '<strong>ユーザーがグループへの参加を承認されました</strong> %1$s<br />≫ %2$s',
+	'LOG_USERS_PENDING'		=> '<strong>ユーザーがグループ “%1$s” へ参加を申請しました</strong><br />≫ %2$s',
+
+	'LOG_IMAGE_GENERATION_ERROR'	=> '<strong>画像作成中にエラーが発生しました</strong><br />≫ Error in %1$s on line %2$s: %3$s',
 
 	'LOG_IMAGESET_ADD_DB'			=> '<strong>データベースに新しいイメージセットを追加しました</strong><br />≫ %s',
 	'LOG_IMAGESET_ADD_FS'			=> '<strong>該当のディレクトリに新しいイメージセットをアップロードしてください</strong><br />≫ %s',
@@ -545,7 +585,7 @@ $lang = array_merge($lang, array(
 	'LOG_IMAGESET_EDIT_DETAILS'		=> '<strong>イメージセット設定を編集しました</strong><br />≫ %s',
 	'LOG_IMAGESET_EDIT'				=> '<strong>イメージセットを編集しました</strong><br />≫ %s',
 	'LOG_IMAGESET_EXPORT'			=> '<strong>イメージセットをエクスポートしました</strong><br />≫ %s',
- 	'LOG_IMAGESET_LANG_MISSING'		=> '<strong>イメージセット “%2$s” が見つかりません</strong><br />≫ %1$s',
+ 	'LOG_IMAGESET_LANG_MISSING'		=> '<strong>イメージセット “%2$s” が見つかりませんでした</strong><br />≫ %1$s',
 	'LOG_IMAGESET_LANG_REFRESHED'	=> '<strong>イメージセット “%2$s” をリフレッシュしました</strong><br />≫ %1$s',
 	'LOG_IMAGESET_REFRESHED'		=> '<strong>イメージセットをリフレッシュしました</strong><br />≫ %s',
 
@@ -606,14 +646,16 @@ $lang = array_merge($lang, array(
 	'LOG_PRUNE_USER_DEL_ANON'	=> '<strong>アカウントをプルーニングし、投稿記事をそのまま残しました</strong><br />≫ %s',
 
 	'LOG_PURGE_CACHE'			=> '<strong>キャッシュを消去しました</strong>',
+	'LOG_PURGE_SESSIONS'		=> '<strong>セッションを消去しました</strong>',
+
 
 	'LOG_RANK_ADDED'		=> '<strong>ランクを追加しました</strong><br />≫ %s',
 	'LOG_RANK_REMOVED'		=> '<strong>ランクを削除しました</strong><br />≫ %s',
 	'LOG_RANK_UPDATED'		=> '<strong>ランクを更新しました</strong><br />≫ %s',
 
-	'LOG_REASON_ADDED'		=> '<strong>リポート/却下 の理由を追加しました</strong><br />≫ %s',
-	'LOG_REASON_REMOVED'	=> '<strong>リポート/却下 の理由を削除しました</strong><br />≫ %s',
-	'LOG_REASON_UPDATED'	=> '<strong>リポート/却下 の理由を更新しました</strong><br />≫ %s',
+	'LOG_REASON_ADDED'		=> '<strong>通報/却下 の理由を追加しました</strong><br />≫ %s',
+	'LOG_REASON_REMOVED'	=> '<strong>通報/却下 の理由を削除しました</strong><br />≫ %s',
+	'LOG_REASON_UPDATED'	=> '<strong>通報/却下 の理由を更新しました</strong><br />≫ %s',
 
 	'LOG_REFERER_INVALID'		=> '<strong>不正なリファラを検出しました</strong><br />≫検出されたリファラは “<em>%1$s</em>” です。リファラが一致しなかったため、受信リクエストを破棄し、セッションを削除しました。',
 	'LOG_RESET_DATE'			=> '<strong>掲示板開始日時をリセットしました</strong>',
@@ -622,8 +664,8 @@ $lang = array_merge($lang, array(
 	'LOG_RESYNC_POST_MARKING'	=> '<strong>トピックの投稿マークを同期しました</strong>',
 	'LOG_RESYNC_STATS'			=> '<strong>統計データ（記事数、トピック数、ユーザー数）を同期しました</strong>',
 
-	'LOG_SEARCH_INDEX_CREATED'	=> '<strong>検索インデックスを作成しました</strong><br />≫for %s',
-	'LOG_SEARCH_INDEX_REMOVED'	=> '<strong>検索インデックスを削除しました</strong><br />≫for %s',
+	'LOG_SEARCH_INDEX_CREATED'	=> '<strong>検索インデクスを作成しました</strong><br />≫for %s',
+	'LOG_SEARCH_INDEX_REMOVED'	=> '<strong>検索インデクスを削除しました</strong><br />≫for %s',
 	'LOG_STYLE_ADD'				=> '<strong>スタイルを追加しました</strong><br />≫ %s',
 	'LOG_STYLE_DELETE'			=> '<strong>スタイルを削除しました</strong><br />≫ %s',
 	'LOG_STYLE_EDIT_DETAILS'	=> '<strong>スタイルを編集しました</strong><br />≫ %s',
@@ -643,7 +685,7 @@ $lang = array_merge($lang, array(
 	'LOG_THEME_DELETE'			=> '<strong>テーマを削除しました</strong><br />≫ %s',
 	'LOG_THEME_EDIT_DETAILS'	=> '<strong>テーマ設定を編集しました</strong><br />≫ %s',
 	'LOG_THEME_EDIT'			=> '<strong>テーマ <em>%1$s</em> を編集しました</strong>',
-	'LOG_THEME_EDIT_FILE'		=> '<strong>テーマ <em>%1$s</em> を編集しました</strong><br />≫ 修正ファイル <em>%2$s</em>',
+	'LOG_THEME_EDIT_FILE'		=> '<strong>テーマ <em>%1$s</em> を編集しました</strong><br />≫ ハックファイル <em>%2$s</em>',
 	'LOG_THEME_EXPORT'			=> '<strong>テーマをエクスポートしました</strong><br />≫ %s',
 	'LOG_THEME_REFRESHED'		=> '<strong>テーマをリフレッシュしました</strong><br />≫ %s',
 
@@ -657,12 +699,15 @@ $lang = array_merge($lang, array(
 	'LOG_USER_DELETED'		=> '<strong>ユーザーを削除しました</strong><br />≫ %s',
 	'LOG_USER_DEL_ATTACH'	=> '<strong>添付ファイルを削除しました</strong><br />≫ %s',
 	'LOG_USER_DEL_AVATAR'	=> '<strong>アバターを削除しました</strong><br />≫ %s',
+	'LOG_USER_DEL_OUTBOX'	=> '<strong>送信ボックスを空にしました</strong><br />≫ %s',
 	'LOG_USER_DEL_POSTS'	=> '<strong>全投稿記事を削除しました</strong><br />≫ %s',
 	'LOG_USER_DEL_SIG'		=> '<strong>サインを削除しました</strong><br />≫ %s',
 	'LOG_USER_INACTIVE'		=> '<strong>アカウントを停止しました</strong><br />≫ %s',
 	'LOG_USER_MOVE_POSTS'	=> '<strong>記事を移動しました</strong><br />≫ posts by “%1$s” to forum “%2$s” ',
 	'LOG_USER_NEW_PASSWORD'	=> '<strong>パスワードを変更しました</strong><br />≫ %s',
 	'LOG_USER_REACTIVATE'	=> '<strong>アカウント有効化メールを送信しました</strong><br />≫ %s',
+	'LOG_USER_REMOVED_NR'	=> '<strong>ユーザーを一見さんから登録ユーザーに変更しました</strong><br />» %s',
+
 	'LOG_USER_UPDATE_EMAIL'	=> '<strong>ユーザー “%1$s” がメールアドレスを変更しました</strong><br />≫ from “%2$s” to “%3$s” ',
 	'LOG_USER_UPDATE_NAME'	=> '<strong>ユーザー名を変更しました</strong><br />≫ from “%1$s” to “%2$s” ',
 	'LOG_USER_USER_UPDATE'	=> '<strong>ユーザー設定を更新しました</strong><br />≫ %s',
@@ -671,14 +716,14 @@ $lang = array_merge($lang, array(
 	'LOG_USER_DEL_AVATAR_USER'	=> '<strong>アバターを削除しました</strong>',
 	'LOG_USER_DEL_SIG_USER'		=> '<strong>サインを削除しました</strong>',
 	'LOG_USER_FEEDBACK'			=> '<strong>フィードバックを追加しました</strong><br />≫ %s',
-	'LOG_USER_GENERAL'			=> '<strong>ニューエントリー:</strong><br />≫ %s',
+	'LOG_USER_GENERAL'			=> '<strong>フィードバック:</strong><br />≫ %s',
 	'LOG_USER_INACTIVE_USER'	=> '<strong>アカウントを停止しました</strong>',
 	'LOG_USER_LOCK'				=> '<strong>自分のトピックを閉鎖しました</strong><br />≫ %s',
 	'LOG_USER_MOVE_POSTS_USER'	=> '<strong>フォーラムの全投稿記事を移動しました</strong>≫ %s',
 	'LOG_USER_REACTIVATE_USER'	=> '<strong>アカウント有効化メールを送信しました</strong>',
 	'LOG_USER_UNLOCK'			=> '<strong>自分のトピックを開放しました</strong><br />≫ %s',
-	'LOG_USER_WARNING'			=> '<strong>警告を追加しました</strong><br />≫ %s',
-	'LOG_USER_WARNING_BODY'		=> '<strong>警告を発行しました</strong><br />≫ %s',
+	'LOG_USER_WARNING'			=> '<strong>警告しました</strong><br />≫ %s',
+	'LOG_USER_WARNING_BODY'		=> '<strong>警告しました</strong><br />≫ %s',
 
 	'LOG_USER_GROUP_CHANGE'			=> '<strong>デフォルトグループを変更しました</strong><br />≫ %s',
 	'LOG_USER_GROUP_DEMOTE'			=> '<strong>グループからユーザーを除名しました</strong><br />≫ %s',
@@ -686,6 +731,10 @@ $lang = array_merge($lang, array(
 	'LOG_USER_GROUP_JOIN_PENDING'	=> '<strong>グループに参加しました（承認を必要としています）</strong><br />≫ %s',
 	'LOG_USER_GROUP_RESIGN'			=> '<strong>グループから脱退しました</strong><br />≫ %s',
 
+	'LOG_WARNING_DELETED'		=> '<strong>ユーザーの警告を削除しました</strong><br />≫ %s',
+	'LOG_WARNINGS_DELETED'		=> '<strong>ユーザー %2$s 名の警告を削除しました</strong><br />≫ %1$s', // Example: '<strong>Deleted 2 user warnings</strong><br />≫ username'
+	'LOG_WARNINGS_DELETED_ALL'	=> '<strong>全てのユーザーの警告を削除しました</strong><br />≫ %s',
+	
 	'LOG_WORD_ADD'			=> '<strong>言語フィルターを追加しました</strong><br />≫ %s',
 	'LOG_WORD_DELETE'		=> '<strong>言語フィルターを削除しました</strong><br />≫ %s',
 	'LOG_WORD_EDIT'			=> '<strong>言語フィルターを編集しました</strong><br />≫ %s',

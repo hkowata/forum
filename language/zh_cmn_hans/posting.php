@@ -167,6 +167,8 @@ $lang = array_merge($lang, array(
 	'POST_ICON'					=> '帖子图标',
 	'POST_NORMAL'				=> '普通',
 	'POST_REVIEW'				=> '帖子预览',
+	'POST_REVIEW_EDIT'			=> '文章查看',
+	'POST_REVIEW_EDIT_EXPLAIN'	=> '在您编辑的过程中这篇文章已经被其他用户更改. 您可能需要查看一下新的帖子内容以便调整自己的发文.',
 	'POST_REVIEW_EXPLAIN'		=> '已有至少一篇新回复在这个主题下发表了，您或许希望重新审视您的回贴。',
 	'POST_STORED'				=> '文章已经成功发表',
 	'POST_STORED_MOD'			=> '文章已经保存但是需要等待批准发布',
@@ -188,6 +190,7 @@ $lang = array_merge($lang, array(
 	'STYLES_TIP'				=> '提示：点击格式选项可以将格式直接应用到选中的文字上',
 
 	'TOO_FEW_CHARS'				=> '您输入的正文过短',
+	'TOO_FEW_CHARS_LIMIT'		=> '您的正文长度为 %1$d 字符. 您的输入不能少于 %2$d 个字符.',
 	'TOO_FEW_POLL_OPTIONS'		=> '您必须输入至少两个投票选项',
 	'TOO_MANY_ATTACHMENTS'		=> '不能再添加更多的附件了，允许的数量是 %d 个。',
 	'TOO_MANY_CHARS'			=> '您输入的正文过长',

@@ -4,7 +4,7 @@
 * search [Japanese]
 *
 * @package language
-* @version $Id: search.php 9438 2009-04-11 11:09:45Z acydburn $
+* @version $Id: search.php 10004 2009-08-17 13:25:04Z rxu $
 * @copyright (c) 2005 phpBB Group
 * @license http://opensource.org/licenses/gpl-license.php GNU Public License
 *
@@ -54,7 +54,8 @@ $lang = array_merge($lang, array(
 
 	'JUMP_TO_POST'			=> '記事へ移動',
 
-	'LOGIN_EXPLAIN_EGOSEARCH'	=> '投稿した記事を確認するにはユーザー登録とログインが必要です',
+	'LOGIN_EXPLAIN_EGOSEARCH'	=> '投稿記事を確認するにはユーザー登録とログインが必要です',
+	'LOGIN_EXPLAIN_UNREADSEARCH'=> '未読記事を確認するにはユーザー登録とログインが必要です',
 	
 	'MAX_NUM_SEARCH_KEYWORDS_REFINE'	=> '検索キーワードが多すぎます。 %1$d 個以上の検索キーワードを同時に検索しないでください。',
 	
@@ -62,14 +63,14 @@ $lang = array_merge($lang, array(
 	'NO_RECENT_SEARCHES'	=> '最近検索されたキーワードはありません',
 	'NO_SEARCH'				=> 'パーミッションが与えられていないため、検索機能を使用できません',
 	'NO_SEARCH_RESULTS'		=> '検索に一致する記事が見つかりませんでした',
-	'NO_SEARCH_TIME'		=> '連続して検索することはできません。２、３分経ってから試してみてください。',
+	'NO_SEARCH_TIME'		=> '連続して検索することはできません。数分後に再度お試しください。',
 	'WORD_IN_NO_POST'		=> '検索キーワード <strong>%s</strong> を含む記事が存在しないため検索結果は 0 件です',
 	'WORDS_IN_NO_POST'		=> '検索キーワード <strong>%s</strong> を含む記事が存在しないため検索結果は 0 件です',
 
 	'POST_CHARACTERS'		=> '文字',
 
-	'RECENT_SEARCHES'		=> '最近検索したキーワード',
-	'RESULT_DAYS'			=> '期間内を検索',
+	'RECENT_SEARCHES'		=> '最近検索されたキーワード',
+	'RESULT_DAYS'			=> '期間内検索',
 	'RESULT_SORT'			=> 'ソート',
 	'RETURN_FIRST'			=> '表示文字数',
 	'RETURN_TO_SEARCH_ADV'	=> '詳細検索ページに戻る',
@@ -84,7 +85,7 @@ $lang = array_merge($lang, array(
 	'SEARCH_FORUMS'				=> 'フォーラム',
 	'SEARCH_FORUMS_EXPLAIN'		=> '検索を行いたいフォーラムを選択します。下の “サブフォーラム” を “いいえ” にしていない限り、サブフォーラム内の記事も自動的に検索されます。',
 	'SEARCH_IN_RESULTS'			=> 'この検索結果をさらに検索',
-	'SEARCH_KEYWORDS_EXPLAIN'	=> '検索したい記事のキーワードには <strong>+</strong> を、検索したくない記事のキーワードには <strong>-</strong> をそれぞれキーワードの直前に置いてください。OR検索 を選択した場合、括弧()内にキーワードを並べ、それら各キーワードを <strong>|</strong> で区切ってください。部分一致としてワイルドカード(*)を使用できます。クエリとはデータベースへの命令文のことです。+-|* を使用する場合はクエリ検索を選択してください。',
+	'SEARCH_KEYWORDS_EXPLAIN'	=> '検索したくない記事のキーワードには <strong>-</strong> をキーワードの直前に置いてください。部分一致としてワイルドカード(*)を使用できます。クエリとはデータベースへの命令文のことです。-* を使用する場合はクエリ検索を選択してください。',
 	'SEARCH_MSG_ONLY'			=> 'メッセージのみ',
 	'SEARCH_OPTIONS'			=> '検索オプション',
 	'SEARCH_QUERY'				=> '検索クエリ',
@@ -97,7 +98,7 @@ $lang = array_merge($lang, array(
 	'SORT_DESCENDING'			=> '降順',
 	'SORT_FORUM'				=> 'フォーラム',
 	'SORT_POST_SUBJECT'			=> '記事の件名',
-	'SORT_TIME'					=> '記事の投稿日時',
+	'SORT_TIME'					=> '投稿日時',
 
 	'TOO_FEW_AUTHOR_CHARS'	=> '投稿者名は %d 字以上である必要があります',
 ));

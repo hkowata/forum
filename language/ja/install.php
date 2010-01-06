@@ -4,7 +4,7 @@
 * install [Japanese]
 *
 * @package language
-* @version $Id: install.php 9508 2009-05-03 11:18:08Z acydburn $
+* @version $Id: install.php 10101 2009-09-04 14:49:41Z acydburn $
 * @copyright (c) 2005 phpBB Group
 * @license http://opensource.org/licenses/gpl-license.php GNU Public License
 *
@@ -53,7 +53,7 @@ $lang = array_merge($lang, array(
 	'BEGIN_CONVERT'					=> 'データコンバート開始',
 	'BLANK_PREFIX_FOUND'			=> 'データベース内の phpBB2テーブル をスキャンしたところ、phpBB2テーブル の接頭語が見当たりませんでした',
 	'BOARD_NOT_INSTALLED'			=> 'phpBB3 がインストールされていません（ファイル config.php が存在していないか内容に欠陥があります）',
-	'BOARD_NOT_INSTALLED_EXPLAIN'	=> 'phpBB統合コンバータフレームワーク を使用するには phpBB3 を先にインストールしておく必要があります。今まで利用していた掲示板システムのデータを phpBB3 へコンバートするには、先に<a href="%s"> phpBB3 のインストール</a>を完了してください。',
+	'BOARD_NOT_INSTALLED_EXPLAIN'	=> 'phpBBコンバータフレームワーク を使用するには phpBB3 を先にインストールしておく必要があります。今まで利用していた掲示板システムのデータを phpBB3 へコンバートするには、先に<a href="%s"> phpBB3 のインストール</a>を完了してください。',
 
 	'CATEGORY'					=> 'カテゴリ',
 	'CACHE_STORE'				=> 'キャッシュの保存場所',
@@ -81,8 +81,8 @@ $lang = array_merge($lang, array(
 	'CONTINUE_OLD_CONVERSION'	=> '以前に開始されたデータコンバートを再開する',
 	'CONVERT'					=> 'データコンバート',
 	'CONVERT_COMPLETE'			=> 'データコンバート完了',
-	'CONVERT_COMPLETE_EXPLAIN'	=> '旧掲示板システムのデータは新掲示板 phpBB 3.0 へコンバートされました。新掲示板にログインするには<a href="../">こちら</a>をクリックしてください。旧掲示板システムの基本設定が新掲示板にきちんと移転・反映されているかをご確認ください。もし問題がなければ、install ディレクトリを削除することによって一般ユーザーが新掲示板サイトにアクセスできるようになります。',
-	'CONVERT_INTRO'				=> 'phpBB統合コンバータフレームワーク へようこそ',
+	'CONVERT_COMPLETE_EXPLAIN'	=> '旧掲示板システムのデータは新掲示板 phpBB 3.0 へコンバートされました。新掲示板にログインするには<a href="../">こちら</a>をクリックしてください。旧掲示板システムの基本設定が新掲示板にきちんと移転・反映されているかをご確認ください。もし問題がなければ、install ディレクトリを削除することによって一般ユーザーが新掲示板にアクセスできるようになります。',
+	'CONVERT_INTRO'				=> 'phpBBコンバータフレームワーク へようこそ',
 	'CONVERT_INTRO_BODY'		=> 'ここではあなたが今まで使用していた掲示板システムのデータを phpBB3 へコンバートできます。あなたが使用していた掲示板ソフトウェア用のコンバータがもしリストにない場合、お望みのコンバータが存在しているかどうかを phpBB Group 公式サイトを訪れてチェックしてみてください。もしかするとお望みのコンバータがダウンロード可能になっているかもしれません。',
 	'CONVERT_NEW_CONVERSION'	=> '新しくデータコンバートを開始する',
 	'CONVERT_NOT_EXIST'			=> 'コンバータが存在していません',
@@ -135,6 +135,7 @@ $lang = array_merge($lang, array(
 	'DB_PASSWORD'				=> 'データベースのパスワード',
 	'DB_PORT'					=> 'データベースサーバのポート番号',
 	'DB_PORT_EXPLAIN'			=> '非標準ポートを使用している場合のみ入力してください',
+	'DB_UPDATE_NOT_SUPPORTED'	=> 'このアップデートスクリプトは “%1$s” より古いバージョンの phpBB には対応していません。現在お使いの phpBB のバージョンは “%1$s” です。このアップデートスクリプトを利用するには先に phpBB を、このアップデートスクリプトが対応するバージョンまでアップデートする必要があります。何か分からない事があれば phpBB.com の Support Forum で質問してください。',
 	'DB_USERNAME'				=> 'データベースのユーザー名',
 	'DB_TEST'					=> '接続テスト',
 	'DEFAULT_LANG'				=> '掲示板のデフォルト言語',
@@ -144,7 +145,7 @@ $lang = array_merge($lang, array(
 	'DISABLE_KEYS'				=> '（データベーステーブルの）キーの無効化',
 	'DLL_FIREBIRD'				=> 'Firebird',
 	'DLL_FTP'					=> 'FTP 拡張モジュールのサポート [ 自動インストール &amp; 自動アップデート ]',
-	'DLL_GD'					=> 'GD 拡張モジュールのサポート [ 画像認証 ]',
+	'DLL_GD'					=> 'GD 拡張モジュールのサポート [ CAPTCHA ]',
 	'DLL_MBSTRING'				=> 'マルチバイト文字のサポート',
 	'DLL_MSSQL'					=> 'MSSQL Server 2000+',
 	'DLL_MSSQL_ODBC'			=> 'MSSQL Server 2000+ via ODBC',
@@ -165,9 +166,12 @@ $lang = array_merge($lang, array(
 	'FILES_OPTIONAL'			=> 'ファイルとディレクトリ [ オプション ]',
 	'FILES_OPTIONAL_EXPLAIN'	=> '<strong>オプション</strong> - これらファイルまたはディレクトリの存在と、それらに対する書き込み権は必ずしも必要というわけではありません。インストールシステムはこれらの条件を満たさない場合でも機能するように設計されています。しかしこれらの条件を満たしている方がインストールは早く終わるでしょう。',
 	'FILES_REQUIRED'			=> 'ファイルとディレクトリ [ 必須 ]',
-	'FILES_REQUIRED_EXPLAIN'	=> '<strong>必須</strong> - phpBB3 を正常に機能させるには重要なファイルとディレクトリに対してきちんとアクセスできる必要があります。もし “見つかりません” が表示されている場合、該当のファイルまたはディレクトリを手動で作成してください。もし “書き込めません” が表示されている場合、該当のファイルまたはディレクトリのアクセス権を手動で変更し、phpBB3 がそのファイルまたはディレクトリに対して書き込みできるようにしてください。',
+	'FILES_REQUIRED_EXPLAIN'	=> '<strong>必須</strong> - phpBB3 を正常に機能させるには重要なファイルとディレクトリに対してきちんとアクセスできる必要があります。もし “見つかりません” と表示されている場合、該当のファイルまたはディレクトリを手動で作成してください。もし “書き込めません” と表示されている場合、該当のファイルまたはディレクトリのアクセス権を手動で変更し、phpBB3 がそのファイルまたはディレクトリに対して書き込みできるようにしてください。',
 	'FILLING_TABLE'				=> 'テーブル <strong>%s</strong> へデータ挿入',
 	'FILLING_TABLES'			=> 'テーブルへデータ挿入',
+
+	'FIREBIRD_DBMS_UPDATE_REQUIRED'		=> '2.1 より古いバージョンの Firebird/Interbase はもはやサポート外です。phpBB をアップデートするには先に Firebird を 2.1.0 以上にアップデートする必要があります。',
+
 	'FINAL_STEP'				=> '最終ステップの処理',
 	'FORUM_ADDRESS'				=> '旧掲示板システムのアドレス',
 	'FORUM_ADDRESS_EXPLAIN'		=> '旧掲示板システムの URL です。例: <samp>http://www.example.com/phpBB2/</samp>。アドレスが入力された場合、旧掲示板システムの記事、プライベートメッセージ、サイン内でこのアドレスが使用されている箇所はデータコンバートされた際に全て新掲示板のアドレスに置き換えられます。',
@@ -175,7 +179,7 @@ $lang = array_merge($lang, array(
 	'FORUM_PATH_EXPLAIN'		=> '<strong>phpBB3 ルートディレクトリ</strong>から旧掲示板システムへの<strong>相対</strong>パスです。',
 	'FOUND'						=> '見つかりました',
 	'FTP_CONFIG'				=> 'FTP でコンフィグファイルを転送する',
-	'FTP_CONFIG_EXPLAIN'		=> 'FTP 拡張モジュールを検出しました。もしお望みなら PHP の FTP 拡張モジュール関数を使って config.php をサーバへアップロードできます。その場合、下のフォームに FTP 情報を入力する必要があります。ユーザー名とパスワードはサーバのアカウント情報であることに注意してください（判らない場合はサーバ管理者にお問い合わせください）。',
+	'FTP_CONFIG_EXPLAIN'		=> 'FTP 拡張モジュールを検出しました。もしお望みなら PHP の FTP 拡張モジュール関数を使って config.php をサーバへアップロードできます。その場合、下のフォームに FTP 情報を入力する必要があります。ユーザー名とパスワードはサーバのアカウント情報であることにご注意ください（判らない場合はサーバ管理者にお問い合わせください）。',
 	'FTP_PATH'					=> 'FTP パス',
 	'FTP_PATH_EXPLAIN'			=> 'サーバルートディレクトリから phpBB3 へのパスです。例: <samp>htdocs/phpBB3/</samp>.',
 	'FTP_UPLOAD'				=> 'アップロード',
@@ -186,11 +190,11 @@ $lang = array_merge($lang, array(
 	'INITIAL_CONFIG_EXPLAIN'	=> 'このサーバで phpBB が動作するということが判明したので、動作に必要な情報をいくつか入力する必要があります。もしデータベースに接続するための情報が分からない場合、まず最初にサーバ管理者にお問い合わせください。それでも解決しない場合、phpBB サポートフォーラムをご利用ください。データの入力が完了したら、入力したデータが正確であることを確認してから次のステップへ進んでください。',
 	'INSTALL_CONGRATS'			=> 'おめでとうございます！',
 	'INSTALL_CONGRATS_EXPLAIN'	=> '
-		<p>phpBB %1$s のインストールに成功しました。新しくインストールした phpBB3 を今すぐ使用するか、他の掲示板システムのデータをコンバートして使用するかを選択できます:</p>
+		phpBB %1$s のインストールに成功しました。新しくインストールした phpBB3 を今すぐ使用するか、他の掲示板システムのデータをコンバートして使用するかを選択できます:</p>
 		<h2>今まで使っていた掲示板システムから phpBB へコンバートする</h2>
-		<p>phpBB統合コンバータフレームワーク は phpBB 2.0.x または他の掲示板システムから phpBB3 へのデータコンバートを統合的にサポートします。あなたの旧掲示板システムのデータを phpBB3 へコンバートするには、<a href="%2$s">コンバータ選択ページ</a>をクリックしてください。</p>
+		<p>phpBBコンバータフレームワーク は phpBB 2.0.x または他の掲示板システムから phpBB3 へのデータコンバートを統合的にサポートします。あなたの旧掲示板システムのデータを phpBB3 へコンバートするには、<a href="%2$s">コンバータ選択ページ</a>をクリックしてください。</p>
 		<h2>phpBB3 を今すぐ使用します！</h2>
-		<p>下のボタンをクリックすれば Administration Control Panel (AdminCP) へ入室できます。そこで phpBB3 がどのような機能を備えているか確認すると良いでしょう。<a href="http://www.phpbb.com/support/documentation/3.0/">Documentation</a> と <a href="http://www.phpbb.com/community/viewforum.php?f=46">support forums</a> にヘルプ情報が載っています。さらに詳細な情報が必要な時は <a href="%3$s">README</a> をご参照ください。</p><p><strong>install ディレクトリを削除すれば一般ユーザーがこの掲示板サイトにアクセスできるようになります。install ディレクトリがそのままの状態で存在している間は AdminCP ページのみしかアクセスすることはできません。</strong></p>',
+		<p>下のボタンをクリックすれば Administration Control Panel (AdminCP) へ入室できます。そこで phpBB3 がどのような機能を備えているか確認すると良いでしょう。ヘルプ情報はこちらをご覧ください： <a href="http://www.phpbb.com/support/documentation/3.0/">Documentation</a>, <a href="%3$s">README</a>, <a href="http://www.phpbb.com/community/viewforum.php?f=46">Support Forums</a>。</p><p><strong>install ディレクトリを削除すれば一般ユーザーが掲示板にアクセスできるようになります。install ディレクトリがそのままの状態で存在している間は AdminCP ページのみしかアクセスすることはできません。</strong></p>',
 	'INSTALL_INTRO'				=> 'phpBB3 のインストールへようこそ',
  
 	'INSTALL_INTRO_BODY'		=> 'ここでは phpBB3 のインストールを行うことができます。</p><p>インストールするにはデータベースへ接続するための情報が必要です。もしデータベースへ接続するための情報が判らない場合、サーバ管理者にお問い合わせください。データベースに接続できないとインストールを先へ進めることはできません。必要な情報は次の通りです:</p>
@@ -210,7 +214,7 @@ $lang = array_merge($lang, array(
 		<li>MySQL 3.23 以上（MySQLi も可）</li>
 		<li>PostgreSQL 7.3+</li>
 		<li>SQLite 2.8.2+</li>
-		<li>Firebird 2.0+</li>
+		<li>Firebird 2.1+</li>
 		<li>MS SQL Server 2000 以上 （直接または ODBC 経由）</li>
 		<li>Oracle</li>
 	</ul>
@@ -222,25 +226,25 @@ $lang = array_merge($lang, array(
 	'INSTALL_NEXT_FAIL'			=> 'パスしなかったテストがいくつかあるため、次のステージへ進むべきではありません。このまま次のステージへ進んだ場合、不完全なインストールに終わってしまう可能性があります。',
 	'INSTALL_NEXT_PASS'			=> '全てのテストをパスしたので次のステージへ進んでかまいません。インストール後にもしファイルのアクセス権を変更したり PHP 拡張モジュールを変更したりして再テストしたいと思った場合、いつでもできます。',
 	'INSTALL_PANEL'				=> 'インストールパネル',
-	'INSTALL_SEND_CONFIG'		=> '不幸にも環境設定情報を config.php に書き込むことができませんでした。ファイル config.php が存在しないかファイルアクセス権が書き込み可になっていないかのどちらかが考えられます。下に表示されているオプションを選択して config.php のインストールを完了してください。',
+	'INSTALL_SEND_CONFIG'		=> 'コンフィグ情報を config.php に書き込めませんでした。ファイル config.php が存在しないかファイルアクセス権が書き込み可になっていないかのどちらかが考えられます。下に表示されているオプションを選択して config.php のインストールを完了してください。',
 	'INSTALL_START'				=> 'インストール開始',
 	'INSTALL_TEST'				=> '再テスト',
 	'INST_ERR'					=> 'インストールエラー',
 	'INST_ERR_DB_CONNECT'		=> 'データベースに接続できませんでした。下のエラーメッセージをご確認ください。',
-	'INST_ERR_DB_FORUM_PATH'	=> 'データベースファイルへのパスとして、掲示板ディレクトリツリー内のファイルへのパスが指定されています。セキュリティ上の理由から、データベースファイルをインターネットからアクセス可能な場所に格納するべきではありません。',
+	'INST_ERR_DB_FORUM_PATH'	=> 'データベースファイルへのパスとして、掲示板ディレクトリツリー内のファイルへのパスが指定されています。セキュリティ上の理由から、データベースファイルをインターネットからアクセス可能な場所に格納すべきではありません。',
 	'INST_ERR_DB_NO_ERROR'		=> 'このエラーに対するメッセージは用意されていません',
-	'INST_ERR_DB_NO_MYSQLI'		=> 'サーバにインストールされている MySQL のバージョンはあなたが選択したオプション “MySQL with MySQLi Extension” に当てはまりません。かわりにオプション “MySQL” を選択してください。',
-	'INST_ERR_DB_NO_SQLITE'		=> 'インストールされている SQLite のバージョンが古すぎます。少なくとも 2.8.2 以上にアップグレードしてください。',
+	'INST_ERR_DB_NO_MYSQLI'		=> 'サーバにインストールされている MySQL のバージョンでは “MySQL with MySQLi Extension” をご利用になれません。かわりにオプション “MySQL” を選択してください。',
+	'INST_ERR_DB_NO_SQLITE'		=> 'SQLite のバージョンが古すぎます。少なくとも 2.8.2 以上にアップグレードしてください。',
 	'INST_ERR_DB_NO_ORACLE'		=> 'サーバにインストールされている Oracle のバージョンでは <var>NLS_CHARACTERSET</var> パラメータを <var>UTF8</var> に設定しておく必要があります。パラメータを変更するかバージョンを 9.2+ にアップグレードしてください。',
-	'INST_ERR_DB_NO_FIREBIRD'	=> 'サーバにインストールされている Firebird のバージョンが古すぎます。少なくとも 2.0 以上にアップグレードしてください。',
+	'INST_ERR_DB_NO_FIREBIRD'	=> 'Firebird のバージョンが古すぎます。少なくとも 2.1 以上にアップグレードしてください。',
 	'INST_ERR_DB_NO_FIREBIRD_PS'=> 'Firebird データベースのページサイズが 8192 より低いです。少なくとも 8192 以上である必要があります。',
-	'INST_ERR_DB_NO_POSTGRES'	=> '選択したデータベースは文字エンコーディング <var>UNICODE</var> または <var>UTF8</var> で作成されていません。文字エンコーディングを <var>UNICODE</var> か <var>UTF8</var> にしてデータベースを再度作成してください。',
+	'INST_ERR_DB_NO_POSTGRES'	=> '選択したデータベースは文字エンコーディング <var>UNICODE</var> または <var>UTF8</var> で作成されていません。文字エンコーディングを <var>UNICODE</var> か <var>UTF8</var> にして再度データベースを作成してください。',
 	'INST_ERR_DB_NO_NAME'		=> 'データベースの名前が入力されていません',
-	'INST_ERR_EMAIL_INVALID'	=> '入力した メールアドレス が正しくありません',
+	'INST_ERR_EMAIL_INVALID'	=> '入力した メールアドレス は無効です',
 	'INST_ERR_EMAIL_MISMATCH'	=> '入力した メールアドレス が不一致です',
 	'INST_ERR_FATAL'			=> '致命的なインストールエラー',
 	'INST_ERR_FATAL_DB'			=> '致命的かつ復元不可能なデータベースエラーが発生しました。これはおそらく指定したユーザーには <code>CREATE TABLES</code> または <code>INSERT</code> などの SQL 命令の実行権限が与えられていないためと考えられます。詳細は下記をご覧ください。まず最初にサーバ管理者にこの事をお問い合わせください。それでも解決しない場合、phpBBサポートフォーラム をご利用ください。',
-	'INST_ERR_FTP_PATH'			=> '入力したパスのディレクトリへカレントディレクトリを移動できませんでした。入力したパスが正確かどうかをご確認ください。',
+	'INST_ERR_FTP_PATH'			=> '入力したディレクトリパスへカレントディレクトリを移動できませんでした。入力したパスが正確かどうかをご確認ください。',
 	'INST_ERR_FTP_LOGIN'		=> 'FTPサーバ にログインできませんでした。ユーザー名とパスワードが正しいかご確認ください。',
 	'INST_ERR_MISSING_DATA'		=> 'このブロックのフィールドは全て入力する必要があります',
 	'INST_ERR_NO_DB'			=> '選択したデータベースを取り扱うための PHP 拡張モジュールの読み込みに失敗しました',
@@ -268,13 +272,13 @@ php_value mbstring.http_output pass<br />
 -------------
  </var>',
 	'MBSTRING_FUNC_OVERLOAD'				=> '関数のオーバーロード',
-	'MBSTRING_FUNC_OVERLOAD_EXPLAIN'		=> '<var>mbstring.func_overload</var> は 0 か 4 に設定されている必要があります',
+	'MBSTRING_FUNC_OVERLOAD_EXPLAIN'		=> '<var>mbstring.func_overload</var> は 0 か 4 に設定されています',
 	'MBSTRING_ENCODING_TRANSLATION'			=> '透過的な文字エンコーディングフィルタ',
-	'MBSTRING_ENCODING_TRANSLATION_EXPLAIN'	=> '<var>mbstring.encoding_translation</var> は 0 に設定されている必要があります',
+	'MBSTRING_ENCODING_TRANSLATION_EXPLAIN'	=> '<var>mbstring.encoding_translation</var> は 0 に設定されています',
 	'MBSTRING_HTTP_INPUT'					=> 'HTTP 入力文字エンコーディングの自動変換',
-	'MBSTRING_HTTP_INPUT_EXPLAIN'			=> '<var>mbstring.http_input</var> は <samp>pass</samp> に設定されている必要があります',
+	'MBSTRING_HTTP_INPUT_EXPLAIN'			=> '<var>mbstring.http_input</var> は <samp>pass</samp> に設定されています',
 	'MBSTRING_HTTP_OUTPUT'					=> 'HTTP 出力文字エンコーディングの自動変換',
-	'MBSTRING_HTTP_OUTPUT_EXPLAIN'			=> '<var>mbstring.http_output</var> は <samp>pass</samp> に設定されている必要があります',
+	'MBSTRING_HTTP_OUTPUT_EXPLAIN'			=> '<var>mbstring.http_output</var> は <samp>pass</samp> に設定されています',
 
 	'MAKE_FOLDER_WRITABLE'		=> 'このフォルダの存在 と アクセス権が書き込み可である事 を確認した後、もう一度試してみてください:<br />≫<strong>%s</strong>.',
 	'MAKE_FOLDERS_WRITABLE'		=> 'これらのフォルダの存在 と アクセス権が書き込み可である事 を確認した後、もう一度試してみてください:<br />≫<strong>%s</strong>.',
@@ -290,7 +294,7 @@ php_value mbstring.http_output pass<br />
 	'NO_LOCATION'				=> 'ImageMagick が見つかりません。もしサーバに ImageMagick がインストールされている場合、後で AdminCP にて ImageMagick へのパスを指定できます。',
 	'NO_TABLES_FOUND'			=> 'テーブルが１つも見つかりません',
 
-	'OVERVIEW_BODY'				=> 'phpBB3 へようこそ！<br /><br />phpBB? は世界で最も広く使用されているインターネット掲示板ソフトウェアです。phpBB3 は 2000 年から現在に至るまでのパッケージラインナップの中で最新のパッケージです。かつての phpBB2 と同様、phpBB3 は豊富な機能を持ち、ユーザーフレンドリーであり、phpBB Team によって完全にサポートされています。phpBB3 では phpBB2 の重要かつ基本的な機能に十分な改良が施され、さらに phpBB2 では備えていなかった全く新しい機能が追加されています。私達はこの phpBB3 があなたの期待に応えるものであることを願っています。 <br /><br />このインストールシステムは phpBB3 のインストール、最新バージョンへのアップデート、phpBB3 とは異なる掲示板システム（phpBB2 含む）からのデータコンバートを手助けします。より詳しい情報は <a href="../docs/INSTALL.html">the installation guide</a> をご覧ください。<br /><br />phpBB3 のライセンスまたはサポートに関してはサイドメニューの項目からご覧頂けます。インストール、アップデート、データコンバートを始めるには上のタブからオプションを選択してください。',
+	'OVERVIEW_BODY'				=> 'phpBB3 へようこそ！<br /><br />phpBB™ は世界で最も広く使用されているインターネット掲示板ソフトウェアです。phpBB3 は 2000 年から現在に至るまでのパッケージラインナップの中で最新のパッケージです。かつての phpBB2 と同様、phpBB3 は豊富な機能を持ち、ユーザーフレンドリーであり、phpBB Team によって完全にサポートされています。phpBB3 では phpBB2 の重要かつ基本的な機能に十分な改良が施され、さらに phpBB2 では備えていなかった全く新しい機能が追加されています。私達はこの phpBB3 があなたの期待に応えるものであることを願っています。 <br /><br />このインストールシステムは phpBB3 のインストール、最新バージョンへのアップデート、phpBB3 とは異なる掲示板システム（phpBB2 含む）からのデータコンバートを手助けします。より詳しい情報は <a href="../docs/INSTALL.html">the installation guide</a> をご覧ください。<br /><br />phpBB3 のライセンスまたはサポートに関してはサイドメニューの項目からご覧頂けます。インストール、アップデート、データコンバートを始めるには上のタブからオプションを選択してください。',
 
 	'PCRE_UTF_SUPPORT'				=> 'PCRE関数の UTF-8 文字列のサポート',
 	'PCRE_UTF_SUPPORT_EXPLAIN'		=> 'もし PCRE（Perl 互換正規表現）関数が UTF-8 によるパターン文字列を取り扱えない場合、 phpBB3 は動作<strong>しません</strong>。PHP の PCRE拡張モジュール のバージョンが古い場合、この症状が起こります。',
@@ -309,29 +313,29 @@ php_flag register_globals off<br />
  </var>',
 	'PHP_SAFE_MODE'					=> 'セーフモード',
 	'PHP_SETTINGS'					=> 'PHP のバージョンと設定',
-	'PHP_SETTINGS_EXPLAIN'			=> '<strong>必須</strong> - phpBB3 を使用するにはサーバにインストールされている PHP のバージョンが 4.3.3 以上である必要があります。もし <var>セーフモード</var> が下に表示されている場合、PHP のセーフモードが有効になっていることを示します。セーフモードが有効な場合、リモート操作に制限が課せられます。',
+	'PHP_SETTINGS_EXPLAIN'			=> '<strong>必須</strong> - phpBB3 を使用するにはサーバにインストールされている PHP のバージョンが 4.3.3 以上である必要があります。もし下に "<var>セーフモード</var>" と表示されている場合、PHP のセーフモードが有効になっていることを示します。セーフモードが有効な場合、リモート操作に制限が課せられます。',
 	'PHP_URL_FOPEN_SUPPORT'			=> 'PHP設定オプション <var>allow_url_fopen</var> が有効です',
 	'PHP_URL_FOPEN_SUPPORT_EXPLAIN'	=> '<strong>オプション</strong> - この設定オプションが無効に設定されていても phpBB3 は動作するでしょう。しかし他サイトのアバター表示などがきちんと動作しなくなります。',
 	'PHP_VERSION_REQD'				=> 'PHPバージョン 4.3.3 以上',
 	'POST_ID'						=> '投稿記事ID',
 	'PREFIX_FOUND'					=> '指定したデータベースのテーブルをスキャンしたところ、テーブル接頭語として <strong>%s</strong> が使われています',
 	'PREPROCESS_STEP'				=> 'データコンバートプリプロセス 関数/クエリ の遂行',
-	'PRE_CONVERT_COMPLETE'			=> 'データコンバートプリステップを全て完了しました。データコンバートを開始してください。コンバート完了後、手動で調整しなければならない点がいくつかあるかもしれない点にご注意ください。特にパーミッションが正しく割り当てられているかチェックしてください。必要であれば検索インデックスを再構築してください。アバターやスマイリーのような画像ファイルが正確にコピーされているかどうかもご確認ください。',
+	'PRE_CONVERT_COMPLETE'			=> 'データコンバートプリステップを全て完了しました。データコンバートを開始してください。コンバート完了後、手動で調整しなければならない点がいくつかあるかもしれない点にご注意ください。特にパーミッションが正しく割り当てられているかチェックしてください。必要であれば検索インデクスを再構築してください。アバターやスマイリーのような画像ファイルが正確にコピーされているかどうかもご確認ください。',
 	'PROCESS_LAST'					=> 'プロセスの実行',
 
 	'REFRESH_PAGE'				=> '各ステップをページ毎にリフレッシュする',
 	'REFRESH_PAGE_EXPLAIN'		=> ' “はい” にした場合、ページを進める度にコンバータは各コンバートステップの処理を完了します。きちんとデータコンバートが最後まで完了するかどうか自信がない場合、前もってエラーを発見しておくために最初は “いいえ” にすることを勧めます。',
 	'REQUIREMENTS_TITLE'		=> 'インストールの診断',
-	'REQUIREMENTS_EXPLAIN'		=> 'ここでは、phpBB3 をサーバにインストール可能かどうか、インストール後にきちんと動作するかどうかのテスト結果が表示されています。表示されている全てのテスト結果に目を通してください。必須テストを全てパスするまでインストールを開始することはできません。phpBB3 の全機能を利用するにはオプションテストもパスしておく必要があります。',
+	'REQUIREMENTS_EXPLAIN'		=> 'ここでは、phpBB3 をサーバにインストール可能かどうか、インストール後にきちんと動作するかどうかについてのテスト結果が表示されています。表示されている全てのテスト結果に目を通してください。必須テストを全てパスするまでインストールを開始することはできません。phpBB3 の全機能を利用するにはオプションテストもパスしておく必要があります。',
 	'RETRY_WRITE'				=> 'リトライ - config.php への書き込み',
 	'RETRY_WRITE_EXPLAIN'		=> 'phpBB3 が書き込めるように config.php のファイルアクセス権を変更したい場合、下のボタンをクリックしてください。phpBB3 のインストール完了後、config.php のファイルアクセス権を元に戻しておくことを忘れないでください。',
 
 	'SCRIPT_PATH'				=> 'スクリプトパス',
-	'SCRIPT_PATH_EXPLAIN'		=> 'phpBB3 ルートディレクトリへのパスです。ドメインからの相対パスである必要があります。例: <samp>/phpBB3</samp>',
+	'SCRIPT_PATH_EXPLAIN'		=> 'phpBB3 ルートディレクトリへのパスです。ドメインからの相対パスで指定する必要があります。例: <samp>/phpBB3</samp>',
 	'SELECT_LANG'				=> '言語の選択',
 	'SERVER_CONFIG'				=> 'サーバ環境設定',
-	'SEARCH_INDEX_UNCONVERTED'	=> '検索インデックスをコンバートできませんでした',
-	'SEARCH_INDEX_UNCONVERTED_EXPLAIN'	=> '旧掲示板システムの検索インデックスをコンバートできませんでした。検索インデックスが作成されていない状態で検索しても常に “検索結果は 0 件です” を返すだけになります。新しい検索インデックスを作成するには AdminCP へ入室し、 “メンテナンス” タブのサブメニューから “検索インデックス” を選択してください。',
+	'SEARCH_INDEX_UNCONVERTED'	=> '検索インデクスをコンバートできませんでした',
+	'SEARCH_INDEX_UNCONVERTED_EXPLAIN'	=> '旧掲示板システムの検索インデクスをコンバートできませんでした。検索インデクスが作成されていない状態で検索しても常に “検索結果は 0 件です” を返すだけになります。新しい検索インデクスを作成するには AdminCP へ入室し、 “メンテナンス” タブのサブメニューから “検索インデクス” を選択してください。',
 	'SOFTWARE'					=> '掲示板ソフトウェア',
 	'SPECIFY_OPTIONS'			=> 'コンバートオプションの指定',
 	'STAGE_ADMINISTRATOR'		=> '管理人設定',
@@ -352,7 +356,7 @@ php_flag register_globals off<br />
 	'SUB_LICENSE'				=> 'ライセンス',
 	'SUB_SUPPORT'				=> 'サポート',
 	'SUCCESSFUL_CONNECT'		=> '接続に成功しました',
-	'SUPPORT_BODY'				=> 'phpBB3 の最新安定バージョンに関するサポートは無料で提供されています。サポートの内容は:</p><ul><li>インストール</li><li>各種設定</li><li>技術的な質問</li><li>ソフトウェアのバグに関する問題</li><li>リリース候補（RC）バージョンから最新安定バージョンへのアップデート</li><li>phpBB2.0.x から phpBB3 へのデータコンバート</li><li>他の掲示板ソフトウェアから phpBB3 へのデータコンバート（<a href="http://www.phpbb.com/community/viewforum.php?f=65">Convertors Forum</a> をご覧ください）</li></ul><p>もし phpBB3 のベータバージョンをまだ利用している場合、phpBB3 の最新安定バージョンを新しくインストールすることを強く勧めます。</p><h2>MOD / スタイル</h2><p>MOD に関する問題は <a href="http://www.phpbb.com/community/viewforum.php?f=81">Modifications Forum</a> の関連するトピックに質問・投稿してください。<br />スタイル、テンプレート、イメージセットに関する問題は、<a href="http://www.phpbb.com/community/viewforum.php?f=80">Styles Forum</a> の関連するトピックに質問・投稿してください。<br /><br />もし特定のパッケージに関して質問したい場合、そのパッケージ専用のトピックがありますのでそちらに投稿してください。</p><h2>サポート</h2><p><a href="http://www.phpbb.com/community/viewtopic.php?f=14&amp;t=571070">The phpBB Welcome Package</a><br /><a href="http://www.phpbb.com/support/">Support Section</a><br /><a href="http://www.phpbb.com/support/documentation/3.0/quickstart/">Quick Start Guide</a><br /><br />最新ニュースと最新リリースのメールを購読するには <a href="http://www.phpbb.com/support/">subscribe to our mailing list</a> にてメールアドレスを入力し送信してください。<br /><br />',
+	'SUPPORT_BODY'				=> 'phpBB3 の最新安定バージョンに関するサポートは無料で提供されています。サポートの内容は:</p><ul><li>インストール</li><li>各種設定</li><li>技術的な質問</li><li>ソフトウェアのバグに関する問題</li><li>リリース候補（RC）バージョンから最新安定バージョンへのアップデート</li><li>phpBB2.0.x から phpBB3 へのデータコンバート</li><li>他の掲示板ソフトウェアから phpBB3 へのデータコンバート（<a href="http://www.phpbb.com/community/viewforum.php?f=65">Convertors Forum</a> をご覧ください）</li></ul><p>もし phpBB3 のベータバージョンをまだ利用している場合、phpBB3 の最新安定バージョンを新しくインストールすることを強く勧めます。</p><h2>MOD / スタイル</h2><p>MOD については <a href="http://www.phpbb.com/community/viewforum.php?f=81">Modifications Forum</a> の関連するトピックに質問・投稿してください。<br />スタイル、テンプレート、イメージセットについては、<a href="http://www.phpbb.com/community/viewforum.php?f=80">Styles Forum</a> の関連するトピックに質問・投稿してください。<br /><br />もし特定のバージョンについて質問したい場合、そのバージョン専用のトピックがありますのでそちらにご投稿ください。</p><h2>サポート</h2><p><a href="http://www.phpbb.com/community/viewtopic.php?f=14&amp;t=571070">The phpBB Welcome Package</a><br /><a href="http://www.phpbb.com/support/">Support Section</a><br /><a href="http://www.phpbb.com/support/documentation/3.0/quickstart/">Quick Start Guide</a><br /><br />最新ニュースと最新リリースのメールを購読するには <a href="http://www.phpbb.com/support/">subscribe to our mailing list</a> にてメールアドレスを入力し送信してください。<br /><br />',
 	'SYNC_FORUMS'				=> 'フォーラムの同期',
 	'SYNC_POST_COUNT'			=> 'post_counts の同期',
 	'SYNC_POST_COUNT_ID'		=> '<var>エントリー</var> %1$s から %2$s までの post_counts を同期中',
@@ -379,7 +383,7 @@ php_flag register_globals off<br />
 
 // Updater
 $lang = array_merge($lang, array(
-	'ALL_FILES_UP_TO_DATE'		=> '差分ファイルは全てアップデートされました。<a href="../ucp.php?mode=login">掲示板にログイン</a>して動作に問題がないかご確認ください。install ディレクトリを削除することを忘れないでください！',
+	'ALL_FILES_UP_TO_DATE'		=> '差分ファイルは全てアップデートされました。<a href="../ucp.php?mode=login&amp;redirect=adm/index.php%3Fi=send_statistics%26mode=send_statistics">掲示板にログイン</a>して動作に問題がないかご確認ください。install ディレクトリを削除することを忘れないでください！ <a href="../ucp.php?mode=login&amp;redirect=adm/index.php%3Fi=send_statistics%26mode=send_statistics">サーバと掲示板の設定情報の提供</a> のご協力をお願い致します。',
 	'ARCHIVE_FILE'				=> 'パッケージ内ファイル',
 
 	'BACK'				=> '戻る',
@@ -393,11 +397,11 @@ $lang = array_merge($lang, array(
 	'CHECK_FILES_UP_TO_DATE'		=> 'データベースに保管されている情報によればお使いの phpBB3 のバージョンは最新です。ウェブサーバ上の phpBB3 の全ファイルが本当に最新バージョンであるかどうかを確かめるためにファイルチェックを行ってももちろんかまいません。',
 	'CHECK_UPDATE_DATABASE'			=> '次のアップデートプロセスへ',
 	'COLLECTED_INFORMATION'			=> 'ファイルチェック情報',
-	'COLLECTED_INFORMATION_EXPLAIN'	=> 'ここではファイルチェックの結果からアップデートが必要だと判断されたファイルをリストアップしています。ファイルリストはいくつかのタイプに分けられています。各ファイルリストの説明をよく読んでから必要なアップデートを行ってください。',
+	'COLLECTED_INFORMATION_EXPLAIN'	=> 'ここではファイルチェックの結果からアップデートの必要ありと判断されたファイルがリストアップされています。ファイルリストはタイプ別に分けられています。各ファイルリストの説明をよく読んでから必要なアップデートを行ってください。',
 	'COLLECTING_FILE_DIFFS'			=> '差分ファイルの確認中',
 	'COMPLETE_LOGIN_TO_BOARD'		=> '<a href="../ucp.php?mode=login">掲示板にログイン</a>して動作に問題がないかご確認ください。install ディレクトリを削除することを忘れないでください！',
 	'CONTINUE_UPDATE_NOW'			=> '次のアップデートプロセスへ',		// Shown within the database update script at the end if called from the updater
-	'CONTINUE_UPDATE'				=> 'アップデートを続ける',					// Shown after file upload to indicate the update process is not yet finished
+	'CONTINUE_UPDATE'				=> 'ファイル再チェック',					// Shown after file upload to indicate the update process is not yet finished
 	'CURRENT_FILE'					=> '衝突ブロック [Begin]',
 	'CURRENT_VERSION'				=> '使用しているバージョン',
 
@@ -419,7 +423,7 @@ $lang = array_merge($lang, array(
 	'DOWNLOAD_CONFLICTS'				=> '衝突ファイルのダウンロード',
 	'DOWNLOAD_CONFLICTS_EXPLAIN'		=> '衝突ブロックを見つけるにはファイルをエディタで開き、 &lt;&lt;&lt; を検索してください',
 	'DOWNLOAD_UPDATE_METHOD'			=> 'アップデートパッケージのダウンロード',
-	'DOWNLOAD_UPDATE_METHOD_EXPLAIN'	=> 'ここでは修正ファイルをダウンロードできます。圧縮形式を選択して修正ファイルをダウンロードしてください。ダウンロード後、解凍して出てきたファイルを phpBB3 ルートディレクトリへアップロードしてください。修正ファイルを全てアップロードし終わったら “ファイル再チェック” をクリックしてアップデートがきちんと完了したかをご確認ください。',
+	'DOWNLOAD_UPDATE_METHOD_EXPLAIN'	=> 'ここではアップデートファイルをダウンロードできます。圧縮形式を選択してアップデートファイルをダウンロードしてください。ダウンロード後、解凍して出てきたファイルを phpBB3 ルートディレクトリへアップロードしてください。アップデートファイルを全てアップロードし終わったら “ファイル再チェック” をクリックしてアップデートがきちんと完了したかをご確認ください。',
 
 	'ERROR'			=> 'エラー',
 	'EDIT_USERNAME'	=> 'ユーザー名を編集する',
@@ -427,18 +431,18 @@ $lang = array_merge($lang, array(
 	'FILE_ALREADY_UP_TO_DATE'		=> 'このファイルは既にアップデートされています',
 	'FILE_DIFF_NOT_ALLOWED'			=> 'このファイルは差分表示を許可されていません',
 	'FILE_USED'						=> '使用情報',			// Single file
-	'FILES_CONFLICT'				=> '修正ファイル [ 衝突 ]',
-	'FILES_CONFLICT_EXPLAIN'		=> '以下のファイルは旧バージョンのオリジナルファイルを修正したファイルです。これらのファイルは修正部分がアップデート部分と衝突しています。アップデートするには衝突部分をご自分で調べて手動で衝突部分を取り除くか、表示されているオプションの中からアップデート方法を選択してください。手動で衝突部分を取り除いた場合、 “ファイル再チェック” をクリックして衝突部分が本当に取り除かれているか確認してください。アップデート方法のオプションは各ファイル毎に選ぶことができます。修正部分とアップデート部分をマージ（共存・統合）する場合、１番目のオプションでは衝突部分にアップデートコードが使用され修正コードは破棄されます。２番目のオプションでは衝突部分に修正コードが使用されアップデートコードは破棄されます。',
-	'FILES_MODIFIED'				=> '修正ファイル',
-	'FILES_MODIFIED_EXPLAIN'		=> '以下のファイルは旧バージョンのオリジナルファイルを修正したファイルです。修正部分とアップデート部分のマージ（共存・統合）が可能です。',
+	'FILES_CONFLICT'				=> 'ハックファイル [ 衝突 ]',
+	'FILES_CONFLICT_EXPLAIN'		=> '以下のファイルはハックファイルです。これらのファイルはハック部分がアップデート部分と衝突しています。アップデートするには衝突部分をご自分で調べて手動で衝突部分を取り除くか、表示されているオプションの中からアップデート方法を選択してください。手動で衝突部分を取り除いた場合、 “ファイル再チェック” をクリックして衝突部分が本当に取り除かれているか確認してください。アップデート方法のオプションは各ファイル毎に選ぶことができます。ハック部分とアップデート部分をマージ（共存・統合）する場合、１番目のオプションでは衝突部分にアップデートコードが使用されハックコードは破棄されます。２番目のオプションでは衝突部分にハックコードが使用されアップデートコードは破棄されます。',
+	'FILES_MODIFIED'				=> 'ハックファイル',
+	'FILES_MODIFIED_EXPLAIN'		=> '以下のファイルはハックファイルです。ハック部分とアップデート部分のマージ（共存・統合）が可能です。',
 	'FILES_NEW'						=> '新しいファイル',
 	'FILES_NEW_EXPLAIN'				=> '以下のファイルは当アップデートで新しく追加されたファイルです。これらのファイルはお使いの phpBB3 に新しく追加されます。',
 	'FILES_NEW_CONFLICT'			=> '新しいファイル [ 衝突 ]',
 	'FILES_NEW_CONFLICT_EXPLAIN'	=> '以下のファイルは当アップデートで新しく追加されたファイルです。しかしこの追加ファイルと同じ位置、同じファイル名のファイルが当 phpBB3 内に既に存在しています。アップデートファイルをアップロードするとこのファイルは上書きされます。',
-	'FILES_NOT_MODIFIED'			=> 'オリジナルファイル',
-	'FILES_NOT_MODIFIED_EXPLAIN'	=> '以下のファイルは旧バージョンのオリジナルファイルです。修正は一切されていません。',
+	'FILES_NOT_MODIFIED'			=> '純正ファイル',
+	'FILES_NOT_MODIFIED_EXPLAIN'	=> '以下のファイルは純正ファイルです。ハックは一切されていません。',
 	'FILES_UP_TO_DATE'				=> 'アップデート済みファイル',
-	'FILES_UP_TO_DATE_EXPLAIN'		=> '以下のファイルは既にアップデートが完了しているため、アップデートファイルをアップロードする必要はありません。',
+	'FILES_UP_TO_DATE_EXPLAIN'		=> '以下のファイルは既にアップデートが完了しているため、アップロードする必要はありません。',
 	'FTP_SETTINGS'					=> 'FTP設定',
 	'FTP_UPDATE_METHOD'				=> 'FTPアップロード',
 
@@ -453,7 +457,7 @@ $lang = array_merge($lang, array(
 	'LINE_ADDED'			=> '追加',
 	'LINE_MODIFIED'			=> '修正',
 	'LINE_REMOVED'			=> '削除',
-	'LINE_UNMODIFIED'		=> 'オリジナルコード',
+	'LINE_UNMODIFIED'		=> '純正コード',
 	'LOGIN_UPDATE_EXPLAIN'	=> 'phpBB3 をアップデートするにはログインしてください。',
 
 	'MAPPING_FILE_STRUCTURE'	=> '表示されている各アップデートファイルを指定先にアップロードしてください。',
@@ -461,8 +465,8 @@ $lang = array_merge($lang, array(
 	'MERGE_MODIFICATIONS_OPTION'	=> 'マージする',
 
 	'MERGE_NO_MERGE_NEW_OPTION'	=> 'マージしない - アップデートファイルを使用する',
-	'MERGE_NO_MERGE_MOD_OPTION'	=> 'マージしない - 現在の修正ファイルをそのまま使用する',
-	'MERGE_MOD_FILE_OPTION'		=> 'マージする - 衝突ブロックに修正コードを適用する',
+	'MERGE_NO_MERGE_MOD_OPTION'	=> 'マージしない - 現在のハックファイルをそのまま使用する',
+	'MERGE_MOD_FILE_OPTION'		=> 'マージする - 衝突ブロックにハックコードを適用する',
 	'MERGE_NEW_FILE_OPTION'		=> 'マージする - 衝突ブロックにアップデートコードを適用する',
 	'MERGE_SELECT_ERROR'		=> 'マージモードが選択されていない衝突ファイルがあります',
 	'MERGING_FILES'				=> 'マージ中',
@@ -477,13 +481,13 @@ $lang = array_merge($lang, array(
 	'NO_UPDATE_FILES_OUTDATED'		=> 'アップデートパッケージが見つかりませんでした。アップデートパッケージをサーバにアップロードしたかをご確認ください。<br /><br />phpBB3 は最新バージョンにアップデートされて<strong>いません</strong>。現在、この phpBB %1$s を最新バージョンにアップデートするためのアップデートパッケージを利用できます。<a href="http://www.phpbb.com/downloads/" rel="external">http://www.phpbb.com/downloads/</a> に訪れてアップデートパッケージ( phpBB-%2$s_to_%3$s )をダウンロードしてください。',
 	'NO_UPDATE_FILES_UP_TO_DATE'	=> 'phpBB3 のバージョンは最新バージョンです。当アップデートツールを実行する必要はありません。',
 	'NO_UPDATE_INFO'				=> 'ファイルのアップデート情報が見つかりません',
-	'NO_UPDATES_REQUIRED'			=> '要求されたアップデート処理はありません',
+	'NO_UPDATES_REQUIRED'			=> '必要なアップデート処理はありません',
 	'NO_VISIBLE_CHANGES'			=> '変更はありません',
 	'NOTICE'						=> '通知',
 	'NUM_CONFLICTS'					=> '衝突ブロック数',
 	'NUMBER_OF_FILES_COLLECTED'		=> '現在、%2$d ファイルの内、%1$d ファイルまでチェックを終了しました。<br />ファイルチェックが全て終了するまでお待ちください。',
 
-	'OLD_UPDATE_FILES'		=> 'アップデートファイルが最新ではありません。このアップデートファイルだと phpBB %1$s から phpBB %2$s にアップデートできますが、現在の phpBB3 の最新バージョンは %3$s です。',
+	'OLD_UPDATE_FILES'		=> 'アップデートファイルが最新ではありません。このアップデートファイルは phpBB %1$s から phpBB %2$s へアップデートを行います。一方、現在の phpBB3 の最新バージョンは %3$s です。',
 
 	'PACKAGE_UPDATES_TO'				=> 'このパッケージによるアップデート後のバージョン',
 	'PERFORM_DATABASE_UPDATE'			=> 'データベースアップデート',
@@ -510,11 +514,11 @@ $lang = array_merge($lang, array(
 	'STAGE_UPDATE_DB'			=> 'データベースアップデート',
 	'STAGE_UPDATE_FILES'		=> 'ファイルアップデート',
 	'STAGE_VERSION_CHECK'		=> 'バージョンチェック',
-	'STATUS_CONFLICT'			=> '修正ファイル [ 衝突 ]',
-	'STATUS_MODIFIED'			=> '修正ファイル',
+	'STATUS_CONFLICT'			=> 'ハックファイル [ 衝突 ]',
+	'STATUS_MODIFIED'			=> 'ハックファイル',
 	'STATUS_NEW'				=> '新しいファイル',
 	'STATUS_NEW_CONFLICT'		=> '新しいファイル [ 衝突 ]',
-	'STATUS_NOT_MODIFIED'		=> 'オリジナルファイル',
+	'STATUS_NOT_MODIFIED'		=> '純正ファイル',
 	'STATUS_UP_TO_DATE'			=> 'アップデート済みファイル',
 
 	'TOGGLE_DISPLAY'			=> 'ファイルリストの 表示/非表示',
@@ -528,18 +532,18 @@ $lang = array_merge($lang, array(
 	'UPDATE_FILES'					=> 'ファイルアップデート',
 	'UPDATE_FILES_NOTICE'			=> 'ファイルのアップデートを忘れないでください。このスクリプトはデータベースのアップデートのみを実行しました。',
 	'UPDATE_INSTALLATION'			=> 'phpBB3 のアップデート',
-	'UPDATE_INSTALLATION_EXPLAIN'	=> 'ここでは phpBB3 のアップデートを行います。<br />アップデートプロセスの中には phpBB3 の各ファイルについてアップデートすべきファイルかどうかをチェックするものもあります。アップデートを実行する前にこれらアップデートされるファイルの差分コードを確認できます。<br /><br />ファイルアップデートは２つの方法から選択できます。</p><h2>手動アップデート</h2><p>このアップデート方法では、あなたが MOD などで独自に修正を施しているファイルについて、修正部分を損なうことなくアップデート差分を追加したファイルを作成し、そのパッケージをダウンロードすることが可能です。このパッケージをダウンロード後、パッケージ内ファイルをご自分で phpBB3 ディレクトリ下の正しい位置にアップロードする必要があります。アップロードが完了したら “ファイル再チェック” を実行することで正しい位置にファイルがアップロードされたかどうかを確認できます。</p><h2>FTP による自動アップデート</h2><p>このアップデート方法ではアップデートは自動で行われます。この方法を使用するには FTPサーバ へのログイン情報が必要です。自動アップデートが完了するとファイル再チェックが自動的に始まり、ファイルがきちんとアップデートされているかどうかを確認できます。<br /><br />',
+	'UPDATE_INSTALLATION_EXPLAIN'	=> 'ここでは phpBB3 のアップデートを行います。<br />アップデートプロセスの中には phpBB3 の各ファイルについてアップデートすべきファイルかどうかをチェックするものもあります。アップデートを実行する前にこれらアップデートされるファイルの差分コードを確認できます。<br /><br />ファイルアップデートは２つの方法から選択できます。</p><h2>手動アップデート</h2><p>このアップデート方法では、あなたが MOD などで独自にハックを施しているファイルについて、ハック部分を損なうことなくアップデート差分を追加したファイルを作成し、そのパッケージをダウンロードすることが可能です。このパッケージをダウンロード後、パッケージ内ファイルをご自分で phpBB3 ディレクトリ下の正しい位置にアップロードする必要があります。アップロードが完了したら “ファイル再チェック” を実行することで正しい位置にファイルがアップロードされたかどうかを確認できます。</p><h2>FTP による自動アップデート</h2><p>このアップデート方法ではアップデートは自動で行われます。この方法を使用するには FTPサーバ へのログイン情報が必要です。自動アップデートが完了するとファイル再チェックが自動的に始まり、ファイルがきちんとアップデートされているかどうかを確認できます。<br /><br />',
 	'UPDATE_INSTRUCTIONS'			=> '
 
 		<h1>リリースのお知らせ</h1>
 
-		<p>アップデートプロセスを続行する前に <a href="%1$s" title="%1$s"><strong>the release announcement for the latest version</strong></a> をお読みください。読んで損はしないはずです。そちらにダウンロードリンクとアップデートによる変更情報も含まれています。</p>
+		<p>アップデートを行う前に <a href="%1$s" title="%1$s"><strong>the release announcement for the latest version</strong></a> をお読みください。読んで損はしないはずです。そちらにダウンロードリンクとアップデートによる変更ログも含まれています。</p>
 
 		<br />
 
-		<h1>自動アップデートパッケージよるアップデート方法</h1>
+		<h1>自動アップデート</h1>
 
-		<p>この自動アップデートパッケージによるアップデートは推奨されているアップデート方法です。INSTALL.html ドキュメントで紹介されているアップデート方法でアップデートすることももちろん可能です。自動アップデートのステップは:</p>
+		<p>以下の手順で自動アップデートすることが推奨されています。INSTALL.html で紹介されているアップデート方法でアップデートすることももちろん可能です。自動アップデートのステップは:</p>
 
 		<ul style="margin-left: 20px; font-size: 1.1em;">
 			<li><a href="http://www.phpbb.com/downloads/" title="http://www.phpbb.com/downloads/">phpBB.com downloads page</a> をクリックして "Automatic Update Package" をダウンロードする<br /><br /></li>
@@ -548,9 +552,9 @@ $lang = array_merge($lang, array(
 		</ul>
 
 		<p>アップロードが完了すると一般ユーザーは全てオフライン状態に移行します<br /><br />
-		<strong><a href="%2$s" title="%2$s">こちらをクリック</a>してアップデートプロセスを開始してください</strong><br />
+		<strong><a href="%2$s" title="%2$s">こちらをクリック</a>してアップデートを開始してください</strong><br />
 		<br />
-		アップデートプロセスを開始したら各プロセスの指示に従ってください。アップデートが完了するとその旨のメッセージが表示されます。
+		アップデートを開始したら各プロセスの指示に従ってください。アップデートが完了するとその旨のメッセージが表示されます。
 		</p>
 	',
 	'UPDATE_INSTRUCTIONS_INCOMPLETE'	=> '
@@ -575,11 +579,12 @@ $lang = array_merge($lang, array(
 	'USER_INACTIVE'					=> '無効アカウントユーザー',
 
 	'VERSION_CHECK'				=> 'バージョンチェック',
-	'VERSION_CHECK_EXPLAIN'		=> 'ここでは phpBB のバージョンが最新バージョンかどうかを確認できます',
-	'VERSION_NOT_UP_TO_DATE'	=> 'phpBB のバージョンは最新バージョンではありません。最新バージョンにアップデートしてください。',
-	'VERSION_NOT_UP_TO_DATE_ACP'=> 'phpBB のバージョンは最新バージョンではありません。<br />下のリンクをクリックすれば最新バージョンへのアップデート方法を説明したページに移動できます。',
-	'VERSION_UP_TO_DATE'		=> 'phpBB のバージョンは最新バージョンです。ファイルの正当性のチェックをしたい場合はこのまま先に進んでください。',
-	'VERSION_UP_TO_DATE_ACP'	=> 'phpBB のバージョンは最新バージョンです。アップデートする必要はありません。',
+	'VERSION_CHECK_EXPLAIN'			=> 'ここでは phpBB のバージョンが最新バージョンかどうかを確認できます',
+	'VERSION_NOT_UP_TO_DATE'		=> 'phpBB のバージョンが最新ではありません。最新バージョンにアップデートしてください。',
+	'VERSION_NOT_UP_TO_DATE_ACP'	=> 'phpBB のバージョンが最新ではありません。<br />下のリンクをクリックすれば最新バージョンへのアップデート情報をご覧頂けます。',
+	'VERSION_NOT_UP_TO_DATE_TITLE'	=> 'phpBB のバージョンが最新ではありません',
+	'VERSION_UP_TO_DATE'			=> 'phpBB のバージョンは最新です。ファイルの正当性をチェックしたい場合はこのまま先へ進んでください。',
+	'VERSION_UP_TO_DATE_ACP'		=> 'phpBB のバージョンは最新です。アップデートする必要はありません。',
 	'VIEWING_FILE_CONTENTS'		=> 'ファイルのソースを確認中',
 	'VIEWING_FILE_DIFF'			=> 'ファイルの差分を確認中',
 
