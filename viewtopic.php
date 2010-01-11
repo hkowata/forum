@@ -593,6 +593,7 @@ $template->assign_vars(array(
 	'TOPIC_AUTHOR_COLOUR'	=> get_username_string('colour', $topic_data['topic_poster'], $topic_data['topic_first_poster_name'], $topic_data['topic_first_poster_colour']),
 	'TOPIC_AUTHOR'			=> get_username_string('username', $topic_data['topic_poster'], $topic_data['topic_first_poster_name'], $topic_data['topic_first_poster_colour']),
 	'TOPIC_AUTHOR_ID'		=> $topic_data['topic_poster'],
+	'TOPIC_VIEWS'			=> $topic_data['topic_views'],
 
 	'PAGINATION' 	=> $pagination,
 	'PAGE_NUMBER' 	=> on_page($total_posts, $config['posts_per_page'], $start),
