@@ -1,0 +1,12 @@
+Subject: トピックが承認されました - "{TOPIC_TITLE}"
+
+{USERNAME} さん
+
+フォーラムサイト 「{SITENAME}」 で
+あなたが投稿したトピック 「{TOPIC_TITLE}」 が
+モデレータまたはフォーラムサイト管理人によって承認されました。
+
+こちらをクリックすればトピックを確認できます：
+{U_VIEW_TOPIC}
+
+{EMAIL_SIG}
