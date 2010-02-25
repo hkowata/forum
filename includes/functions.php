@@ -4063,12 +4063,6 @@ function page_header($page_title = '', $display_online_list = true, $item_id = 0
 	}
 
 	// The following assigns all _common_ variables that may be used at any point in a template.
-
-// MOD : MSSTI RSS Feeds (V1.0.9) - Start
-		$f_rss = request_var('f', 0);
-		$t_rss = request_var('t', 0);
-// MOD : MSSTI RSS Feeds (V1.0.9) - End
-
 	$template->assign_vars(array(
 		'SITENAME'						=> $config['sitename'],
 		'SITE_DESCRIPTION'				=> $config['site_desc'],
@@ -4166,20 +4160,6 @@ function page_header($page_title = '', $display_online_list = true, $item_id = 0
 		'T_UPLOAD_PATH'			=> "{$web_path}{$config['upload_path']}/",
 		'T_STYLESHEET_LINK'		=> (!$user->theme['theme_storedb']) ? "{$web_path}styles/" . $user->theme['theme_path'] . '/theme/stylesheet.css' : append_sid("{$phpbb_root_path}style.$phpEx", 'id=' . $user->theme['style_id'] . '&amp;lang=' . $user->data['user_lang']),
 		'T_STYLESHEET_NAME'		=> $user->theme['theme_name'],
-
-// MOD : MSSTI RSS Feeds (V1.0.9) - Start
-		'U_RSS'						=> generate_board_url() . "/rss.$phpEx",
-		'S_FORUM_ID'				=> $f_rss, 
-		'S_TOPIC_ID'				=> $t_rss,
-		'S_ENABLE_FEEDS'			=> ($config['rss_enable']) ? true : false,
-		'S_ENABLE_FEEDS_NEWS'		=> ($config['rss_news_id'] != '') ? true : false,
-		'S_ENABLE_FEEDS_FORUMS'		=> ($config['rss_overall_forums']) ? true : false,
-		'S_ENABLE_FEEDS_THREADS'	=> ($config['rss_overall_threads']) ? true : false,
-		'S_ENABLE_FEEDS_POSTS'		=> ($config['rss_overall_posts']) ? true : false,
-		'S_ENABLE_FEEDS_EGOSEARCH'	=> ($config['rss_egosearch'] && $user->data['user_id'] != ANONYMOUS) ? true : false,
-		'S_ENABLE_FEEDS_FORUM'		=> ($config['rss_forum'] && $f_rss != 0) ? true : false,
-		'S_ENABLE_FEEDS_THREAD'		=> ($config['rss_thread'] && $t_rss != 0) ? true : false,
-// MOD : MSSTI RSS Feeds (V1.0.9) - End
 
 		'T_THEME_NAME'			=> $user->theme['theme_path'],
 		'T_TEMPLATE_NAME'		=> $user->theme['template_path'],
