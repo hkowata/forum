@@ -44,6 +44,7 @@ if (!empty($load_extensions))
 
 $sid = (isset($_GET['sid']) && !is_array($_GET['sid'])) ? htmlspecialchars($_GET['sid']) : '';
 $id = (isset($_GET['id'])) ? intval($_GET['id']) : 0;
+$input_lang = $_GET['lang'];
 
 if (strspn($sid, 'abcdefABCDEF0123456789') !== strlen($sid))
 {
@@ -118,6 +119,11 @@ if ($id)
 	}
 
 	$user_image_lang = (file_exists($phpbb_root_path . 'styles/' . $theme['imageset_path'] . '/imageset/' . $user['user_lang'])) ? $user['user_lang'] : $config['default_lang'];
+	
+	if ($input_lang)
+	{
+		$user_image_lang = $input_lang;
+	}
 
 	// Same query in session.php
 	$sql = 'SELECT *
@@ -221,7 +227,8 @@ if ($id)
 		'{T_IMAGESET_PATH}'			=> "{$phpbb_root_path}styles/" . $theme['imageset_path'] . '/imageset',
 		'{T_IMAGESET_LANG_PATH}'	=> "{$phpbb_root_path}styles/" . $theme['imageset_path'] . '/imageset/' . $user_image_lang,
 		'{T_STYLESHEET_NAME}'		=> $theme['theme_name'],
-		'{S_USER_LANG}'				=> $user['user_lang']
+		'{S_USER_LANG}'				=> $user['user_lang'],
+		'{LUZI82_DEBUG}'	=> $luzi82_debug
 	);
 
 	$theme['theme_data'] = str_replace(array_keys($replace), array_values($replace), $theme['theme_data']);

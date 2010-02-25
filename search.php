@@ -47,6 +47,13 @@ $sort_dir		= request_var('sd', 'd');
 $return_chars	= request_var('ch', ($topic_id) ? -1 : 300);
 $search_forum	= request_var('fid', array(0));
 
+$luzi82_output_count = request_var('output_count', -1);
+
+if ( $luzi82_output_count > 250 )
+{
+	$luzi82_output_count = 250;
+}
+
 // Is user able to search? Has search been disabled?
 if (!$auth->acl_get('u_search') || !$auth->acl_getf_global('f_search') || !$config['load_search'])
 {
@@ -75,6 +82,8 @@ if ($interval && !$auth->acl_get('u_ignoreflood'))
 // Define some vars
 $limit_days		= array(0 => $user->lang['ALL_RESULTS'], 1 => $user->lang['1_DAY'], 7 => $user->lang['7_DAYS'], 14 => $user->lang['2_WEEKS'], 30 => $user->lang['1_MONTH'], 90 => $user->lang['3_MONTHS'], 180 => $user->lang['6_MONTHS'], 365 => $user->lang['1_YEAR']);
 $sort_by_text	= array('a' => $user->lang['SORT_AUTHOR'], 't' => $user->lang['SORT_TIME'], 'f' => $user->lang['SORT_FORUM'], 'i' => $user->lang['SORT_TOPIC_TITLE'], 's' => $user->lang['SORT_POST_SUBJECT']);
+
+$sort_by_text['z']=$user->lang['SORT_TOPIC_TIME'];
 
 $s_limit_days = $s_sort_key = $s_sort_dir = $u_sort_param = '';
 gen_sort_selects($limit_days, $sort_by_text, $sort_days, $sort_key, $sort_dir, $s_limit_days, $s_sort_key, $s_sort_dir, $u_sort_param);
@@ -288,6 +297,7 @@ if ($keywords || $author || $author_id || $search_id || $submit)
 
 	// define some variables needed for retrieving post_id/topic_id information
 	$sort_by_sql = array('a' => 'u.username_clean', 't' => (($show_results == 'posts') ? 'p.post_time' : 't.topic_last_post_time'), 'f' => 'f.forum_id', 'i' => 't.topic_title', 's' => (($show_results == 'posts') ? 'p.post_subject' : 't.topic_title'));
+	$sort_by_sql['z'] = (($show_results == 'posts') ? 'p.post_time' : 't.topic_time');
 
 	// pre-made searches
 	$sql = $field = $l_search_title = '';
@@ -456,6 +466,7 @@ if ($keywords || $author || $author_id || $search_id || $submit)
 
 	// show_results should not change after this
 	$per_page = ($show_results == 'posts') ? $config['posts_per_page'] : $config['topics_per_page'];
+	$per_page = ($luzi82_output_count > 0) ? $luzi82_output_count : $per_page;
 	$total_match_count = 0;
 
 	if ($search_id)
@@ -556,6 +567,7 @@ if ($keywords || $author || $author_id || $search_id || $submit)
 	$u_search .= (!$search_child) ? '&amp;sc=0' : '';
 	$u_search .= ($search_fields != 'all') ? '&amp;sf=' . $search_fields : '';
 	$u_search .= ($return_chars != 300) ? '&amp;ch=' . $return_chars : '';
+	$u_search .= ($luzi82_output_count > 0) ? '&amp;output_count=' . $luzi82_output_count : '';
 
 	$template->assign_vars(array(
 		'SEARCH_TITLE'		=> $l_search_title,
@@ -973,7 +985,7 @@ if ($keywords || $author || $author_id || $search_id || $submit)
 				'POST_ID'			=> ($show_results == 'posts') ? $row['post_id'] : false,
 
 				'FORUM_TITLE'		=> $row['forum_name'],
-				'TOPIC_TITLE'		=> $topic_title,
+				'TOPIC_TITLE'		=> luzi82_replace_smilies($topic_title),
 				'TOPIC_REPLIES'		=> $replies,
 				'TOPIC_VIEWS'		=> $row['topic_views'],
 
