@@ -3923,7 +3923,7 @@ function phpbb_optionset($bit, $set, $data)
 /**
 * Generate page header
 */
-function page_header($page_title = '', $display_online_list = true, $item_id = 0, $item = 'forum')
+function page_header($page_title = '', $display_online_list = true,  $post_text = '',$item_id = 0, $item = 'forum')
 {
 	global $db, $config, $template, $SID, $_SID, $user, $auth, $phpEx, $phpbb_root_path;
 
@@ -4062,11 +4062,66 @@ function page_header($page_title = '', $display_online_list = true, $item_id = 0
 		$user_lang = substr($user_lang, 0, strpos($user_lang, '-x-'));
 	}
 
-	// The following assigns all _common_ variables that may be used at any point in a template.
+	
+    // Advanced Meta Tags MOD
+	$page_keywords = $config['global_keywords'];
+	$page_description = $config['site_desc'];
+	
+	if (!empty($post_text))
+	{
+		$post_text = strtolower(strip_tags($post_text));
+		$post_text = str_word_count($post_text, 1);
+		if ($config['use_dynamic_keywords'])
+		{
+			$count = 0;
+			$page_keywords = array();
+			foreach ($post_text as $word)
+			{
+				$word = str_replace("'", '', $word);
+				
+				if (strlen($word) > 2)
+				{
+					if (!empty($page_keywords) && in_array($word, $page_keywords))
+					{
+						continue;
+					}
+					$page_keywords[] = $word;
+					$count++;
+				}
+				
+				if ($count == $config['keyword_word_count'])
+				{
+					break;
+				}
+			}
+			$config_keywords = ($config['append_global_keywords']) ? $config['global_keywords'] : '';
+			$page_keywords = ($config['append_keywords_first']) ? $config_keywords . ', ' . implode(', ', $page_keywords) : implode(', ', $page_keywords) . ', ' . $config_keywords;
+		}
+		
+		if ($config['use_dynamic_description'])
+		{
+			$count = 0;
+			$page_description = '';
+			foreach ($post_text as $word)
+			{
+				$page_description .= $word . ' ';
+				$count++;
+				
+				if ($count == $config['description_word_count'])
+				{
+					break;
+				}
+			}
+		}
+	}
+// The following assigns all _common_ variables that may be used at any point in a template.
 	$template->assign_vars(array(
 		'SITENAME'						=> $config['sitename'],
 		'SITE_DESCRIPTION'				=> $config['site_desc'],
 		'PAGE_TITLE'					=> $page_title,
+	// Advanced Meta Tags MOD
+	'PAGE_KEYWORDS'                                 => $page_keywords,
+	'PAGE_DESCRIPTION'                              => $page_description,
 		'SCRIPT_NAME'					=> str_replace('.' . $phpEx, '', $user->page['page_name']),
 		'LAST_VISIT_DATE'				=> sprintf($user->lang['YOU_LAST_VISIT'], $s_last_visit),
 		'LAST_VISIT_YOU'				=> $s_last_visit,

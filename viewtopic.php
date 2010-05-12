@@ -1320,7 +1320,8 @@ $template->assign_vars(array(
 );
 
 // Output the posts
-$first_unread = $post_unread = false;
+$first_unread = $post_unread = false;// Advanced Meta Tags MOD
+$first_post_text = '';
 for ($i = 0, $end = sizeof($post_list); $i < $end; ++$i)
 {
 	// A non-existing rowset only happens if there was no user present for the entered poster_id
@@ -1359,6 +1360,12 @@ for ($i = 0, $end = sizeof($post_list); $i < $end; ++$i)
 		$bbcode->bbcode_second_pass($message, $row['bbcode_uid'], $row['bbcode_bitfield']);
 	}
 
+
+    // Advanced Meta Tags MOD
+    if ($i == 0)
+    {
+        $first_post_text = $message;
+    }
 	$message = bbcode_nl2br($message);
 	$message = smiley_text($message);
 
@@ -1736,7 +1743,8 @@ if (empty($_REQUEST['f']))
 }
 
 // Output the page
-page_header($user->lang['VIEW_TOPIC'] . ' - ' . $topic_data['topic_title'], true, $forum_id);
+page_header($user->lang['VIEW_TOPIC'] . ' - ' . $topic_data['topic_title'], true,  $first_post_text);// true, post_text added by Advanced Meta Tags MOD
+
 
 if ($view=='xml')
 {

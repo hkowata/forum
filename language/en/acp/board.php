@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 /**
 *
 * acp_board [English]
@@ -54,6 +54,19 @@ $lang = array_merge($lang, array(
 	'WARNINGS_EXPIRE'				=> 'Warning duration',
 	'WARNINGS_EXPIRE_EXPLAIN'		=> 'Number of days that will elapse before the warning will automatically expire from a user’s record.',
 ));
+// Advanced Meta Tags MOD
+$lang = array_merge($lang, array(
+    'APPEND_GLOBAL_KEYWORDS'                => 'Append Global Keywords',
+    'APPEND_GLOBAL_KEYWORDS_EXPLAIN'=> 'Add Global Keywords to the Generated Meta Keywords',
+    'APPEND_KEYWORDS_FIRST'                 => 'Add Global Keywords Position',
+    'APPEND_KEYWORDS_FIRST_EXPLAIN' => 'Yes to add Global Keywords appear before Generated Keywords,<br />No to add Global Keywords after Generated Keywords',
+    'DESCRIPTION_WORD_COUNT'                => 'Meta Description Word Count Limit',
+    'DYNAMIC_DESCRIPTION'                   => 'Enable Page Generated Meta Descriptions',
+    'DYNAMIC_KEYWORDS'                              => 'Enable Page Generated Meta Keywords',
+    'GLOBAL_KEYWORDS'                               => 'Global Meta Keywords',
+    'KEYWORD_WORD_COUNT'                    => 'Meta Keyword Word Count Limit',
+));
+
 
 // Board Features
 $lang = array_merge($lang, array(
