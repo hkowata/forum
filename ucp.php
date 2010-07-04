@@ -22,6 +22,10 @@ require($phpbb_root_path . 'includes/functions_module.' . $phpEx);
 $id 	= request_var('i', '');
 $mode	= request_var('mode', '');
 
+// luzi82 START
+$login_check = request_var('login_check', '');
+// luzi82 END
+
 if ($mode == 'login' || $mode == 'logout' || $mode == 'confirm')
 {
 	define('IN_LOGIN', true);
@@ -73,11 +77,17 @@ switch ($mode)
 	break;
 
 	case 'login':
+		// luzi82 START
+		if ($login_check == '1')
+		{
+			exit;
+		}
+		// luzi82 END
 		if ($user->data['is_registered'])
 		{
 			redirect(append_sid("{$phpbb_root_path}index.$phpEx"));
 		}
-
+		
 		login_box(request_var('redirect', "index.$phpEx"));
 	break;
 

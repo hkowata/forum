@@ -2,7 +2,7 @@
 /**
 *
 * @package phpBB3
-* @version $Id: functions_posting.php 10008 2009-08-17 14:45:14Z acydburn $
+* @version $Id$
 * @copyright (c) 2005 phpBB Group
 * @license http://opensource.org/licenses/gpl-license.php GNU Public License
 *
@@ -46,7 +46,7 @@ function generate_smilies($mode, $forum_id)
 
 		page_header($user->lang['SMILIES']);
 
-		$sql = 'SELECT COUNT(smiley_id) AS count
+		$sql = 'SELECT COUNT(smiley_id) AS item_count
 			FROM ' . SMILIES_TABLE . '
 			GROUP BY smiley_url';
 		$result = $db->sql_query($sql, 3600);
@@ -88,16 +88,16 @@ function generate_smilies($mode, $forum_id)
 		$sql = 'SELECT smiley_url, MIN(emotion) as emotion, MIN(code) AS code, smiley_width, smiley_height
 			FROM ' . SMILIES_TABLE . '
 			GROUP BY smiley_url, smiley_width, smiley_height
-			ORDER BY smiley_order';
+			ORDER BY MIN(smiley_order)';
 		$result = $db->sql_query_limit($sql, $config['smilies_per_page'], $start, 3600);
 	}
 	else
 	{
-	$sql = 'SELECT *
+		$sql = 'SELECT *
 			FROM ' . SMILIES_TABLE . '
 			WHERE display_on_posting = 1
-		ORDER BY smiley_order';
-	$result = $db->sql_query($sql, 3600);
+			ORDER BY smiley_order';
+		$result = $db->sql_query($sql, 3600);
 	}
 
 	$smilies = array();
@@ -2525,7 +2525,7 @@ function submit_post($mode, $subject, $username, $topic_type, &$poll, &$data, $u
 				VALUES (' . $user->data['user_id'] . ', ' . $data['topic_id'] . ')';
 			$db->sql_query($sql);
 		}
-		else if ($data['notify_set'] && !$data['notify'])
+		else if (($config['email_enable'] || $config['jab_enable']) && $data['notify_set'] && !$data['notify'])
 		{
 			$sql = 'DELETE FROM ' . TOPICS_WATCH_TABLE . '
 				WHERE user_id = ' . $user->data['user_id'] . '
@@ -2571,9 +2571,9 @@ function submit_post($mode, $subject, $username, $topic_type, &$poll, &$data, $u
 		}
 		else
 		{
-		$sql = 'SELECT forum_last_post_time
-			FROM ' . FORUMS_TABLE . '
-			WHERE forum_id = ' . $data['forum_id'];
+			$sql = 'SELECT forum_last_post_time
+				FROM ' . FORUMS_TABLE . '
+				WHERE forum_id = ' . $data['forum_id'];
 		}
 		$result = $db->sql_query($sql);
 		$forum_last_post_time = (int) $db->sql_fetchfield('forum_last_post_time');
