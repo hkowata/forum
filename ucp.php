@@ -80,15 +80,18 @@ switch ($mode)
 		// luzi82 START
 		if ($login_check == '1')
 		{
-			exit;
+			login_box('','','',false,true,true);
 		}
-		// luzi82 END
+		else
+		{
 		if ($user->data['is_registered'])
 		{
 			redirect(append_sid("{$phpbb_root_path}index.$phpEx"));
 		}
 		
 		login_box(request_var('redirect', "index.$phpEx"));
+		}
+		// luzi82 END
 	break;
 
 	case 'logout':

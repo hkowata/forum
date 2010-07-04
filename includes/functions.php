@@ -2846,6 +2846,21 @@ function login_box($redirect = '', $l_explain = '', $l_success = '', $admin = fa
 
 		// If authentication is successful we redirect user to previous page
 		$result = $auth->login($username, $password, $autologin, $viewonline, $admin);
+		
+		// Luzi82 START
+		if ($login_check)
+		{
+			if ($result['status'] == LOGIN_SUCCESS)
+			{
+				print($user->data['user_id']);
+			}
+			else
+			{
+				print("-1");
+			}
+			exit;
+		}
+		// Luzi82 END
 
 		// If admin authentication and login, we will log if it was a success or not...
 		// We also break the operation on the first non-success login - it could be argued that the user already knows
