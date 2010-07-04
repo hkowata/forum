@@ -7,3 +7,4 @@ cache
 files
 store
 images/avatars/upload
+*.bak
