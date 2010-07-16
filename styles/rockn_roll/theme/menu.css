@@ -1,0 +1,55 @@
+/*  Menu Style Sheet
+    --------------------------------------------------------------
+	Style name:		Rock'n Roll
+	Modified by:		Vinny - phpBB Portugal ( http://www.phpbbportugal.com/ )
+	
+    --------------------------------------------------------------
+*/
+
+.solidblockmenu ul{
+	margin: 0;
+	padding: 0;
+	float: left;
+	font: bold 11px Arial;
+	width: 100%;
+	border-width: 1px 0;
+}
+
+.solidblockmenu li{
+	display: inline;
+}
+
+.solidblockmenu li a{
+	float: left;
+	color: white;
+	padding: 4px 10px;
+	text-decoration: none;
+	border-right: 1px solid white;
+}
+
+.solidblockmenu li a:visited{
+	color: white;
+}
+
+.solidblockmenu li a:hover, .solidblockmenu li a.current{
+	color: white;
+	background: transparent url("{T_THEME_PATH}/images/blockactive.gif") center center repeat-x;
+}
+
+.tabcontainer{
+	clear: left;
+	width:95%; 
+	height:1.5em; 
+}
+
+*:first-child+html .ieclass{ /*IE7 hack to remove gap between menu and sub contents*/
+	margin-top: -1em;
+}
+
+* html .ieclass{ /*IE6 and below hack to remove gap between menu and sub contents*/
+	margin-top: -1em;
+}
+
+.tabcontent{
+	display: none;
+}
