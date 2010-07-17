@@ -1,0 +1,27 @@
+#wraptab{
+width: 100%;
+margin: 0 auto;
+}
+.box{
+background: #fff;
+}
+.boxholder{
+clear: both;
+padding: 5px;
+background: #8DC70A;
+}
+.tab{
+float: left;
+height: 32px;
+width: 120px;
+margin: 0 1px 0 0;
+text-align: center;
+background: #8DC70A url(./images/greentab.jpg) no-repeat;
+}
+.tabtxt{
+margin: 0;
+color: #fff;
+font-size: 12px;
+font-weight: bold;
+padding: 9px 0 0 0;
+}
