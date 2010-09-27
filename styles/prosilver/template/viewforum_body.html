@@ -28,9 +28,16 @@
 <!-- IF S_HAS_SUBFORUM -->
 <!-- IF not S_IS_BOT and U_MARK_FORUMS -->
 <ul class="linklist">
-	<li class="rightside"><a href="{U_MARK_FORUMS}">{L_MARK_FORUMS_READ}</a></li>
+		<li class="rightside"><a href="{U_MARK_FORUMS}">{L_MARK_FORUMS_READ}</a></li>
 </ul>
 <!-- ENDIF -->
+<div id="sidebar_left">
+<!-- BEGIN include_modules -->
+{include_modules.S_INCLUDE_COMBINED}
+<!-- END include_modules -->
+</div>
+
+<div id="content_combined">
 	<!-- INCLUDE forumlist_body.html -->
 <!-- ENDIF -->
 
@@ -69,6 +76,15 @@
 	</div>
 <!-- ENDIF -->
 
+<!-- IF not S_HAS_SUBFORUM -->
+<div id="sidebar_left">
+<!-- BEGIN include_modules -->
+{include_modules.S_INCLUDE_COMBINED}
+<!-- END include_modules -->
+</div>
+
+<div id="content_combined">
+<!-- ENDIF -->
 <!-- IF S_NO_READ_ACCESS -->
 
 	<div class="panel">
@@ -219,4 +235,5 @@
 	<p><!-- BEGIN rules -->{rules.RULE}<br /><!-- END rules --></p>
 <!-- ENDIF -->
 
+</div>
 <!-- INCLUDE overall_footer.html -->

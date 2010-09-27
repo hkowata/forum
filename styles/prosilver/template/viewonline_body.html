@@ -6,6 +6,19 @@
 <ul class="linklist">
 	<li class="rightside pagination"><!-- IF PAGINATION --><a href="#" onclick="jumpto(); return false;" title="{L_JUMP_TO_PAGE}">{PAGE_NUMBER}</a> &bull; <span>{PAGINATION}</span><!-- ELSE -->{PAGE_NUMBER}<!-- ENDIF --></li>
 </ul>
+<div id="sidebar_left">
+<!-- BEGIN include_modules -->
+	{include_modules.S_INCLUDE_LEFT}
+<!-- END include_modules -->
+</div>
+
+<div id="sidebar_right">
+<!-- BEGIN include_modules -->
+	{include_modules.S_INCLUDE_RIGHT}
+<!-- END include_modules -->
+</div>
+
+<div id="content_center">
 
 <div class="forumbg">
 	<div class="inner"><span class="corners-top"><span></span></span>
@@ -54,4 +67,5 @@
 </ul>
 
 <!-- INCLUDE jumpbox.html -->
+</div>
 <!-- INCLUDE overall_footer.html -->

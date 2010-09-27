@@ -134,6 +134,46 @@ p.right {
 a#logo:hover {
 	text-decoration: none;
 }
+/* AlphaPORTAL
+ ------------ */
+#sidebar_left {
+	float: left;
+	width: 18%;
+	margin-bottom: 10px;
+	padding-right: 1%;
+}
+
+#sidebar_right {
+	float: right;
+	width: 18%;
+	margin-bottom: 10px;
+	padding-left: 1%;
+}
+
+#content_center {
+	margin-bottom: 10px;
+	float: right;
+	width: 62%;
+}
+
+#content_combined {
+	margin-bottom: 10px;
+	float: right;
+	width: 81%;
+}
+
+.portalheader {
+	margin-bottom: 5px;
+	margin-top: 5px
+}
+
+.indent {
+	margin-left: 10px;
+}
+
+.link_break {
+	width: 80%;
+}
 
 /* Search box
 --------------------------------------------- */

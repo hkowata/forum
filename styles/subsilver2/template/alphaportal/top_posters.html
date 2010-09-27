@@ -1,0 +1,16 @@
+<table class="tablebg" width="100%" cellspacing="1">
+<tr>
+	<th>{L_TOP_POSTERS}</th>
+</tr>
+<tr> 
+	<td class="row1">
+		<span style="float:left;"><strong>{L_USERNAME}</strong></span>
+		<span style="float:right;padding-right:10px;"><strong>{L_POSTS}</strong></span><br />
+		<!-- BEGIN top_posters -->
+		<span style="float:left;"><strong><a href="{top_posters.U_USERNAME}"><span<!-- IF top_posters.USERNAME_COLOR -->{top_posters.USERNAME_COLOR}<!-- ENDIF -->>{top_posters.USERNAME}</span></a></strong></span>
+		<span style="float:right;padding-right:10px;"><a href="{top_posters.S_SEARCH_ACTION}">{top_posters.POSTER_POSTS}</a></span><br clear="all" />
+		<!-- END top_posters -->
+	</td>
+</tr>
+</table>
+<br />

@@ -2,6 +2,17 @@
 
 <h2 class="solo">{L_SEARCH}</h2>
 
+<div id="sidebar_left">
+<!-- BEGIN include_modules -->
+{include_modules.S_INCLUDE_LEFT}
+<!-- END include_modules -->
+</div>
+<div id="sidebar_right">
+<!-- BEGIN include_modules -->
+{include_modules.S_INCLUDE_RIGHT}
+<!-- END include_modules -->
+</div>
+<div id="content_center">
 <form method="get" action="{S_SEARCH_ACTION}">
 
 <div class="panel">
@@ -119,4 +130,5 @@
 </div>
 <!-- ENDIF -->
 
+</div>
 <!-- INCLUDE overall_footer.html -->

@@ -1,0 +1,51 @@
+<!-- IF not S_IS_BOT -->
+<table class="tablebg" width="100%" cellspacing="1">
+<tr>
+	<th><a href="{U_LOGIN_LOGOUT}">{L_LOGIN_LOGOUT}</a><!-- IF not S_USER_LOGGED_IN -->&nbsp; &bull; &nbsp;<a href="{U_REGISTER}">{L_REGISTER}</a><!-- ENDIF --></th>
+</tr>
+<tr> 
+	<td class="row1"><br />
+			<!-- IF S_USER_LOGGED_IN -->
+			<div style="text-align:center">
+				{BLOCK_AVATAR}
+			</div>
+			{L_WELCOME_BACK} {SITENAME}, {S_USERNAME_FULL}<br /><br />
+			<!-- IF S_DISPLAY_PM --><a href="{U_PRIVATEMSGS}">{PRIVATE_MESSAGE_INFO}</a><!-- ENDIF --><br /><br />
+			{LAST_VISIT_DATE}
+			<!-- IF BLOCK_WARNING_COUNT <> 0 --><br /><br />{BLOCK_WARNINGS}<!-- ENDIF -->
+			<!-- ELSE -->
+			<form action="{S_LOGIN_BLOCK}" method="post" id="login">
+				<div class="content">
+					<fieldset <!-- IF not S_CONFIRM_CODE -->class="fields1"<!-- ELSE -->class="fields2"<!-- ENDIF -->>
+					<!-- IF LOGIN_ERROR --><div class="error">{LOGIN_ERROR}</div><!-- ENDIF -->
+					<dl>
+						<dt><label for="username">{L_USERNAME}:</label></dt>
+					</dl>
+					<dl>
+						<dt><input type="text" tabindex="1" name="username" id="username" size="15" maxlength="40" class="inputbox autowidth" /></dt>
+					</dl>
+					<dl>
+						<dt><label for="password">{L_PASSWORD}:</label></dt>
+					</dl>
+					<dl>
+						<dt><input type="password" tabindex="2" id="password" name="password" size="15" maxlength="25" class="inputbox autowidth" /></dt>
+						<!-- IF S_DISPLAY_FULL_LOGIN and (U_SEND_PASSWORD or U_RESEND_ACTIVATION) -->
+							<!-- IF U_SEND_PASSWORD --><dd><a href="{U_SEND_PASSWORD}">{L_FORGOT_PASS}</a></dd><!-- ENDIF -->
+							<!-- IF U_RESEND_ACTIVATION --><dd><a href="{U_RESEND_ACTIVATION}">{L_RESEND_ACTIVATION}</a></dd><!-- ENDIF -->
+						<!-- ENDIF -->
+					</dl>
+					<br />
+					<label for="autologin"><input type="checkbox" name="autologin" id="autologin" tabindex="4" class="checkbox" /> {L_LOG_ME_IN}</label><br />
+					<label for="viewonline"><input type="checkbox" name="viewonline" id="viewonline" tabindex="5" class="checkbox" /> {L_HIDE_ME}</label>
+					<dl>
+						<dt>&nbsp;</dt>
+						<dt>{S_HIDDEN_FIELDS}<input type="submit" name="login" tabindex="6" value="{L_LOGIN}" class="button1" /></dt>
+					</dl>
+					</fieldset>
+				</div>
+			</form>
+			<!-- ENDIF --><br /></td>
+</tr>
+</table>
+<br />
+<!-- ENDIF -->

@@ -1,0 +1,21 @@
+<!-- IF S_CAN_VIEW_ATTACHMENT -->
+<div class="navbar bg2">
+	<div class="inner"><span class="corners-top"><span></span></span>
+		<div class="gensmall">
+			<h3 class="portalheader">{L_DOWNLOADS}</h3>
+			<!-- BEGIN download -->
+			<div style="text-align:center">{download.THUMBNAIL}
+			<strong>{download.FILENAME}</strong><br />
+			<div style="font-style:italic">{download.COMMENT}</div><br /></div>
+			{L_BY} {download.POSTER}<br />
+			{L_ON} {download.FILETIME}<br />
+			{L_IN} {download.TOPIC}<br /><br />
+			{download.DOWNLOAD_LINK}<br />
+			{download.DOWNLOAD_COUNT}<br />
+			{download.FILESIZE} {L_BYTES}<br />
+			<!-- END download -->
+		</div>
+	<span class="corners-bottom"><span></span></span></div>
+</div>
+<br />
+<!-- ENDIF -->

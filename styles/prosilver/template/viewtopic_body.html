@@ -59,6 +59,13 @@
 </div>
 <div class="clear"></div>
 
+<div id="sidebar_left">
+<!-- BEGIN include_modules -->
+{include_modules.S_INCLUDE_COMBINED}
+<!-- END include_modules -->
+</div>
+
+<div id="content_combined">
 <!-- IF S_HAS_POLL -->
 	<form method="post" action="{S_POLL_ACTION}">
 
@@ -272,4 +279,5 @@
 	<p>{LOGGED_IN_USER_LIST}</p>
 <!-- ENDIF -->
 
+</div>
 <!-- INCLUDE overall_footer.html -->

@@ -1,0 +1,31 @@
+<!-- INCLUDE overall_header.html -->
+
+<p class="right<!-- IF U_MCP --> rightside<!-- ENDIF -->"><!-- IF S_USER_LOGGED_IN -->{LAST_VISIT_DATE}<!-- ELSE -->{CURRENT_TIME}<!-- ENDIF --></p>
+<!-- IF U_MCP --><p> [&nbsp;<a href="{U_MCP}">{L_MCP}</a>&nbsp;]</p><!-- ENDIF -->
+<div id="sidebar_left">
+<!-- BEGIN include_modules -->
+	{include_modules.S_INCLUDE_LEFT}
+<!-- END include_modules -->
+</div>
+
+<div id="sidebar_right">
+<!-- BEGIN include_modules -->
+	{include_modules.S_INCLUDE_RIGHT}
+<!-- END include_modules -->
+</div>
+
+<div id="content_center">
+	<!-- BEGIN view_page -->
+	<table class="tablebg" width="100%" cellspacing="1">
+	<tr>
+		<th><a href="{view_page.U_PAGE}">{view_page.TITLE}</a></th>
+	</tr>
+	<tr> 
+		<td class="row1" align="center">{view_page.CONTENT}</td>
+	</tr>
+	</table>
+	<br />
+	<!-- END view_page -->
+</div>
+
+<!-- INCLUDE overall_footer.html -->

@@ -1,0 +1,45 @@
+<!-- IF S_HAS_POLL -->
+<form method="post" action="{S_POLL_ACTION}">
+<div class="navbar bg2">
+	<div class="inner"><span class="corners-top"><span></span></span>
+		<div class="gensmall">
+		<h3 class="portalheader"><a href="{U_VIEW_RESULTS}">{L_POLL}</a></h3>
+		<h4>{POLL_QUESTION}</h4>
+		<div class="author"><!-- IF S_CAN_VOTE -->{S_MAX_VOTES}<!-- ENDIF --></div>
+
+		<fieldset>		
+		<!-- BEGIN block_poll_option -->
+			<dl class="<!-- IF block_poll_option.POLL_OPTION_VOTED -->voted<!-- ENDIF -->"<!-- IF block_poll_option.POLL_OPTION_VOTED --> title="{L_POLL_VOTED_OPTION}"<!-- ENDIF -->>
+				<div style="float:left;"><!-- IF S_CAN_VOTE --><span style="width:auto;"><!-- IF S_IS_MULTI_CHOICE --><input type="checkbox" name="vote_id[]" id="vote_{block_poll_option.POLL_OPTION_ID}" value="{block_poll_option.POLL_OPTION_ID}"<!-- IF block_poll_option.POLL_OPTION_VOTED --> checked="checked"<!-- ENDIF -->/><!-- ELSE --><input type="radio" name="vote_id[]" id="vote_{block_poll_option.POLL_OPTION_ID}" value="{block_poll_option.POLL_OPTION_ID}"<!-- IF block_poll_option.POLL_OPTION_VOTED --> checked="checked"<!-- ENDIF --> /><!-- ENDIF --></span> <label for="vote_{block_poll_option.POLL_OPTION_ID}">{block_poll_option.POLL_OPTION_CAPTION}</label><!-- ELSE -->{block_poll_option.POLL_OPTION_CAPTION}<!-- ENDIF --></div>
+				<!-- IF S_DISPLAY_RESULTS --><div class="resultbar" style="float:right;"><!-- IF block_poll_option.POLL_OPTION_RESULT == 0 -->{L_NO_VOTES}<!-- ELSE -->{block_poll_option.POLL_OPTION_PERCENT}<!-- ENDIF --> &bull; {block_poll_option.POLL_OPTION_RESULT}</div><!-- ENDIF -->
+			</dl>
+		<!-- END block_poll_option -->
+		
+		<!-- IF S_DISPLAY_RESULTS -->
+			<hr />
+			<dl>
+				<dd class="resultbar" style="float:right;">{L_TOTAL_VOTES} : {TOTAL_VOTES}</dd>
+			</dl>
+		<!-- ENDIF -->
+
+		<!-- IF S_CAN_VOTE -->
+			<fieldset class="submit-buttons">
+				<input type="submit" name="update" value="{L_SUBMIT_VOTE}" class="button1" />
+			</fieldset>
+		<!-- ENDIF -->
+
+		<!-- IF not S_DISPLAY_RESULTS -->
+			<dl style="border-top: none;">
+				<dt>&nbsp;</dt>
+				<dd class="resultbar"><a href="{U_VIEW_RESULTS}">{L_VIEW_RESULTS}</a></dd>
+			</dl>
+		<!-- ENDIF -->
+		</fieldset>
+	</div>
+
+	<span class="corners-bottom"><span></span></span></div>
+</div>
+<br />
+{S_HIDDEN_FIELDS}
+</form>
+<!-- ENDIF -->

@@ -1,0 +1,76 @@
+<script type="text/javascript">
+<!--
+
+function showhide(the_layer)
+{
+  if(document.getElementById(the_layer))
+  {
+    if(document.getElementById(the_layer).style.display == 'none')
+    {
+      document.getElementById(the_layer).style.display = 'inline';
+    }
+    else
+    {
+      document.getElementById(the_layer).style.display = 'none';
+    }
+  }
+}
+//-->
+</script>
+<div class="navbar bg2">
+	<div class="inner"><span class="corners-top"><span></span></span>
+		<div class="gensmall">
+		<h3 class="portalheader">{L_MENU}</h3>
+		<div style="margin-left:5px">
+		<strong>{L_SITE}</strong><hr />
+			<div class="indent">
+				{BULLET_REG} <a href="{U_PORTAL}">{L_PORTAL}</a><hr class="link_break" />
+				<!-- BEGIN page_list -->
+				{BULLET_REG} <a href="{page_list.U_VIEW_PAGE}">{page_list.TITLE}</a><hr class="link_break" />
+				<!-- END page_list -->
+			</div>
+		<strong>{L_FORUM}</strong><hr />
+			<div class="indent">
+				{BULLET_REG} <a href="{U_INDEX}">{L_INDEX}</a><hr class="link_break" />
+				<div><a href="javascript:showhide('forumlist');javascript:showhide('bullet_right');javascript:showhide('bullet_down');"><span id="bullet_right">{BULLET_REG} {L_SHOW_FORUM_LIST}</span><span id="bullet_down" style="display:none">{BULLET_DOWN} {L_HIDE_FORUM_LIST}</span></a></div><hr />
+				<div id="forumlist" style="display:none">
+					<div class="indent">
+						<!-- BEGIN forum_list -->
+						{forum_list.FORUM_PADDING}{BULLET_REG} <a href="{forum_list.U_FORUM}">{forum_list.FORUM_NAME}</a><hr />
+						<!-- END forum_list -->
+					</div>
+				</div>
+			</div>
+		<strong>{L_FORUM_OTHER}</strong><hr />
+			<div class="indent">
+				<!-- IF not S_USER_LOGGED_IN -->{BULLET_REG} <a href="{U_LOGIN_LOGOUT}">{L_LOGIN_LOGOUT}</a><hr class="link_break" />
+				{BULLET_REG} <a href="{U_REGISTER}">{L_REGISTER}</a><hr class="link_break" />
+				<!-- ELSE -->{BULLET_REG} <a href="{U_PROFILE}">{L_PROFILE}</a><hr class="link_break" />
+				<!-- ENDIF -->
+				{BULLET_REG} <a href="{U_SEARCH}">{L_SEARCH}</a><hr class="link_break" />		
+				{BULLET_REG} <a href="{U_MEMBERLIST}">{L_MEMBERLIST}</a><hr class="link_break" />
+				{BULLET_REG} <a href="{U_FAQ}" title="{L_FAQ_EXPLAIN}">{L_FAQ}</a><!-- IF U_MCP or U_ACP or U_RESTORE_PERMISSIONS --><hr class="link_break" /><!-- ENDIF -->
+			</div>
+		<!-- IF U_MCP or U_ACP or U_RESTORE_PERMISSIONS --><strong>{L_STAFF_LINKS}</strong><hr />
+			<div class="indent">
+				<!-- IF U_MCP -->
+				{BULLET_REG} <a href="{U_MCP}">{L_MCP_SHORT}</a>
+					<!-- IF U_ACP or U_RESTORE_PERMISSIONS --><hr class="link_break" /><!-- ENDIF -->
+				<!-- ENDIF -->
+				<!-- IF U_ACP -->
+				{BULLET_REG} <a href="{U_ACP}">{L_ACP_SHORT}</a>
+					<!-- IF U_RESTORE_PERMISSIONS --><hr class="link_break" /><!-- ENDIF -->
+				<!-- ENDIF -->
+				<!-- IF U_RESTORE_PERMISSIONS -->
+				{BULLET_REG} <a href="{U_RESTORE_PERMISSIONS}">{L_RESTORE_PERMISSIONS}</a>
+				<!-- ENDIF -->
+				<!--<hr class="link_break" />-->
+			</div>
+		<!-- ENDIF -->
+		<!--<strong>{L_OFF_LINKS}</strong><hr />
+			<div class="indent"></div>-->
+		</div>
+		</div>
+	<span class="corners-bottom"><span></span></span></div>
+</div>
+<br />

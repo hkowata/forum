@@ -73,6 +73,14 @@
 		</div>
 	<!-- ENDIF -->
 	<!-- IF S_LEADERS_SET or not S_SHOW_GROUP or not .memberrow -->
+	<!-- IF not S_IN_SEARCH_POPUP -->
+	<div id="sidebar_left">
+	<!-- BEGIN include_modules -->
+	{include_modules.S_INCLUDE_COMBINED}
+	<!-- END include_modules -->
+	</div>
+	<div id="content_combined">
+	<!-- ENDIF -->
 	<div class="forumbg forumbg-table">
 		<div class="inner"><span class="corners-top"><span></span></span>
 
@@ -180,5 +188,6 @@
 	<!-- INCLUDE simple_footer.html -->
 <!-- ELSE -->
 	<!-- INCLUDE jumpbox.html -->
+</div>
 	<!-- INCLUDE overall_footer.html -->
 <!-- ENDIF -->

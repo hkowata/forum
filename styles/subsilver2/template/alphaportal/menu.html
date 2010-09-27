@@ -1,0 +1,56 @@
+<table class="tablebg" width="100%" cellspacing="0" cellpadding="0">
+	<tr>
+		<td valign="top">
+			<table class="tablebg" cellpadding="2" cellspacing="0" border="0" width="100%">
+				<tr>
+					<th>{L_MENU}</th>
+				</tr>
+			</table>
+		</td>
+	</tr>
+</table>
+<table class="tablebg" width="100%" cellpadding="2" cellspacing="1">
+	<tr>
+		<td class="row2" nowrap="nowrap" onmouseover="this.className='row1'" onmouseout="this.className='row2'" onclick="location.href='{U_PORTAL}'"><a class="nav" href="{U_PORTAL}">{L_PORTAL}</a></td>
+	</tr>
+	<!-- BEGIN page_list -->
+	<tr>
+		<td class="row2" nowrap="nowrap" onmouseover="this.className='row1'" onmouseout="this.className='row2'" onclick="location.href='{page_list.U_VIEW_PAGE}'"><a class="nav" href="{page_list.U_VIEW_PAGE}">{page_list.TITLE}</a></td>
+	</tr>
+	<!-- END page_list -->
+	<tr>
+		<td class="row1" nowrap="nowrap" onmouseover="this.className='row2'" onmouseout="this.className='row1'" onclick="location.href='{U_INDEX}'"><a class="nav" href="{U_INDEX}">{L_INDEX}</a></td>
+	</tr>
+<!-- IF not S_USER_LOGGED_IN -->
+	<tr>
+		<td class="row1" nowrap="nowrap" onmouseover="this.className='row2'" onmouseout="this.className='row1'" onclick="location.href='{U_LOGIN_LOGOUT}'"><a class="nav" href="{U_LOGIN_LOGOUT}">{L_LOGIN_LOGOUT}</a></td>
+	</tr>
+	<tr>
+		<td class="row1" nowrap="nowrap" onmouseover="this.className='row2'" onmouseout="this.className='row1'" onclick="location.href='{U_REGISTER}'"><a class="nav" href="{U_REGISTER}">{L_REGISTER}</a></td>
+	</tr>
+<!-- ELSE -->
+	<tr>
+		<td class="row1" nowrap="nowrap" onmouseover="this.className='row2'" onmouseout="this.className='row1'" onclick="location.href='{U_PROFILE}'"><a class="nav" href="{U_PROFILE}">{L_PROFILE}</a></td>
+	</tr>
+<!-- ENDIF -->
+	<tr>
+		<td class="row1" nowrap="nowrap" onmouseover="this.className='row2'" onmouseout="this.className='row1'" onclick="location.href='{U_SEARCH}'"><a class="nav" href="{U_SEARCH}">{L_SEARCH}</a></td>
+	</tr>
+	<tr>
+		<td class="row1" nowrap="nowrap" onmouseover="this.className='row2'" onmouseout="this.className='row1'" onclick="location.href='{U_MEMBERLIST}'"><a class="nav" href="{U_MEMBERLIST}">{L_MEMBERLIST}</a></td>
+	</tr>
+	<tr>
+		<td class="row1" nowrap="nowrap" onmouseover="this.className='row2'" onmouseout="this.className='row1'" onclick="location.href='{U_FAQ}'"><a class="nav" href="{U_FAQ}">{L_FAQ}</a></td>
+	</tr>
+	<!-- IF U_MCP -->
+	<tr>
+		<td class="row1" nowrap="nowrap" onmouseover="this.className='row2'" onmouseout="this.className='row1'" onclick="location.href='{U_MCP}'"><a class="nav" href="{U_MCP}">{L_MCP}</a></td>
+	</tr>
+	<!-- ENDIF -->
+	<!-- IF U_ACP -->
+	<tr>
+		<td class="row1" nowrap="nowrap" onmouseover="this.className='row2'" onmouseout="this.className='row1'" onclick="location.href='{U_ACP}'"><a class="nav" href="{U_ACP}">{L_ACP}</a></td>
+	</tr>
+	<!-- ENDIF -->
+</table>
+<br />

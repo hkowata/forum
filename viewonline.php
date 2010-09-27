@@ -200,6 +200,16 @@ while ($row = $db->sql_fetchrow($result))
 			$location_url = append_sid("{$phpbb_root_path}index.$phpEx");
 		break;
 
+		case 'pages':
+			$location = $user->lang['VIEWING_PAGES'];
+			$location_url = append_sid("{$phpbb_root_path}pages.$phpEx");
+		break;
+
+		case 'portal':
+			$location = $user->lang['PORTAL'];
+			$location_url = append_sid("{$phpbb_root_path}portal.$phpEx");
+		break;
+
 		case 'adm/index':
 			$location = $user->lang['ACP'];
 			$location_url = append_sid("{$phpbb_root_path}index.$phpEx");

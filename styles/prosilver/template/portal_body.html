@@ -1,0 +1,29 @@
+<!-- INCLUDE overall_header.html -->
+
+<p class="right<!-- IF U_MCP --> rightside<!-- ENDIF -->"><!-- IF S_USER_LOGGED_IN -->{LAST_VISIT_DATE}<!-- ELSE -->{CURRENT_TIME}<!-- ENDIF --></p>
+<!-- IF U_MCP --><p> [&nbsp;<a href="{U_MCP}">{L_MCP}</a>&nbsp;]</p><!-- ENDIF -->
+<div id="sidebar_left">
+<!-- BEGIN include_modules -->
+	{include_modules.S_INCLUDE_LEFT}
+<!-- END include_modules -->
+</div>
+
+<div id="sidebar_right">
+<!-- BEGIN include_modules -->
+	{include_modules.S_INCLUDE_RIGHT}
+<!-- END include_modules -->
+</div>
+
+<div id="content_center">
+<!-- BEGIN include_modules -->
+	{include_modules.S_INCLUDE_PORTAL}
+<!-- END include_modules -->
+<div class="panel bg2">
+	<div class="inner"><span class="corners-top"><span></span></span>
+	<ul class="linklist">
+		<li>{PORTAL_COPYRIGHT}</li>	
+	</ul>
+	<span class="corners-bottom"><span></span></span></div>
+</div>
+</div>
+<!-- INCLUDE overall_footer.html -->

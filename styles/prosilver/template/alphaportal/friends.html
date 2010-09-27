@@ -1,0 +1,17 @@
+<!-- IF .friends_online or .friends_offline and S_USER_LOGGED_IN -->
+<div class="navbar bg2">
+	<div class="inner"><span class="corners-top"><span></span></span>
+		<h3 class="portalheader">{L_FRIENDS}</h3>
+		<div class="indent">
+			<!-- BEGIN friends_online -->
+				<dd class="friend-online" title="{L_FRIENDS_ONLINE}">{friends_online.USERNAME_FULL} <!-- IF S_SHOW_PM_BOX --> <input type="submit" name="add_to[{friends_online.USER_ID}]" value="{L_ADD}" class="button2" /><!-- ENDIF --><!-- IF friends_online.S_LAST_ROW and .friends_offline --><hr /><!-- ENDIF --></dd>
+			<!-- END friends_online -->
+	
+			<!-- BEGIN friends_offline -->
+				<dd class="friend-offline" title="{L_FRIENDS_OFFLINE}">{friends_offline.USERNAME_FULL} <!-- IF S_SHOW_PM_BOX --><input type="submit" name="add_to[{friends_offline.USER_ID}]" value="{L_ADD}" class="button2" /><!-- ENDIF --></dd>
+			<!-- END friends_offline -->
+		</div>
+	<span class="corners-bottom"><span></span></span></div>
+</div>
+<br />
+<!-- ENDIF --> 

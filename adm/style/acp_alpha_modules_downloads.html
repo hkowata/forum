@@ -1,0 +1,13 @@
+<hr />
+<dl>
+	<dt><label for="module_enabled">{L_DOWNLOADS_RECENT}:</label><br />
+	<span>{L_DOWNLOADS_RECENT_EXPLAIN}</span></dt>
+</dt>
+	<dd><label><input type="radio" class="radio" name="downloads_recent" id="downloads_recent" value="1"<!-- IF S_DOWNLOADS_RECENT --> checked="checked"<!-- ENDIF --> /> {L_YES}</label>
+		<label><input type="radio" class="radio" name="downloads_recent" id="downloads_recent" value="0"<!-- IF not S_DOWNLOADS_RECENT --> checked="checked"<!-- ENDIF --> /> {L_NO}</label></dd>
+</dl>
+<dl>
+	<dt><label for="parent_id">{L_DOWNLOADS_ID}:</label><br />
+	<span>{L_DOWNLOADS_ID_EXPLAIN}</span></dt>
+	<dd><input type="text" name="downloads_id" id="downloads_id" value="{DOWNLOADS_TOPIC}" /></dd>
+</dl>
