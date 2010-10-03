@@ -1528,10 +1528,48 @@ class user extends session
 			* If re-enabled we need to make sure only those languages installed are checked
 			* Commented out so we do not loose the code.
 
+			Luzi82 START
+			* language checking added 2008-08-15 by Martin Truckenbrodt
+			**/			
+			// Luzi82 END
+
 			if (isset($_SERVER['HTTP_ACCEPT_LANGUAGE']))
 			{
+				// Luzi82 START
+				$lang_iso_xx_yy = array();
+				$lang_iso_xx = array();
+				$accept_lang_xx_yy = array();
+				$accept_lang_xx = array();
+
+				$sql = 'SELECT lang_iso FROM ' . LANG_TABLE;
+				$result = $db->sql_query($sql, 3600);
+
+				while ($row = $db->sql_fetchrow($result))
+				{
+					if (file_exists($phpbb_root_path . 'language/' . $row['lang_iso'] . "/common.$phpEx"))
+					{
+						if ($row['lang_iso'] == "zh_cmn_hant")
+						{
+							$row_lang_iso = "zh_tw";
+						}
+						else
+						{
+							$row_lang_iso = $row['lang_iso'];
+						}
+						$lang_iso_xx_yy[] = $row_lang_iso;
+						if (strlen($row_lang_iso) > 4)
+						{
+							$lang_iso_xx[$row_lang_iso] = substr($row_lang_iso, 0, 2);
+						}
+						
+					}
+				}
+				// Luzi82 END
+
 				$accept_lang_ary = explode(',', $_SERVER['HTTP_ACCEPT_LANGUAGE']);
 
+				// Luzi82 START
+				/*
 				foreach ($accept_lang_ary as $accept_lang)
 				{
 					// Set correct format ... guess full xx_YY form
@@ -1556,8 +1594,51 @@ class user extends session
 						}
 					}
 				}
+				*/
+				$lang_score = 0;
+				$this->lang_name = $config['default_lang'];
+				foreach ($accept_lang_ary as $accept_lang)
+				{
+					if (strtolower($accept_lang) == "zh-hk")
+					{
+						$accept_lang = "zh-tw";
+					}
+					// Set correct format ... guess full xx_yy form
+					$accept_lang_xx_yy = basename(substr($accept_lang, 0, 2) . '_' . strtolower(substr($accept_lang, 3, 2)));
+					// Set correct format ... guess only xx form
+					$accept_lang_xx = basename(substr($accept_lang, 0, 2));
+
+					// browser xx-YY == board xx_yy and
+					// browser xx == board xx
+					if ($lang_score < 3 && in_array($accept_lang_xx_yy, $lang_iso_xx_yy))
+					{
+						$this->lang_name = $config['default_lang'] = $accept_lang_xx_yy;
+						$lang_score = 3;
+					}
+					// browser xx-YY => xx == board xx
+					else if ($lang_score < 2 && in_array($accept_lang_xx, $lang_iso_xx_yy))
+					{
+						$this->lang_name = $config['default_lang'] = $accept_lang_xx;
+						$lang_score = 2;
+					}
+					// browser xx == board xx_yy => xx
+					else if ($lang_score < 1 && in_array($accept_lang_xx, $lang_iso_xx) && $lang_iso_xx != '')
+					{
+						$this->lang_name = $config['default_lang'] = array_search($accept_lang_xx, $lang_iso_xx);
+						$lang_score = 1;
+					}
+				}
+				if ($this->lang_name == "zh_tw")
+				{
+					$this->lang_name = $config['default_lang'] = "zh_cmn_hant";
+				}
+				$this->data['user_lang'] = $this->lang_name;
+				// Luzi82 END
 			}
+			// Luzi82 START
+			/*
 			*/
+			// Luzi82 END
 		}
 
 		// We include common language file here to not load it every time a custom language file is included

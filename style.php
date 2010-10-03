@@ -48,6 +48,9 @@ if (!empty($load_extensions) && function_exists('dl'))
 
 $sid = (isset($_GET['sid']) && !is_array($_GET['sid'])) ? htmlspecialchars($_GET['sid']) : '';
 $id = (isset($_GET['id'])) ? intval($_GET['id']) : 0;
+// Luzi82 START guest default lang mod
+$lang = (isset($_GET['lang'])) ? strval($_GET['lang']) : '';
+// Luzi82 END
 $input_lang = $_GET['lang'];
 
 if (strspn($sid, 'abcdefABCDEF0123456789') !== strlen($sid))
@@ -119,7 +122,9 @@ if ($id)
 
 	if ($user['user_id'] == ANONYMOUS)
 	{
-		$user['user_lang'] = $config['default_lang'];
+		// Luzi82 START for guest default lang mod
+		$user['user_lang'] = $config['default_lang']=$lang;
+		// Luzi8e END
 	}
 
 	$user_image_lang = (file_exists($phpbb_root_path . 'styles/' . $theme['imageset_path'] . '/imageset/' . $user['user_lang'])) ? $user['user_lang'] : $config['default_lang'];
