@@ -546,6 +546,7 @@ $lang = array_merge($lang, array(
 	'SORT_LOCATION'				=> 'お住まい',
 	'SORT_RANK'					=> 'ランク',
 	'SORT_POSTS'				=> '投稿数',
+	'SORT_TOPIC_TIME'		=> '作成日時',
 	'SORT_TOPIC_TITLE'			=> 'トピックの件名',
 	'SORT_USERNAME'				=> 'ユーザー名',
 	'SPLIT_TOPIC'				=> 'トピックを分割する',

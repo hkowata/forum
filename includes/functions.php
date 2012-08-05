@@ -4503,17 +4503,35 @@ function phpbb_user_session_handler()
 function luzi82_replace_smilies($text)
 {
 	global $db, $user, $config, $phpbb_root_path;
+	static $luzi82_smilies_result;
+	static $luzi82_smilies_result2;
+	static $luzi82_smilies_result2_size;
+	static $luzi82_smilies_result_done = 0;
 	
 	$code = $smiley_url = array();
-	
-	$sql = 'SELECT *
-		FROM ' . SMILIES_TABLE;
-	$result = $db->sql_query($sql);
-	
-	while ($smilies = $db->sql_fetchrow($result))
+
+	if ( $luzi82_smilies_result_done != 1982 )
 	{
+		$sql = 'SELECT *
+			FROM ' . SMILIES_TABLE;
+		$luzi82_smilies_result = $db->sql_query($sql);
+		$luzi82_smilies_result_done = 1982;
+		$luzi82_smilies_result2 = array();
+		$luzi82_smilies_result2_size = 0;
+		while ($smilies = $db->sql_fetchrow($luzi82_smilies_result))
+		{
+			$luzi82_smilies_result2[$luzi82_smilies_result2_size]=$smilies;
+			$luzi82_smilies_result2_size++;
+		}
+	}
+
+	$slave_url="http://www.owataiko.com:10080/~hkowata/forum/";
+	
+	for ( $i = 0 ; $i < $luzi82_smilies_result2_size ; $i++ )
+	{
+		$smilies = $luzi82_smilies_result2[$i];
 		$code[] = $smilies['code'];
-		$smiley_url[] = '<img src="' . $phpbb_root_path . $config['smilies_path'] . '/' . $smilies['smiley_url'] . '" alt="' . $smilies['emotion'] . '" border="0" />';
+		$smiley_url[] = '<img src="' . $slave_url . $config['smilies_path'] . '/' . $smilies['smiley_url'] . '" alt="' . $smilies['emotion'] . '" border="0" />';
 	}
 	
 	return str_replace($code, $smiley_url, $text);

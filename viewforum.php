@@ -83,7 +83,9 @@ if (isset($_GET['e']) && !$user->data['is_registered'])
 }
 
 // Permissions check
-if (!$auth->acl_gets('f_list', 'f_read', $forum_id) || ($forum_data['forum_type'] == FORUM_LINK && $forum_data['forum_link'] && !$auth->acl_get('f_read', $forum_id)))
+// luzi82: mod make list can see list
+//if (!$auth->acl_gets('f_list', 'f_read', $forum_id) || ($forum_data['forum_type'] == FORUM_LINK && $forum_data['forum_link'] && !$auth->acl_get('f_read', $forum_id)))
+if (!$auth->acl_get('f_list', $forum_id))
 {
 	if ($user->data['user_id'] != ANONYMOUS)
 	{
@@ -122,7 +124,9 @@ if ($forum_data['forum_type'] == FORUM_LINK && $forum_data['forum_link'])
 generate_forum_nav($forum_data);
 
 // Forum Rules
-if ($auth->acl_get('f_read', $forum_id))
+// luzi82: f_list can show list
+//if ($auth->acl_get('f_read', $forum_id)
+if ($auth->acl_get('f_list', $forum_id))
 {
 	generate_forum_rules($forum_data);
 }
@@ -173,7 +177,9 @@ if (!($forum_data['forum_type'] == FORUM_POST || (($forum_data['forum_flags'] & 
 
 // Ok, if someone has only list-access, we only display the forum list.
 // We also make this circumstance available to the template in case we want to display a notice. ;)
-if (!$auth->acl_get('f_read', $forum_id))
+// luzi82: f_list can show list
+//if (!$auth->acl_get('f_read', $forum_id))
+if (!$auth->acl_get('f_list', $forum_id))
 {
 	$template->assign_vars(array(
 		'S_NO_READ_ACCESS'		=> true,

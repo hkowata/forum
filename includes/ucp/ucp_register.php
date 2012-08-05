@@ -260,6 +260,17 @@ class ucp_register
 				}
 			}
 
+			// luzi82: start
+			if ($_POST['bot_attack'] != 'hello_world')
+			{
+				$luzi82_is_bot=1;
+			}
+			if ($_POST['bot_attack2'] != luzi82_bot_attack_1($_POST['confirm_id']))
+			{
+				$luzi82_is_bot=1;
+			}
+			// luzi82: end
+
 			if (!sizeof($error))
 			{
 				$server_url = generate_board_url();
@@ -302,6 +313,13 @@ class ucp_register
 					$user_inactive_reason = 0;
 					$user_inactive_time = 0;
 				}
+
+				// luzi82 START
+				if ($luzi82_is_bot==1)
+				{
+					$group_id=14; // bot account
+				}
+				// luzi82 END
 
 				$user_row = array(
 					'username'				=> $data['username'],
@@ -438,6 +456,8 @@ class ucp_register
 		$s_hidden_fields = array(
 			'agreed'		=> 'true',
 			'change_lang'	=> 0,
+			'bot_attack' => 'hello_world', // luzi82
+			'bot_attack2' => '', // luzi82
 		);
 
 		if ($config['coppa_enable'])
@@ -449,8 +469,14 @@ class ucp_register
 		{
 			$s_hidden_fields = array_merge($s_hidden_fields, $captcha->get_hidden_fields());
 		}
+		$luzi82_confirm_id=$s_hidden_fields["confirm_id"];
 		$s_hidden_fields = build_hidden_fields($s_hidden_fields);
 		$confirm_image = '';
+
+		// luzi82 START
+		$s_hidden_fields .= '<script type="text/javascript">function luzi82_bot_attack_1(a){c=0;for(i=0;i<8;++i){j=i*4;b=parseInt("0x"+a.substring(j,j+4));c=c^b;}++c;d=0;while(c!=1){if(c&1){c=c*3+1;}else{c/=2;}++d;}return d;}</script>';
+		$s_hidden_fields .= '<script type="text/javascript">document.forms["register"].elements["bot_attack2"].value=luzi82_bot_attack_1("'.$luzi82_confirm_id.'");</script>';
+		// luzi82 END
 
 		// Visual Confirmation - Show images
 		if ($config['enable_confirm'])
@@ -506,4 +532,24 @@ class ucp_register
 	}
 }
 
+function luzi82_bot_attack_1($a){
+	$c=0;
+	for($i=0;$i<8;++$i){
+		$j=$i*4;
+		$b=hexdec(substr($a,$j,4));
+		$c=$c^$b;
+	}
+	$c+=1;
+	$d=0;
+	while($c!=1){
+		if($c&1){
+			$c*=3;
+			++$c;
+		}else{
+			$c/=2;
+		}
+		++$d;
+	}
+	return $d;
+}
 ?>

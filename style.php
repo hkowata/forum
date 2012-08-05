@@ -229,16 +229,23 @@ if ($id)
 
 	header('Content-type: text/css; charset=UTF-8');
 
+	// Luzi82: redirect to 10080 START
+
+	// $luzi82_root_path = $phpbb_root_path;
+	$luzi82_root_path = $slave_url;
+
 	// Parse Theme Data
 	$replace = array(
-		'{T_THEME_PATH}'			=> "{$phpbb_root_path}styles/" . $theme['theme_path'] . '/theme',
-		'{T_TEMPLATE_PATH}'			=> "{$phpbb_root_path}styles/" . $theme['template_path'] . '/template',
-		'{T_IMAGESET_PATH}'			=> "{$phpbb_root_path}styles/" . $theme['imageset_path'] . '/imageset',
-		'{T_IMAGESET_LANG_PATH}'	=> "{$phpbb_root_path}styles/" . $theme['imageset_path'] . '/imageset/' . $user_image_lang,
+		'{T_THEME_PATH}'			=> "{$luzi82_root_path}styles/" . $theme['theme_path'] . '/theme',
+		'{T_TEMPLATE_PATH}'			=> "{$luzi82_root_path}styles/" . $theme['template_path'] . '/template',
+		'{T_IMAGESET_PATH}'			=> "{$luzi82_root_path}styles/" . $theme['imageset_path'] . '/imageset',
+		'{T_IMAGESET_LANG_PATH}'	=> "{$luzi82_root_path}styles/" . $theme['imageset_path'] . '/imageset/' . $user_image_lang,
 		'{T_STYLESHEET_NAME}'		=> $theme['theme_name'],
 		'{S_USER_LANG}'				=> $user['user_lang'],
 		'{LUZI82_DEBUG}'	=> $luzi82_debug
 	);
+
+	// Luzi82: redirect to 10080 END
 
 	$theme['theme_data'] = str_replace(array_keys($replace), array_values($replace), $theme['theme_data']);
 

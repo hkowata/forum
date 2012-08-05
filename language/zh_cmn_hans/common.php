@@ -541,6 +541,7 @@ $lang = array_merge($lang, array(
 	'SORT_LOCATION'				=> '地址',
 	'SORT_RANK'					=> '级别',
 	'SORT_POSTS'				=> '文章',
+	'SORT_TOPIC_TIME'			=> '开帖时间',
 	'SORT_TOPIC_TITLE'			=> '主题',
 	'SORT_USERNAME'				=> '用户名',
 	'SPLIT_TOPIC'				=> '分割主题',

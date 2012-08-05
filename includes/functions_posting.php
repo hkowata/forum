@@ -113,6 +113,9 @@ function generate_smilies($mode, $forum_id)
 	if (sizeof($smilies))
 	{
 		$root_path = (defined('PHPBB_USE_BOARD_URL_PATH') && PHPBB_USE_BOARD_URL_PATH) ? generate_board_url() . '/' : $phpbb_root_path;
+		// Luzi82 : redirect to 10080 START
+		$root_path = 'http://www.owataiko.com:10080/~hkowata/forum/';
+		// Luzi82 : redirect to 10080 END
 
 		foreach ($smilies as $row)
 		{

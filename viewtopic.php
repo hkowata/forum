@@ -587,6 +587,45 @@ $server_path = (!$view) ? $phpbb_root_path : generate_board_url() . '/';
 // Replace naughty words in title
 $topic_data['topic_title'] = censor_text($topic_data['topic_title']);
 
+// test start
+$facebook_ok=false;
+if(!$facebook_ok){
+	$sql =	'SELECT auth_setting FROM ' . ACL_GROUPS_TABLE
+			. ' WHERE group_id = 1'
+				. ' AND forum_id = ' . $forum_id
+				. ' AND auth_option_id = 20';
+	$result = $db->sql_query($sql);
+	while ($row = $db->sql_fetchrow($result))
+	{
+		if ($row['auth_setting'] == 1){
+			$facebook_ok = true;
+		}
+	}
+}
+if(!$facebook_ok){
+	$sql =	'SELECT ard.auth_setting'
+			. ' FROM ' . ACL_GROUPS_TABLE . ' ag,' 
+				. ACL_ROLES_DATA_TABLE . ' ard' 
+			. ' WHERE ag.group_id = 1'
+				. ' AND ag.forum_id = ' . $forum_id
+				. ' AND ag.auth_option_id = 0'
+				. ' AND ag.auth_role_id = ard.role_id'
+				. ' AND ard.auth_option_id = 20';
+	$result = $db->sql_query($sql);
+	while ($row = $db->sql_fetchrow($result))
+	{
+		if ($row['auth_setting'] == 1){
+			$facebook_ok = true;
+		}
+	}
+}
+//$eSJzPa9B = $auth->acl_get_list(1,false,$forum_id);
+//$ccc="asdf";
+//foreach($eSJzPa9B as $aaa->$bbb){
+//	$ccc=$ccc.$aaa.":".$bbb.",";
+//}
+// test end
+
 // Send vars to template
 $template->assign_vars(array(
 	'FORUM_ID' 		=> $forum_id,
@@ -669,6 +708,8 @@ $template->assign_vars(array(
 
 	'FB_SHARE_URL'			=> urlencode(generate_board_url()."/viewtopic.$phpEx?f=$forum_id&t=$topic_id"),
 	'FB_SHARE_URL_ORI'		=> generate_board_url()."/viewtopic.$phpEx?f=$forum_id&t=$topic_id",
+	'FB_OK'   => $facebook_ok,
+	//'LUZI82_ESJZPA9B'   => "fuck",
 )
 );
 
