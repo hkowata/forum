@@ -15,23 +15,12 @@ define('IN_PHPBB', true);
 $phpbb_root_path = (defined('PHPBB_ROOT_PATH')) ? PHPBB_ROOT_PATH : './';
 $phpEx = substr(strrchr(__FILE__, '.'), 1);
 
-// Report all errors, except notices and deprecation messages
-if (!defined('E_DEPRECATED'))
-{
-	define('E_DEPRECATED', 8192);
-}
-error_reporting(E_ALL ^ E_NOTICE ^ E_DEPRECATED);
-
+require($phpbb_root_path . 'includes/startup.' . $phpEx);
 require($phpbb_root_path . 'config.' . $phpEx);
 
 if (!defined('PHPBB_INSTALLED') || empty($dbms) || empty($acm_type))
 {
 	exit;
-}
-
-if (version_compare(PHP_VERSION, '6.0.0-dev', '<'))
-{
-	@set_magic_quotes_runtime(0);
 }
 
 // Load Extensions
@@ -45,18 +34,11 @@ if (!empty($load_extensions) && function_exists('dl'))
 	}
 }
 
-
-$sid = (isset($_GET['sid']) && !is_array($_GET['sid'])) ? htmlspecialchars($_GET['sid']) : '';
 $id = (isset($_GET['id'])) ? intval($_GET['id']) : 0;
 // Luzi82 START guest default lang mod
 $lang = (isset($_GET['lang'])) ? strval($_GET['lang']) : '';
 // Luzi82 END
 $input_lang = $_GET['lang'];
-
-if (strspn($sid, 'abcdefABCDEF0123456789') !== strlen($sid))
-{
-	$sid = '';
-}
 
 // This is a simple script to grab and output the requested CSS data stored in the DB
 // We include a session_id check to try and limit 3rd party linking ... unless they
@@ -84,6 +66,20 @@ if ($id)
 
 	$config = $cache->obtain_config();
 	$user = false;
+
+	// try to get a session ID from REQUEST array
+	$sid = request_var('sid', '');
+
+	if (!$sid)
+	{
+		// if that failed, then look in the cookies
+		$sid = request_var($config['cookie_name'] . '_sid', '', false, true);
+	}
+
+	if (strspn($sid, 'abcdefABCDEF0123456789') !== strlen($sid))
+	{
+		$sid = '';
+	}
 
 	if ($sid)
 	{

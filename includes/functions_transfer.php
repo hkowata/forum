@@ -808,6 +808,16 @@ class ftp_fsock extends transfer
 	*/
 	function _open_data_connection()
 	{
+		// Try to find out whether we have a IPv4 or IPv6 (control) connection
+		if (function_exists('stream_socket_get_name'))
+		{
+			$socket_name = stream_socket_get_name($this->connection, true);
+			$server_ip = substr($socket_name, 0, strrpos($socket_name, ':'));
+		}
+
+		if (!isset($server_ip) || preg_match(get_preg_expression('ipv4'), $server_ip))
+		{
+			// Passive mode
 		$this->_send_command('PASV', '', false);
 
 		if (!$ip_port = $this->_check_command(true))
@@ -825,6 +835,29 @@ class ftp_fsock extends transfer
 		$temp = explode(',', $temp[0]);
 		$server_ip = $temp[0] . '.' . $temp[1] . '.' . $temp[2] . '.' . $temp[3];
 		$server_port = $temp[4] * 256 + $temp[5];
+		}
+		else
+		{
+			// Extended Passive Mode - RFC2428
+			$this->_send_command('EPSV', '', false);
+
+			if (!$epsv_response = $this->_check_command(true))
+			{
+				return false;
+			}
+
+			// Response looks like "229 Entering Extended Passive Mode (|||12345|)"
+			// where 12345 is the tcp port for the data connection
+			if (!preg_match('#\(\|\|\|([0-9]+)\|\)#', $epsv_response, $match))
+			{
+				return false;
+			}
+			$server_port = (int) $match[1];
+
+			// fsockopen expects IPv6 address in square brackets
+			$server_ip = "[$server_ip]";
+		}
+
 		$errno = 0;
 		$errstr = '';
 

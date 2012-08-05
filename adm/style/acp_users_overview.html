@@ -43,19 +43,19 @@
 </dl>
 <dl>
 	<dt><label for="user_email">{L_EMAIL}:</label></dt>
-	<dd><input class="text medium" type="text" id="user_email" name="user_email" value="{USER_EMAIL}" /></dd>
+	<dd><input class="text medium" type="text" id="user_email" name="user_email" value="{USER_EMAIL}" autocomplete="off" /></dd>
 </dl>
 <dl>
 	<dt><label for="email_confirm">{L_CONFIRM_EMAIL}:</label><br /><span>{L_CONFIRM_EMAIL_EXPLAIN}</span></dt>
-	<dd><input class="text medium" type="text" id="email_confirm" name="email_confirm" value="" /></dd>
+	<dd><input class="text medium" type="text" id="email_confirm" name="email_confirm" value="" autocomplete="off" /></dd>
 </dl>
 <dl>
 	<dt><label for="new_password">{L_NEW_PASSWORD}:</label><br /><span>{L_CHANGE_PASSWORD_EXPLAIN}</span></dt>
-	<dd><input type="password" id="new_password" name="new_password" value="" /></dd>
+	<dd><input type="password" id="new_password" name="new_password" value="" autocomplete="off" /></dd>
 </dl>
 <dl>
 	<dt><label for="password_confirm">{L_CONFIRM_PASSWORD}:</label><br /><span>{L_CONFIRM_PASSWORD_EXPLAIN}</span></dt>
-	<dd><input type="password" id="password_confirm" name="password_confirm" value="" /></dd>
+	<dd><input type="password" id="password_confirm" name="password_confirm" value="" autocomplete="off" /></dd>
 </dl>
 
 <p class="quick">
@@ -140,7 +140,7 @@
 		<legend>{L_DELETE_USER}</legend>
 		<dl>
 			<dt><label for="delete_type">{L_DELETE_USER}:</label><br /><span>{L_DELETE_USER_EXPLAIN}</span></dt>
-			<dd><select id="delete_type" name="delete_type"><option value="retain">{L_RETAIN_POSTS}</option><option value="remove">{L_DELETE_POSTS}</option></select></dd>
+			<dd><select id="delete_type" name="delete_type"><option class="sep" value="">{L_SELECT_OPTION}</option><option value="retain">{L_RETAIN_POSTS}</option><option value="remove">{L_DELETE_POSTS}</option></select></dd>
 		</dl>
 		<p class="quick">
 			<input class="button1" type="submit" name="update" value="{L_SUBMIT}" />
@@ -148,6 +148,6 @@
 			{S_FORM_TOKEN}
 		</p>
 	</fieldset>
-	<!-- ENDIF -->
 	</form>
+	<!-- ENDIF -->
 <!-- ENDIF -->

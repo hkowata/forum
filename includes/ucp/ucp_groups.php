@@ -193,29 +193,24 @@ class ucp_groups
 								if ($group_row[$group_id]['group_type'] == GROUP_FREE)
 								{
 									group_user_add($group_id, $user->data['user_id']);
-
-									$email_template = 'group_added';
 								}
 								else
 								{
 									group_user_add($group_id, $user->data['user_id'], false, false, false, 0, 1);
 
-									$email_template = 'group_request';
-								}
-
 								include_once($phpbb_root_path . 'includes/functions_messenger.' . $phpEx);
 								$messenger = new messenger();
 
 								$sql = 'SELECT u.username, u.username_clean, u.user_email, u.user_notify_type, u.user_jabber, u.user_lang
-									FROM ' . USER_GROUP_TABLE . ' ug, ' . USERS_TABLE . ' u
+										FROM ' . USER_GROUP_TABLE . ' ug, ' . USERS_TABLE . " u
 									WHERE ug.user_id = u.user_id
-										AND ' . (($group_row[$group_id]['group_type'] == GROUP_FREE) ? "ug.user_id = {$user->data['user_id']}" : 'ug.group_leader = 1') . "
+											AND ug.group_leader = 1
 										AND ug.group_id = $group_id";
 								$result = $db->sql_query($sql);
 
 								while ($row = $db->sql_fetchrow($result))
 								{
-									$messenger->template($email_template, $row['user_lang']);
+										$messenger->template('group_request', $row['user_lang']);
 
 									$messenger->to($row['user_email'], $row['username']);
 									$messenger->im($row['user_jabber'], $row['username']);
@@ -234,6 +229,7 @@ class ucp_groups
 								$db->sql_freeresult($result);
 
 								$messenger->save_queue();
+								}
 
 								add_log('user', $user->data['user_id'], 'LOG_USER_GROUP_JOIN' . (($group_row[$group_id]['group_type'] == GROUP_FREE) ? '' : '_PENDING'), $group_row[$group_id]['group_name']);
 
@@ -490,7 +486,7 @@ class ucp_groups
 						$avatar_select = basename(request_var('avatar_select', ''));
 						$category = basename(request_var('category', ''));
 
-						$can_upload = (file_exists($phpbb_root_path . $config['avatar_path']) && @is_writable($phpbb_root_path . $config['avatar_path']) && $file_uploads) ? true : false;
+						$can_upload = (file_exists($phpbb_root_path . $config['avatar_path']) && phpbb_is_writable($phpbb_root_path . $config['avatar_path']) && $file_uploads) ? true : false;
 
 						// Did we submit?
 						if ($update)

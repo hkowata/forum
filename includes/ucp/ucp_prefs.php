@@ -65,7 +65,7 @@ class ucp_prefs
 
 					$error = validate_data($data, array(
 						'dateformat'	=> array('string', false, 1, 30),
-						'lang'			=> array('match', false, '#^[a-z0-9_\-]{2,}$#i'),
+						'lang'			=> array('language_iso_name'),
 						'tz'			=> array('num', false, -14, 14),
 					));
 
@@ -240,7 +240,7 @@ class ucp_prefs
 
 				$sort_by_topic_text['z']=$user->lang['SORT_TOPIC_TIME'];
 				$sort_by_topic_sql['z'] = 't.topic_time';
-				
+
 				// Post ordering options
 				$limit_post_days = array(0 => $user->lang['ALL_POSTS'], 1 => $user->lang['1_DAY'], 7 => $user->lang['7_DAYS'], 14 => $user->lang['2_WEEKS'], 30 => $user->lang['1_MONTH'], 90 => $user->lang['3_MONTHS'], 180 => $user->lang['6_MONTHS'], 365 => $user->lang['1_YEAR']);
 

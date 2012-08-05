@@ -60,7 +60,7 @@ $help = array(
 	),
 	array(
 		0 => 'I registered in the past but cannot login any more?!',
-		1 => 'Attempt to locate the e-mail sent to you when you first registered, check your username and password and try again. It is possible an administrator has deactivated or deleted your account for some reason. Also, many boards periodically remove users who have not posted for a long time to reduce the size of the database. If this has happened, try registering again and being more involved in discussions.'
+		1 => 'It is possible an administrator has deactivated or deleted your account for some reason. Also, many boards periodically remove users who have not posted for a long time to reduce the size of the database. If this has happened, try registering again and being more involved in discussions.'
 	),
 	array(
 		0 => 'What is COPPA?',
@@ -128,7 +128,7 @@ $help = array(
 	),
 	array(
 		0 => 'Why can’t I add more poll options?',
-		1 => 'The limit for poll options is set by the board administrator. If you feel you need to add more options to your poll then the allowed amount, contact the board administrator.'
+		1 => 'The limit for poll options is set by the board administrator. If you feel you need to add more options to your poll than the allowed amount, contact the board administrator.'
 	),
 	array(
 		0 => 'How do I edit or delete a poll?',

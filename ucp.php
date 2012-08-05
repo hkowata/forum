@@ -26,7 +26,7 @@ $mode	= request_var('mode', '');
 $login_check = request_var('login_check', '');
 // luzi82 END
 
-if ($mode == 'login' || $mode == 'logout' || $mode == 'confirm')
+if (in_array($mode, array('login', 'logout', 'confirm', 'sendpassword', 'activate')))
 {
 	define('IN_LOGIN', true);
 }
@@ -88,7 +88,7 @@ switch ($mode)
 		{
 			redirect(append_sid("{$phpbb_root_path}index.$phpEx"));
 		}
-		
+
 		login_box(request_var('redirect', "index.$phpEx"));
 		}
 		// luzi82 END
@@ -267,6 +267,12 @@ if (!$user->data['is_registered'])
 		redirect(append_sid("{$phpbb_root_path}index.$phpEx"));
 	}
 
+	if ($id == 'pm' && $mode == 'view' && isset($_GET['p']))
+	{
+		$redirect_url = append_sid("{$phpbb_root_path}ucp.$phpEx?i=pm&p=" . request_var('p', 0));
+		login_box($redirect_url, $user->lang['LOGIN_EXPLAIN_UCP']);
+	}
+
 	login_box('', $user->lang['LOGIN_EXPLAIN_UCP']);
 }
 
@@ -325,6 +331,12 @@ if ($module->is_active('zebra', 'friends'))
 if (!$config['allow_topic_notify'] && !$config['allow_forum_notify'])
 {
 	$module->set_display('main', 'subscribed', false);
+}
+
+// Do not display signature panel if not authed to do so
+if (!$auth->acl_get('u_sig'))
+{
+	$module->set_display('profile', 'signature', false);
 }
 
 // Select the active module
