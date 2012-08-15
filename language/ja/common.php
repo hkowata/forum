@@ -527,6 +527,28 @@ $lang = array_merge($lang, array(
 	'SEARCH_TOPIC'				=> 'このトピックを検索…',
 	'SEARCH_UNANSWERED'			=> '返信なしトピック',
 	'SEARCH_UNREAD'				=> '未読記事',
+	
+	/* add for search box */
+   
+   'SEARCH_DIFF'   => '難易度から検索',
+   'SEARCH_STAR'   => '★',
+   
+   'SEARCH_CAT'   => 'カテゴリから検索',
+   'SEARCH_DOUJIN'   => '同人/Vocaloid&東方',
+   'SEARCH_NAMCO'   => 'ナムコオリジナル',
+   'SEARCH_POP'   => 'ポップ',
+   'SEARCH_CLASSIC'   => 'クラシック',
+   'SEARCH_VAR'   => 'バラエティ',
+   'SEARCH_ANIME'   => 'アニメ',
+   'SEARCH_GAME'   => 'ゲーム',
+   'SEARCH_BEMANI'   => 'ビマニ',
+   
+   'SEARCH_OTHER'   => 'コースから検索',
+   'SEARCH_URA'   => '裏譜面コースあり',
+   'SEARCH_SIMPLE'   => 'かんたんコースあり',
+   'SEARCH_NORMAL'   => 'ふつうコースあり',
+   'SEARCH_HARD'   => 'むずかしいコースあり',
+	
 	'SECONDS'					=> '秒',
 	'SELECT'					=> '選択',
 	'SELECT_ALL_CODE'			=> '全て選択',

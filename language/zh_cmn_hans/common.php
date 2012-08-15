@@ -522,6 +522,26 @@ $lang = array_merge($lang, array(
 	'SEARCH_TOPIC'				=> '查找这个主题……',
 	'SEARCH_UNANSWERED'			=> '查看没有回复的主题',
 	'SEARCH_UNREAD'				=> '查看未读文章',
+	/* add for search box */
+   
+   'SEARCH_DIFF'   => '以\(^o^)/难度搜寻',
+   'SEARCH_STAR'   => '★',
+   
+   'SEARCH_CAT'   => '以分类搜寻',
+   'SEARCH_DOUJIN'   => '同人/Vocaloid&东方',
+   'SEARCH_NAMCO'   => 'Namco原创',
+   'SEARCH_POP'   => '流行',
+   'SEARCH_CLASSIC'   => '古典',
+   'SEARCH_VAR'   => '综艺',
+   'SEARCH_ANIME'   => '动漫',
+   'SEARCH_GAME'   => '游戏',
+   'SEARCH_BEMANI'   => 'Bemani',
+   
+   'SEARCH_OTHER'   => '以模式搜寻',
+   'SEARCH_URA'   => '裏谱面',
+   'SEARCH_SIMPLE'   => '简单模式谱面',
+   'SEARCH_NORMAL'   => '普通模式谱面',
+   'SEARCH_HARD'   => '困难模式谱面',
 	'SECONDS'					=> '秒',
 	'SELECT'					=> '选择',
 	'SELECT_ALL_CODE'			=> '全选',

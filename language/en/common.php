@@ -538,6 +538,28 @@ $lang = array_merge($lang, array(
 	'SEARCH_UNANSWERED'			=> 'View unanswered posts',
 	'SEARCH_UNREAD'				=> 'View unread posts',
 	'SEARCH_USER_POSTS'			=> 'Search user’s posts',
+	
+	/* add for search box */
+   
+   'SEARCH_DIFF'   => 'Search by Difficulty',
+   'SEARCH_STAR'   => '★',
+   
+   'SEARCH_CAT'   => 'Search by Category',
+   'SEARCH_DOUJIN'   => 'Doujin/Vocaloid&Touhou',
+   'SEARCH_NAMCO'   => 'Namco Original',
+   'SEARCH_POP'   => 'Pop',
+   'SEARCH_CLASSIC'   => 'Classical',
+   'SEARCH_VAR'   => 'Variety',
+   'SEARCH_ANIME'   => 'Anime',
+   'SEARCH_GAME'   => 'Game',
+   'SEARCH_BEMANI'   => 'Bemani',
+   
+   'SEARCH_OTHER'   => 'Search by Mode',
+   'SEARCH_URA'   => 'Special mode',
+   'SEARCH_SIMPLE'   => 'Easy mode',
+   'SEARCH_NORMAL'   => 'Normal mode',
+   'SEARCH_HARD'   => 'Hard mode',
+   
 	'SECONDS'					=> 'Seconds',
 	'SELECT'					=> 'Select',
 	'SELECT_ALL_CODE'			=> 'Select all',
