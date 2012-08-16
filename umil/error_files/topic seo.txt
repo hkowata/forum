@@ -1,0 +1,8 @@
+TOPIC SEO
+PHP Version: 5.3.1
+DBMS: MySQL(i) 5.1.41
+phpBB3 Version: 3.0.7-PL1
+
+Adding a new column named topic_seo_desc to table phpbb_topics
+ERROR: The column topic_seo_desc already exists on table phpbb_topics.
+

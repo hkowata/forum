@@ -41,6 +41,10 @@ function mcp_topic_view($id, $mode, $action)
 	// Set up some vars
 	$icon_id		= request_var('icon', 0);
 	$subject		= utf8_normalize_nfc(request_var('subject', '', true));
+	$seo_desc        = utf8_normalize_nfc(request_var('seo_desc', '', true));
+    $seo_key         = utf8_normalize_nfc(request_var('seo_key', '', true));	
+    $seo_post_key = utf8_normalize_nfc(request_var('seo_post_key', '', true));
+    $topic_seo_title = utf8_normalize_nfc(request_var('topic_seo_title', '', true));
 	$start			= request_var('start', 0);
 	$sort_days_old	= request_var('st_old', 0);
 	$forum_id		= request_var('f', 0);
@@ -55,7 +59,7 @@ function mcp_topic_view($id, $mode, $action)
 	{
 		if (!$sort)
 		{
-			split_topic($action, $topic_id, $to_forum_id, $subject);
+			split_topic($action, $topic_id, $to_forum_id, $subject, $seo_desc, $seo_key, $seo_post_key, $topic_seo_title);
 		}
 		$action = 'split';
 	}

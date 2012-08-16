@@ -164,6 +164,9 @@ $lang = array_merge($lang, array(
 	'acl_f_subscribe'	=> array('lang' => 'Can subscribe forum', 'cat' => 'actions'),
 	'acl_f_print'		=> array('lang' => 'Can print topics', 'cat' => 'actions'),
 	'acl_f_email'		=> array('lang' => 'Can e-mail topics', 'cat' => 'actions'),
+	'acl_u_topic_seo_key'  => array('lang' => 'Can use topic seo keywords', 'cat' => 'misc'),
+    'acl_u_topic_seo_desc' => array('lang' => 'Can use topic seo description', 'cat' => 'misc'),
+    'acl_u_seo_post_key'   => array('lang' => 'Can use post seo keywords', 'cat' => 'misc'),
 
 	'acl_f_search'		=> array('lang' => 'Can search the forum', 'cat' => 'misc'),
 	'acl_f_ignoreflood' => array('lang' => 'Can ignore flood limit', 'cat' => 'misc'),

@@ -398,7 +398,7 @@ if (isset($post_data['post_text']))
 }
 
 // Set some default variables
-$uninit = array('post_attachment' => 0, 'poster_id' => $user->data['user_id'], 'enable_magic_url' => 0, 'topic_status' => 0, 'topic_type' => POST_NORMAL, 'post_subject' => '', 'topic_title' => '', 'post_time' => 0, 'post_edit_reason' => '', 'notify_set' => 0);
+$uninit = array('post_attachment' => 0, 'poster_id' => $user->data['user_id'], 'enable_magic_url' => 0, 'topic_status' => 0, 'topic_type' => POST_NORMAL, 'post_subject' => '', 'topic_title' => '','seo_desc' => '','seo_key' => '', 'seo_post_key' =>'', 'topic_seo_title' =>'', 'post_time' => 0, 'post_edit_reason' => '', 'notify_set' => 0);
 
 foreach ($uninit as $var_name => $default_value)
 {
@@ -638,6 +638,10 @@ if ($submit || $preview || $refresh)
 	$post_data['post_edit_reason']	= (!empty($_POST['edit_reason']) && $mode == 'edit' && $auth->acl_get('m_edit', $forum_id)) ? utf8_normalize_nfc(request_var('edit_reason', '', true)) : '';
 
 	$post_data['orig_topic_type']	= $post_data['topic_type'];
+	$post_data['seo_desc']          = utf8_normalize_nfc(request_var('seo_desc', '', true));       
+    $post_data['seo_key']           = utf8_normalize_nfc(request_var('seo_key', '', true));
+	$post_data['seo_post_key']      = utf8_normalize_nfc(request_var('seo_post_key', '', true));
+	$post_data['topic_seo_title']   = utf8_normalize_nfc(request_var('topic_seo_title', '', true));	
 	$post_data['topic_type']		= request_var('topic_type', (($mode != 'post') ? (int) $post_data['topic_type'] : POST_NORMAL));
 	$post_data['topic_time_limit']	= request_var('topic_time_limit', (($mode != 'post') ? (int) $post_data['topic_time_limit'] : 0));
 
@@ -1104,6 +1108,10 @@ if ($submit || $preview || $refresh)
 				'enable_urls'			=> (bool) $post_data['enable_urls'],
 				'enable_indexing'		=> (bool) $post_data['enable_indexing'],
 				'message_md5'			=> (string) $message_md5,
+				'seo_desc'              => $post_data['seo_desc'],
+                'seo_key'               => $post_data['seo_key'],
+                'seo_post_key'          => $post_data['seo_post_key'],
+				'topic_seo_title'       => $post_data['topic_seo_title'],
 				'post_time'				=> (isset($post_data['post_time'])) ? (int) $post_data['post_time'] : $current_time,
 				'post_checksum'			=> (isset($post_data['post_checksum'])) ? (string) $post_data['post_checksum'] : '',
 				'post_edit_reason'		=> $post_data['post_edit_reason'],
@@ -1418,6 +1426,11 @@ $template->assign_vars(array(
 
 	'FORUM_NAME'			=> $post_data['forum_name'],
 	'FORUM_DESC'			=> ($post_data['forum_desc']) ? generate_text_for_display($post_data['forum_desc'], $post_data['forum_desc_uid'], $post_data['forum_desc_bitfield'], $post_data['forum_desc_options']) : '',
+	'SEO_DESC'              => $post_data['seo_desc'],
+	'SEO_KEY'               => $post_data['seo_key'],
+	'SEO_POST_KEY'       	=> $post_data['seo_post_key'],
+	'S_TOPIC_SEO'			=> (!empty($post_data['enable_topic_seo'])) ? true : false,
+	'TOPIC_SEO_TITLE'       => $post_data['topic_seo_title'],
 	'TOPIC_TITLE'			=> censor_text($post_data['topic_title']),
 	'MODERATORS'			=> (sizeof($moderators)) ? implode(', ', $moderators[$forum_id]) : '',
 	'USERNAME'				=> ((!$preview && $mode != 'quote') || $preview) ? $post_data['username'] : '',
@@ -1434,6 +1447,9 @@ $template->assign_vars(array(
 	'ERROR'					=> (sizeof($error)) ? implode('<br />', $error) : '',
 	'TOPIC_TIME_LIMIT'		=> (int) $post_data['topic_time_limit'],
 	'EDIT_REASON'			=> $post_data['post_edit_reason'],
+	'U_TOPIC_SEO_DESC'	    => ($auth->acl_get('u_topic_seo_desc')),
+	'U_TOPIC_SEO_KEY'	    => ($auth->acl_get('u_topic_seo_key')),
+    'U_SEO_POST_KEY'        => ($auth->acl_get('u_seo_post_key')),
 	'U_VIEW_FORUM'			=> append_sid("{$phpbb_root_path}viewforum.$phpEx", "f=$forum_id"),
 	'U_VIEW_TOPIC'			=> ($mode != 'post') ? append_sid("{$phpbb_root_path}viewtopic.$phpEx", "f=$forum_id&amp;t=$topic_id") : '',
 	'U_PROGRESS_BAR'		=> append_sid("{$phpbb_root_path}posting.$phpEx", "f=$forum_id&amp;mode=popup"),

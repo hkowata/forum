@@ -326,7 +326,7 @@ $template->assign_vars(array(
 	'L_NO_TOPICS' 			=> ($forum_data['forum_status'] == ITEM_LOCKED) ? $user->lang['POST_FORUM_LOCKED'] : $user->lang['NO_TOPICS'],
 
 	'S_DISPLAY_POST_INFO'	=> ($forum_data['forum_type'] == FORUM_POST && ($auth->acl_get('f_post', $forum_id) || $user->data['user_id'] == ANONYMOUS)) ? true : false,
-
+	
 	'S_IS_POSTABLE'			=> ($forum_data['forum_type'] == FORUM_POST) ? true : false,
 	'S_USER_CAN_POST'		=> ($auth->acl_get('f_post', $forum_id)) ? true : false,
 	'S_DISPLAY_ACTIVE'		=> $s_display_active,
@@ -693,6 +693,8 @@ if (sizeof($topic_list))
 			'TOPIC_TITLE'		=> luzi82_replace_smilies(censor_text($row['topic_title'])),
 			'TOPIC_TITLE_ORI'	=> censor_text($row['topic_title']),
 			'TOPIC_TYPE'		=> $topic_type,
+			//owataiko
+			'SEO_KEY'		=> $row['seo_key'],
 
 			'TOPIC_FOLDER_IMG'		=> $user->img($folder_img, $folder_alt),
 			'TOPIC_FOLDER_IMG_SRC'	=> $user->img($folder_img, $folder_alt, false, '', 'src'),

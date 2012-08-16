@@ -911,6 +911,7 @@ if ($keywords || $author || $author_id || $search_id || $submit)
 
 					'PAGINATION'		=> topic_generate_pagination($replies, $view_topic_url),
 					'TOPIC_TYPE'		=> $topic_type,
+					'SEO_KEY'		=> $row['seo_key'],
 
 					'TOPIC_FOLDER_IMG'		=> $user->img($folder_img, $folder_alt),
 					'TOPIC_FOLDER_IMG_SRC'	=> $user->img($folder_img, $folder_alt, false, '', 'src'),

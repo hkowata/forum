@@ -916,5 +916,16 @@ $lang = array_merge($lang, array(
 	'default_dateformat'	=> 'D M d, Y g:i a', // Mon Jan 01, 2007 1:37 pm
 
 ));
-
+// BEGIN TOPIC SEO
+$lang = array_merge($lang, array(
+    'TAGS'                          => 'Tags',
+    'TOPIC_SEO_DESCRIPTION'        => 'Topic description',
+    'TOPIC_SEO_KEYWORDS'           => 'Topic keywords', 
+    'TOPIC_SEO_KEY_EXPLAIN'        => 'Seperate keywords using ","',	
+    'TOPIC_SEO_TAGS'               => 'Topic tags',
+	'TOPIC_SEO_TITLE'              => 'Topic SEO Title',
+	'POST_KEYWORD_EXPLAIN'         => 'Seperate keywords using ","',	
+    'POST_SEO_KEYWORDS'            => 'Post keywords',
+));
+// END TOPIC SEO MOD
 ?>

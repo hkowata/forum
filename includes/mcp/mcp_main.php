@@ -684,6 +684,9 @@ function mcp_move_topic($topic_ids)
 					'topic_approved'		=>	1, // a shadow topic is always approved
 					'topic_reported'		=>	0, // a shadow topic is never reported
 					'topic_title'			=>	(string) $row['topic_title'],
+					'seo_desc'              =>  (string) $row['seo_desc'],
+                    'seo_key'               =>  (string) $row['seo_key'],
+                    'topic_seo_title'       =>  (string) $row['topic_seo_title'],
 					'topic_poster'			=>	(int) $row['topic_poster'],
 					'topic_time'			=>	(int) $row['topic_time'],
 					'topic_time_limit'		=>	(int) $row['topic_time_limit'],
@@ -1086,6 +1089,9 @@ function mcp_fork_topic($topic_ids)
 				'topic_approved'			=> 1,
 				'topic_reported'			=> 0,
 				'topic_title'				=> (string) $topic_row['topic_title'],
+				'seo_desc'              =>  (string) $row['seo_desc'],
+                'seo_key'               =>  (string) $row['seo_key'],
+                'topic_seo_title'       =>  (string) $row['topic_seo_title'],
 				'topic_poster'				=> (int) $topic_row['topic_poster'],
 				'topic_time'				=> (int) $topic_row['topic_time'],
 				'topic_replies'				=> (int) $topic_row['topic_replies_real'],
@@ -1168,6 +1174,7 @@ function mcp_fork_topic($topic_ids)
 					'enable_sig'		=> (int) $row['enable_sig'],
 					'post_username'		=> (string) $row['post_username'],
 					'post_subject'		=> (string) $row['post_subject'],
+					'seo_post_key'      => (string) $row['seo_post_key'],
 					'post_text'			=> (string) $row['post_text'],
 					'post_edit_reason'	=> (string) $row['post_edit_reason'],
 					'post_edit_user'	=> (int) $row['post_edit_user'],

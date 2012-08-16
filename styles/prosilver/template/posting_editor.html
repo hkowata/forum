@@ -105,6 +105,27 @@
 		<dt><label for="subject">{L_SUBJECT}:</label></dt>
 		<dd><input type="text" name="subject" id="subject" size="45" maxlength="<!-- IF S_NEW_MESSAGE -->120<!-- ELSE -->124<!-- ENDIF -->" tabindex="2" value="{SUBJECT}{DRAFT_SUBJECT}" class="inputbox autowidth" /></dd>
 	</dl>
+	<!-- IF S_TOPIC_SEO -->
+       <!-- IF not S_PRIVMSGS and S_NEW_MESSAGE --><!-- IF U_TOPIC_SEO_DESC -->   
+    <dl style="clear: left;">
+        <dt><label for="topic_seo_title">{L_TOPIC_SEO_TITLE}:</label><br /></dt>
+        <dd><input type="text" name="topic_seo_title" id="topic_seo_title" size="80" value="{TOPIC_SEO_TITLE}" maxlength="255" class="inputbox autowidth" /></dd>
+    </dl>		   
+    <dl style="clear: left;">
+        <dt><label for="seo_desc">{L_TOPIC_SEO_DESCRIPTION}:</label></dt>
+        <dd><textarea name="seo_desc" id="seo_desc" rows="3" cols="30" class="inputbox">{SEO_DESC}</textarea></dd>
+    </dl><!-- ENDIF --><!-- IF U_TOPIC_SEO_KEY -->
+    <dl style="clear: left;">
+        <dt><label for="seo_key">{L_TOPIC_SEO_KEYWORDS}:</label><br />{L_TOPIC_SEO_KEY_EXPLAIN}</dt>
+        <dd><input type="text" name="seo_key" id="seo_key" size="80" value="{SEO_KEY}" maxlength="255" class="inputbox autowidth" /></dd>
+    </dl>
+    <!-- ENDIF --><!-- ENDIF -->
+	<!-- IF not S_PRIVMSGS and not S_NEW_MESSAGE and U_SEO_POST_KEY -->
+    <dl style="clear: left;">
+        <dt><label for="seo_post_key">{L_POST_SEO_KEYWORDS}:</label><br />{L_POST_KEYWORD_EXPLAIN}</dt>
+        <dd><input type="text" name="seo_post_key" id="seo_post_key" size="80" value="{SEO_POST_KEY}" maxlength="255" class="inputbox autowidth" /></dd>
+    </dl>
+    <!-- ENDIF --><!-- ENDIF -->
 	<!-- IF CAPTCHA_TEMPLATE and S_CONFIRM_CODE -->
 		<!-- DEFINE $CAPTCHA_TAB_INDEX = 3 -->
 		<!-- INCLUDE {CAPTCHA_TEMPLATE} -->

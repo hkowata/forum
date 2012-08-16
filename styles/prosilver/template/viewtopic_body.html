@@ -228,7 +228,20 @@ src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
 
 		<span class="corners-bottom"><span></span></span></div>
 	</div>
-
+<!-- IF S_TOPIC_SEO -->
+        <!-- IF postrow.S_FIRST_ROW && SEO_KEY -->
+    <div class="panel bg2">
+        <div class="inner"><span class="corners-top"><span></span></span>
+            <img src="{ROOT_PATH}images/can.png" alt="{L_TAGS}" /><span><em>{SEO_KEY}</em></span>
+       <span class="corners-bottom"><span></span></span></div>
+    </div>
+        <!-- ELSEIF postrow.SEO_POST_KEY  -->
+   <div class="post <!-- IF postrow.S_ROW_COUNT is odd -->bg1<!-- ELSE -->bg2<!-- ENDIF -->">
+        <div class="inner"><span class="corners-top"><span></span></span>
+            <img src="{ROOT_PATH}images/can.png" alt="{L_TAGS}" /><span><em>{postrow.SEO_POST_KEY}</em></span>
+       <span class="corners-bottom"><span></span></span></div>
+    </div>
+<!-- ENDIF --><!-- ENDIF -->
 	<hr class="divider" />
 <!-- END postrow -->
 <!-- IF S_QUICK_REPLY -->

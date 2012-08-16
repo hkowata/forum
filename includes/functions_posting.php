@@ -1659,6 +1659,10 @@ function submit_post($mode, $subject, $username, $topic_type, &$poll, &$data, $u
 	// To achieve this without cutting off between special chars we convert to an array and then count the elements.
 	$subject = truncate_string($subject,120);
 	$data['topic_title'] = truncate_string($data['topic_title'],120);
+	$data['seo_desc'] = truncate_string($data['seo_desc'],255,255, false);
+    $data['seo_key'] = truncate_string($data['seo_key'],255,255, false);
+    $data['seo_post_key'] = truncate_string($data['seo_post_key'],255,255, false);
+    $data['topic_seo_title'] = truncate_string($data['topic_seo_title'],255,255, false);
 
 	// Collect some basic information about which tables and which rows to update/insert
 	$sql_data = $topic_row = array();
@@ -1717,6 +1721,7 @@ function submit_post($mode, $subject, $username, $topic_type, &$poll, &$data, $u
 				'enable_sig'		=> $data['enable_sig'],
 				'post_username'		=> (!$user->data['is_registered']) ? $username : '',
 				'post_subject'		=> $subject,
+				'seo_post_key'      => $data['seo_post_key'],
 				'post_text'			=> $data['message'],
 				'post_checksum'		=> $data['message_md5'],
 				'post_attachment'	=> (!empty($data['attachment_data'])) ? 1 : 0,
@@ -1783,6 +1788,7 @@ function submit_post($mode, $subject, $username, $topic_type, &$poll, &$data, $u
 				'enable_sig'		=> $data['enable_sig'],
 				'post_username'		=> ($username && $data['poster_id'] == ANONYMOUS) ? $username : '',
 				'post_subject'		=> $subject,
+				'seo_post_key'      => $data['seo_post_key'],
 				'post_checksum'		=> $data['message_md5'],
 				'post_attachment'	=> (!empty($data['attachment_data'])) ? 1 : 0,
 				'bbcode_bitfield'	=> $data['bbcode_bitfield'],
@@ -1813,6 +1819,9 @@ function submit_post($mode, $subject, $username, $topic_type, &$poll, &$data, $u
 				'icon_id'					=> $data['icon_id'],
 				'topic_approved'			=> $post_approval,
 				'topic_title'				=> $subject,
+				'seo_desc'                  => $data['seo_desc'],
+                'seo_key'                   => $data['seo_key'],
+			    'topic_seo_title'           => $data['topic_seo_title'],
 				'topic_first_poster_name'	=> (!$user->data['is_registered'] && $username) ? $username : (($user->data['user_id'] != ANONYMOUS) ? $user->data['username'] : ''),
 				'topic_first_poster_colour'	=> $user->data['user_colour'],
 				'topic_type'				=> $topic_type,
@@ -1892,6 +1901,9 @@ function submit_post($mode, $subject, $username, $topic_type, &$poll, &$data, $u
 				'forum_id'					=> ($topic_type == POST_GLOBAL) ? 0 : $data['forum_id'],
 				'icon_id'					=> $data['icon_id'],
 				'topic_approved'			=> (!$post_approval) ? 0 : $data['topic_approved'],
+				'seo_desc'                  => $data['seo_desc'],
+                'seo_key'             		=> $data['seo_key'],
+				'topic_seo_title'           => $data['topic_seo_title'],
 				'topic_title'				=> $subject,
 				'topic_first_poster_name'	=> $username,
 				'topic_type'				=> $topic_type,

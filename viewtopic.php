@@ -659,6 +659,9 @@ $template->assign_vars(array(
 	'FORUM_DESC'	=> generate_text_for_display($topic_data['forum_desc'], $topic_data['forum_desc_uid'], $topic_data['forum_desc_bitfield'], $topic_data['forum_desc_options']),
 	'TOPIC_ID' 		=> $topic_id,
 	'TOPIC_TITLE' 	=> $topic_data['topic_title'],
+	'SEO_DESC'      => (isset($topic_data['seo_desc'])) ? $topic_data['seo_desc'] : '',
+    'SEO_KEY'       => (isset($topic_data['seo_key'])) ? $topic_data['seo_key'] : '',
+    'TOPIC_SEO_TITLE'	=> (isset($topic_data['topic_seo_title'])) ? $topic_data['topic_seo_title'] : '',
 	'TOPIC_POSTER'	=> $topic_data['topic_poster'],
 
 	'TOPIC_AUTHOR_FULL'		=> get_username_string('full', $topic_data['topic_poster'], $topic_data['topic_first_poster_name'], $topic_data['topic_first_poster_colour']),
@@ -702,6 +705,7 @@ $template->assign_vars(array(
 	'S_SINGLE_MODERATOR'	=> (!empty($forum_moderators[$forum_id]) && sizeof($forum_moderators[$forum_id]) > 1) ? false : true,
 	'S_TOPIC_ACTION' 		=> append_sid("{$phpbb_root_path}viewtopic.$phpEx", "f=$forum_id&amp;t=$topic_id" . (($start == 0) ? '' : "&amp;start=$start")),
 	'S_TOPIC_MOD' 			=> ($topic_mod != '') ? '<select name="action" id="quick-mod-select">' . $topic_mod . '</select>' : '',
+	'S_TOPIC_SEO'			=> (!empty($topic_data['enable_topic_seo'])) ? true : false,	
 	'S_MOD_ACTION' 			=> append_sid("{$phpbb_root_path}mcp.$phpEx", "f=$forum_id&amp;t=$topic_id" . (($start == 0) ? '' : "&amp;start=$start") . "&amp;quickmod=1&amp;redirect=" . urlencode(str_replace('&amp;', '&', $viewtopic_url)), true, $user->session_id),
 
 	'S_VIEWTOPIC'			=> true,
@@ -1098,6 +1102,7 @@ while ($row = $db->sql_fetchrow($result))
 		'topic_id'			=> $row['topic_id'],
 		'forum_id'			=> $row['forum_id'],
 		'post_subject'		=> $row['post_subject'],
+		'seo_post_key'      => (isset($row['seo_post_key'])) ? $row['seo_post_key'] : '',
 		'post_edit_count'	=> $row['post_edit_count'],
 		'post_edit_time'	=> $row['post_edit_time'],
 		'post_edit_reason'	=> $row['post_edit_reason'],
@@ -1587,6 +1592,7 @@ for ($i = 0, $end = sizeof($post_list); $i < $end; ++$i)
 
 		'POST_DATE'			=> $user->format_date($row['post_time'], false, ($view == 'print') ? true : false),
 		'POST_SUBJECT'		=> $row['post_subject'],
+		'SEO_POST_KEY'      => $row['seo_post_key'],
 		'MESSAGE'			=> $message,
 		'MESSAGE_ORI'		=> $message_ori,
 		'SIGNATURE'			=> ($row['enable_sig']) ? $user_cache[$poster_id]['sig'] : '',
